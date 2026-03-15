@@ -3,8 +3,12 @@ FROM php:8.4-cli
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git curl zip unzip libpq-dev libzip-dev libpng-dev libonig-dev libxml2-dev \
-    nodejs npm \
     && docker-php-ext-install pdo pdo_pgsql pdo_sqlite mbstring zip gd intl bcmath pcntl \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js 22 via NodeSource
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y nodejs \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
