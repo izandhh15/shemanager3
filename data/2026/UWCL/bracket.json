@@ -1,0 +1,79 @@
+{
+    "league_phase": {
+        "note": "9 equipos clasificados directamente a fase de liga. Juegan todos contra todos (ida y vuelta parcial). Top 2 pasan directo a QF; puestos 3-6 juegan playoff.",
+        "seeds": [
+            { "seed": 1, "club": "uwcl_fcb",  "qualified_as": "Liga F (1.º)" },
+            { "seed": 2, "club": "uwcl_bay",  "qualified_as": "Frauen-Bundesliga (1.º)" },
+            { "seed": 3, "club": "uwcl_che",  "qualified_as": "Barclays WSL (1.º)" },
+            { "seed": 4, "club": "uwcl_lyj",  "qualified_as": "Arkema Première Ligue (1.º)" },
+            { "seed": 5, "club": "uwcl_juv",  "qualified_as": "Serie A Women (1.º)" },
+            { "seed": 6, "club": "uwcl_ben",  "qualified_as": "Primeira Liga (1.º)" },
+            { "seed": 7, "club": "uwcl_ars",  "qualified_as": "Barclays WSL (2.º)" },
+            { "seed": 8, "club": "uwcl_wol",  "qualified_as": "Frauen-Bundesliga (2.º)" },
+            { "seed": 9, "club": "uwcl_psg",  "qualified_as": "Arkema Première Ligue (2.º)" }
+        ]
+    },
+
+    "round_3_pairs": {
+        "note": "Ronda 3: 8 ganadores de Ruta de Campeonas + 8 de Ruta de Liga = 8 eliminatorias",
+        "matches": [
+            { "match": "3A", "champions_route": "uwcl_stp",  "league_route": "uwcl_par" },
+            { "match": "3B", "champions_route": "TBD_R2C",   "league_route": "uwcl_rma" },
+            { "match": "3C", "champions_route": "TBD_R2C",   "league_route": "uwcl_scp" },
+            { "match": "3D", "champions_route": "TBD_R2C",   "league_route": "uwcl_ein" },
+            { "match": "3E", "champions_route": "TBD_R2C",   "league_route": "uwcl_atm" },
+            { "match": "3F", "champions_route": "TBD_R2C",   "league_route": "uwcl_hac" },
+            { "match": "3G", "champions_route": "TBD_R2C",   "league_route": "TBD_R2L" },
+            { "match": "3H", "champions_route": "TBD_R2C",   "league_route": "TBD_R2L" }
+        ]
+    },
+
+    "round_2_champions_route": {
+        "note": "Ronda 2 Ruta de Campeonas: 20 equipos (10 partidos)",
+        "matches": [
+            { "match": "2C-1",  "home": "uwcl_ros",  "away": "uwcl_crv"  },
+            { "match": "2C-2",  "home": "uwcl_sla",  "away": "uwcl_vll"  },
+            { "match": "2C-3",  "home": "uwcl_twe",  "away": "uwcl_apo"  },
+            { "match": "2C-4",  "home": "uwcl_fhj",  "away": "uwcl_leu"  },
+            { "match": "2C-5",  "home": "uwcl_val",  "away": "uwcl_hjk"  },
+            { "match": "2C-6",  "home": "uwcl_vor",  "away": "uwcl_sar"  },
+            { "match": "2C-7",  "home": "uwcl_din",  "away": "uwcl_fer"  },
+            { "match": "2C-8",  "home": "uwcl_bre",  "away": "uwcl_far"  },
+            { "match": "2C-9",  "home": "uwcl_hib",  "away": "uwcl_mur"  },
+            { "match": "2C-10", "home": "uwcl_bii",  "away": "uwcl_kat"  },
+            { "match": "2C-11", "home": "uwcl_yb",   "away": "uwcl_gin"  },
+            { "match": "2C-12", "home": "W_R1",      "away": "W_R1"      }
+        ]
+    },
+
+    "round_2_league_route": {
+        "note": "Ronda 2 Ruta de Liga: 16 equipos (8 partidos)",
+        "matches": [
+            { "match": "2L-1", "home": "uwcl_mun",  "away": "uwcl_bra"  },
+            { "match": "2L-2", "home": "uwcl_brg",  "away": "uwcl_avi"  },
+            { "match": "2L-3", "home": "uwcl_int",  "away": "uwcl_met"  },
+            { "match": "2L-4", "home": "uwcl_rom",  "away": "uwcl_min"  },
+            { "match": "2L-5", "home": "uwcl_ham",  "away": "uwcl_vlr"  },
+            { "match": "2L-6", "home": "uwcl_spap", "away": "uwcl_gla"  },
+            { "match": "2L-7", "home": "uwcl_psv",  "away": "uwcl_akt"  },
+            { "match": "2L-8", "home": "uwcl_nor",  "away": "uwcl_hib2" }
+        ]
+    },
+
+    "round_1_champions_route": {
+        "note": "Ronda 1: 21 equipos — 10 eliminatorias + 1 equipo con bye",
+        "matches": [
+            { "match": "1C-1",  "home": "uwcl_agr",  "away": "uwcl_lan"  },
+            { "match": "1C-2",  "home": "uwcl_car",  "away": "uwcl_aga"  },
+            { "match": "1C-3",  "home": "uwcl_atl",  "away": "uwcl_bud"  },
+            { "match": "1C-4",  "home": "uwcl_flo",  "away": "uwcl_lju"  },
+            { "match": "1C-5",  "home": "uwcl_mit",  "away": "uwcl_spm"  },
+            { "match": "1C-6",  "home": "uwcl_cli",  "away": "uwcl_nsi"  },
+            { "match": "1C-7",  "home": "uwcl_abb",  "away": "uwcl_nsa"  },
+            { "match": "1C-8",  "home": "uwcl_rig",  "away": "uwcl_pyu"  },
+            { "match": "1C-9",  "home": "uwcl_aek",  "away": "uwcl_rac"  },
+            { "match": "1C-10", "home": "uwcl_swi",  "away": "uwcl_nef"  },
+            { "match": "1C-11", "home": "uwcl_kir",  "away": "BYE"       }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3505.png",
+    "name": "United States",
+    "players": [
+        { "id": "wnt_usa_01", "name": "Alyssa Naeher", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Apr 20, 1988", "nationality": ["United States"], "height": "1,80m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_usa_02", "name": "Casey Murphy", "position": "Goalkeeper", "number": "18", "dateOfBirth": "Apr 25, 1996", "nationality": ["United States"], "height": "1,80m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_usa_03", "name": "Crystal Dunn", "position": "Left-Back", "number": "19", "dateOfBirth": "Jul 3, 1992", "nationality": ["United States"], "height": "1,57m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_usa_04", "name": "Tierna Davidson", "position": "Centre-Back", "number": "12", "dateOfBirth": "Sep 30, 1998", "nationality": ["United States"], "height": "1,74m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_usa_05", "name": "Naomi Girma", "position": "Centre-Back", "number": "4", "dateOfBirth": "Jun 14, 2000", "nationality": ["United States"], "height": "1,78m", "foot": "right", "marketValue": "€1.50m" },
+        { "id": "wnt_usa_06", "name": "Emily Fox", "position": "Right-Back", "number": "11", "dateOfBirth": "May 5, 1999", "nationality": ["United States"], "height": "1,70m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_usa_07", "name": "Lindsey Horan", "position": "Central Midfield", "number": "9", "dateOfBirth": "May 26, 1994", "nationality": ["United States"], "height": "1,71m", "foot": "right", "marketValue": "€700k" },
+        { "id": "wnt_usa_08", "name": "Rose Lavelle", "position": "Attacking Midfield", "number": "16", "dateOfBirth": "May 14, 1995", "nationality": ["United States"], "height": "1,62m", "foot": "left", "marketValue": "€800k" },
+        { "id": "wnt_usa_09", "name": "Andi Sullivan", "position": "Defensive Midfield", "number": "7", "dateOfBirth": "Oct 8, 1995", "nationality": ["United States"], "height": "1,70m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_usa_10", "name": "Trinity Rodman", "position": "Right Winger", "number": "5", "dateOfBirth": "May 20, 2002", "nationality": ["United States"], "height": "1,77m", "foot": "right", "marketValue": "€2.00m" },
+        { "id": "wnt_usa_11", "name": "Sophia Smith", "position": "Left Winger", "number": "11", "dateOfBirth": "Aug 5, 2000", "nationality": ["United States"], "height": "1,65m", "foot": "right", "marketValue": "€1.80m" },
+        { "id": "wnt_usa_12", "name": "Alex Morgan", "position": "Centre-Forward", "number": "13", "dateOfBirth": "Jul 2, 1989", "nationality": ["United States"], "height": "1,70m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_usa_13", "name": "Mallory Swanson", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Apr 27, 1998", "nationality": ["United States"], "height": "1,63m", "foot": "right", "marketValue": "€1.20m" },
+        { "id": "wnt_usa_14", "name": "Lynn Williams", "position": "Right Winger", "number": "13", "dateOfBirth": "Dec 5, 1992", "nationality": ["United States"], "height": "1,65m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_usa_15", "name": "Catarina Macario", "position": "Attacking Midfield", "number": "8", "dateOfBirth": "Oct 23, 1999", "nationality": ["United States", "Brazil"], "height": "1,67m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_usa_16", "name": "Jaedyn Shaw", "position": "Left Winger", "number": "22", "dateOfBirth": "Mar 30, 2004", "nationality": ["United States"], "height": "1,73m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_usa_17", "name": "Sam Coffey", "position": "Central Midfield", "number": "17", "dateOfBirth": "Jul 12, 1999", "nationality": ["United States"], "height": "1,70m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_usa_18", "name": "Alyssa Thompson", "position": "Right Winger", "number": "21", "dateOfBirth": "Feb 12, 2005", "nationality": ["United States"], "height": "1,67m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_usa_19", "name": "Korbin Albert", "position": "Central Midfield", "number": "23", "dateOfBirth": "Apr 8, 2004", "nationality": ["United States"], "height": "1,68m", "foot": "right", "marketValue": "€350k" },
+        { "id": "wnt_usa_20", "name": "Jenna Nighswonger", "position": "Right-Back", "number": "3", "dateOfBirth": "Sep 29, 2000", "nationality": ["United States"], "height": "1,71m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_usa_21", "name": "Jane Campbell", "position": "Goalkeeper", "number": "24", "dateOfBirth": "Nov 30, 1995", "nationality": ["United States"], "height": "1,78m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_usa_22", "name": "Hal Hershfelt", "position": "Central Midfield", "number": "14", "dateOfBirth": "Nov 16, 2003", "nationality": ["United States"], "height": "1,65m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_usa_23", "name": "Abby Dahlkemper", "position": "Centre-Back", "number": "7", "dateOfBirth": "May 13, 1993", "nationality": ["United States"], "height": "1,73m", "foot": "right", "marketValue": "€200k" }
+    ]
+}

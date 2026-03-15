@@ -1,0 +1,61 @@
+# Netlify configuration for SheManager — landing page
+# Proyecto de Izan Delgado (@izandhh), basado en Virtua FC de Pablo Román
+# The Laravel app runs separately (Laravel Cloud / Railway / etc.)
+# Netlify only serves the static landing page.
+#
+# SETUP: In Netlify dashboard → Site configuration → Build & deploy:
+#   Base directory:     landing/public
+#   Build command:      (leave empty)
+#   Publish directory:  landing/public
+#   OR set base to "landing/public" and publish to "."
+
+[build]
+  base      = "landing/public"
+  command   = ""
+  publish   = "."
+
+# Spanish → serve index.html (default)
+[[redirects]]
+  from   = "/en"
+  to     = "/index-en.html"
+  status = 200
+
+[[redirects]]
+  from   = "/en/*"
+  to     = "/index-en.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "camera=(), microphone=(), geolocation=()"
+
+# Cache static assets aggressively
+[[headers]]
+  for = "/*.webm"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

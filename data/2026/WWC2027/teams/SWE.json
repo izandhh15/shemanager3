@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3389.png",
+    "name": "Sweden",
+    "players": [
+        { "id": "wnt_swe_01", "name": "Jennifer Falk", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Apr 7, 1998", "nationality": ["Sweden"], "height": "1,78m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_swe_02", "name": "Zećira Mušović", "position": "Goalkeeper", "number": "12", "dateOfBirth": "Apr 17, 1996", "nationality": ["Sweden"], "height": "1,76m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_swe_03", "name": "Magdalena Eriksson", "position": "Left-Back", "number": "3", "dateOfBirth": "Sep 8, 1993", "nationality": ["Sweden"], "height": "1,68m", "foot": "left", "marketValue": "€400k" },
+        { "id": "wnt_swe_04", "name": "Amanda Ilestedt", "position": "Centre-Back", "number": "5", "dateOfBirth": "Jan 17, 1993", "nationality": ["Sweden"], "height": "1,73m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_swe_05", "name": "Nathalie Björn", "position": "Centre-Back", "number": "4", "dateOfBirth": "Jan 22, 1995", "nationality": ["Sweden"], "height": "1,69m", "foot": "right", "marketValue": "€250k" },
+        { "id": "wnt_swe_06", "name": "Hanna Glas", "position": "Right-Back", "number": "2", "dateOfBirth": "Oct 9, 1993", "nationality": ["Sweden"], "height": "1,66m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_swe_07", "name": "Caroline Seger", "position": "Defensive Midfield", "number": "6", "dateOfBirth": "Mar 19, 1985", "nationality": ["Sweden"], "height": "1,63m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_swe_08", "name": "Filippa Angeldal", "position": "Central Midfield", "number": "8", "dateOfBirth": "Jun 9, 1998", "nationality": ["Sweden"], "height": "1,69m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_swe_09", "name": "Kosovare Asllani", "position": "Attacking Midfield", "number": "9", "dateOfBirth": "Jul 29, 1989", "nationality": ["Sweden"], "height": "1,61m", "foot": "right", "marketValue": "€250k" },
+        { "id": "wnt_swe_10", "name": "Fridolina Rolfö", "position": "Left Winger", "number": "11", "dateOfBirth": "Nov 23, 1993", "nationality": ["Sweden"], "height": "1,74m", "foot": "right", "marketValue": "€1.20m" },
+        { "id": "wnt_swe_11", "name": "Stina Blackstenius", "position": "Centre-Forward", "number": "11", "dateOfBirth": "Feb 5, 1996", "nationality": ["Sweden"], "height": "1,74m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_swe_12", "name": "Lina Hurtig", "position": "Left Winger", "number": "17", "dateOfBirth": "Feb 13, 1995", "nationality": ["Sweden"], "height": "1,70m", "foot": "left", "marketValue": "€500k" },
+        { "id": "wnt_swe_13", "name": "Anna Sandberg", "position": "Right Winger", "number": "7", "dateOfBirth": "Aug 14, 1993", "nationality": ["Sweden"], "height": "1,63m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_swe_14", "name": "Johanna Rytting Kaneryd", "position": "Right Winger", "number": "16", "dateOfBirth": "Jul 1, 1996", "nationality": ["Sweden"], "height": "1,68m", "foot": "right", "marketValue": "€800k" },
+        { "id": "wnt_swe_15", "name": "Olivia Schough", "position": "Central Midfield", "number": "13", "dateOfBirth": "Jun 13, 1995", "nationality": ["Sweden"], "height": "1,72m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_swe_16", "name": "Emma Kullberg", "position": "Centre-Back", "number": "15", "dateOfBirth": "Jan 5, 1999", "nationality": ["Sweden"], "height": "1,75m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_swe_17", "name": "Elin Rubensson", "position": "Central Midfield", "number": "14", "dateOfBirth": "Sep 4, 1993", "nationality": ["Sweden"], "height": "1,63m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_swe_18", "name": "Hanna Bennison", "position": "Attacking Midfield", "number": "10", "dateOfBirth": "Oct 4, 2002", "nationality": ["Sweden"], "height": "1,71m", "foot": "right", "marketValue": "€700k" },
+        { "id": "wnt_swe_19", "name": "Madelen Janogy", "position": "Right Winger", "number": "19", "dateOfBirth": "Apr 10, 1999", "nationality": ["Sweden"], "height": "1,65m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_swe_20", "name": "Rebecka Blomqvist", "position": "Left Winger", "number": "20", "dateOfBirth": "Jun 9, 1999", "nationality": ["Sweden"], "height": "1,71m", "foot": "left", "marketValue": "€400k" },
+        { "id": "wnt_swe_21", "name": "Nathalie Häll", "position": "Right-Back", "number": "21", "dateOfBirth": "Feb 2, 1998", "nationality": ["Sweden"], "height": "1,66m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_swe_22", "name": "Moa Eriksson Mäård", "position": "Centre-Back", "number": "22", "dateOfBirth": "Oct 26, 2001", "nationality": ["Sweden"], "height": "1,73m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_swe_23", "name": "Tove Enblom", "position": "Goalkeeper", "number": "23", "dateOfBirth": "Nov 23, 2002", "nationality": ["Sweden"], "height": "1,75m", "foot": "right", "marketValue": "€80k" }
+    ]
+}

@@ -1,0 +1,190 @@
+{
+    "id": "APLF",
+    "name": "Arkema Première Ligue",
+    "clubs": [
+        {
+            "transfermarktId": "3830",
+            "name": "Dijon FCO",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/3830.png",
+            "stadiumName": "Stade Gaston-Gérard",
+            "stadiumSeats": 20000,
+            "last_season_position": 4,
+            "players": [
+                { "id": "apl_dij_01", "name": "Solène Durand",        "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jan 12, 1999", "nationality": ["France"],   "height": "1,71m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_dij_02", "name": "Méline Gérard",        "position": "Goalkeeper",        "number": "16", "dateOfBirth": "Jan 11, 1993", "nationality": ["France"],   "height": "1,72m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_dij_03", "name": "Hawa Cissoko",         "position": "Left-Back",         "number": "3",  "dateOfBirth": "May 29, 2000", "nationality": ["France"],   "height": "1,72m", "foot": "left",  "marketValue": "€200k", "contract": "Jun 30, 2027" },
+                { "id": "apl_dij_04", "name": "Estelle Cascarino",    "position": "Right Winger",      "number": "7",  "dateOfBirth": "Oct 21, 1996", "nationality": ["France"],   "height": "1,64m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" },
+                { "id": "apl_dij_05", "name": "Kenza Dali",           "position": "Attacking Midfield","number": "10", "dateOfBirth": "Mar 27, 1991", "nationality": ["France"],   "height": "1,60m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "apl_dij_06", "name": "Laure Boulleau",       "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Dec 25, 1986", "nationality": ["France"],   "height": "1,70m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_dij_07", "name": "Clara Matéo",          "position": "Left Winger",       "number": "11", "dateOfBirth": "Aug 26, 2001", "nationality": ["France"],   "height": "1,68m", "foot": "left",  "marketValue": "€500k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "11068",
+            "name": "FC Fleury 91",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/11068.png",
+            "stadiumName": "Stade Robert-Bobin",
+            "stadiumSeats": 18845,
+            "last_season_position": 5,
+            "players": [
+                { "id": "apl_fle_01", "name": "Charlotte Bilbault",   "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jul 21, 1992", "nationality": ["France"],   "height": "1,71m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_fle_02", "name": "Vicki Bèche",          "position": "Left-Back",         "number": "3",  "dateOfBirth": "Jul 16, 2002", "nationality": ["France"],   "height": "1,65m", "foot": "left",  "marketValue": "€200k", "contract": "Jun 30, 2027" },
+                { "id": "apl_fle_03", "name": "Inès Jaurena",         "position": "Defensive Midfield","number": "6",  "dateOfBirth": "Jul 19, 1992", "nationality": ["France"],   "height": "1,64m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "apl_fle_04", "name": "Jade Tagliafico",      "position": "Right Winger",      "number": "7",  "dateOfBirth": "Feb 14, 2003", "nationality": ["France"],   "height": "1,61m", "foot": "right", "marketValue": "€120k", "contract": "Jun 30, 2026" },
+                { "id": "apl_fle_05", "name": "Manon Peyraud-Magnin", "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jun 5, 2001",  "nationality": ["France"],   "height": "1,67m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "1024",
+            "name": "Le Havre AC",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/1024.png",
+            "stadiumName": "Stade Océane",
+            "stadiumSeats": 25178,
+            "last_season_position": 8,
+            "players": [
+                { "id": "apl_lha_01", "name": "Jade Peruyero",        "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "May 9, 2001",  "nationality": ["France"],   "height": "1,73m", "foot": "right", "marketValue": "€40k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_lha_02", "name": "Anaïs Bougreau",       "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Mar 20, 1998", "nationality": ["France"],   "height": "1,70m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_lha_03", "name": "Margot Morroni",       "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Dec 7, 2001",  "nationality": ["France"],   "height": "1,62m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_lha_04", "name": "Jade Boho",            "position": "Right Winger",      "number": "7",  "dateOfBirth": "Feb 28, 1996", "nationality": ["Equatorial Guinea"], "height": "1,65m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "826",
+            "name": "RC Lens",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/826.png",
+            "stadiumName": "Stade François Blin",
+            "stadiumSeats": 5528,
+            "last_season_position": "D2 2nd",
+            "players": [
+                { "id": "apl_rcl_01", "name": "Léa Khelifi",          "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Aug 1, 1999",  "nationality": ["France"],   "height": "1,69m", "foot": "right", "marketValue": "€30k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_rcl_02", "name": "Inès Mesloub",         "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Nov 14, 2000", "nationality": ["France"],   "height": "1,68m", "foot": "right", "marketValue": "€30k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_rcl_03", "name": "Chloé Fresneau",       "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Apr 5, 2002",  "nationality": ["France"],   "height": "1,63m", "foot": "right", "marketValue": "€25k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_rcl_04", "name": "Maéva Clemaron",       "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jan 18, 1997", "nationality": ["France"],   "height": "1,65m", "foot": "right", "marketValue": "€40k",  "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "244",
+            "name": "Olympique Lyonnais Féminin",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/244.png",
+            "stadiumName": "Parc Olympique Lyonnais",
+            "stadiumSeats": 59186,
+            "last_season_position": 1,
+            "players": [
+                { "id": "apl_oly_01", "name": "Christiane Endler",    "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jul 23, 1991", "nationality": ["Chile"],    "height": "1,85m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2026" },
+                { "id": "apl_oly_02", "name": "Ada Hegerberg",        "position": "Centre-Forward",    "number": "14", "dateOfBirth": "Jul 10, 1995", "nationality": ["Norway"],   "height": "1,77m", "foot": "right", "marketValue": "€2.50m","contract": "Jun 30, 2027" },
+                { "id": "apl_oly_03", "name": "Wendie Renard",        "position": "Centre-Back",       "number": "3",  "dateOfBirth": "Jul 20, 1990", "nationality": ["France"],   "height": "1,87m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2026" },
+                { "id": "apl_oly_04", "name": "Lindsey Horan",        "position": "Central Midfield",  "number": "10", "dateOfBirth": "May 26, 1994", "nationality": ["United States"], "height": "1,71m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2026" },
+                { "id": "apl_oly_05", "name": "Griedge Mbock",        "position": "Centre-Back",       "number": "5",  "dateOfBirth": "Apr 28, 1996", "nationality": ["France"],   "height": "1,77m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2026" },
+                { "id": "apl_oly_06", "name": "Delphine Cascarino",   "position": "Right Winger",      "number": "7",  "dateOfBirth": "Nov 15, 1997", "nationality": ["France"],   "height": "1,65m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "apl_oly_07", "name": "Amandine Henry",       "position": "Defensive Midfield","number": "6",  "dateOfBirth": "Sep 28, 1989", "nationality": ["France"],   "height": "1,70m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "apl_oly_08", "name": "Signe Bruun",          "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "May 28, 1998", "nationality": ["Denmark"],  "height": "1,74m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2026" },
+                { "id": "apl_oly_09", "name": "Damaris Egurrola",     "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Jun 8, 1999",  "nationality": ["Netherlands","Spain"], "height": "1,70m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2026" },
+                { "id": "apl_oly_10", "name": "Maëlle Lakrar",        "position": "Centre-Back",       "number": "15", "dateOfBirth": "May 4, 2001",  "nationality": ["France"],   "height": "1,72m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "162",
+            "name": "Olympique de Marseille",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/162.png",
+            "stadiumName": "OM Campus",
+            "stadiumSeats": 3500,
+            "last_season_position": "D2 1st",
+            "players": [
+                { "id": "apl_mar_01", "name": "Mylène Chavas",        "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Apr 9, 1994",  "nationality": ["France"],   "height": "1,72m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_mar_02", "name": "Léa Le Garrec",        "position": "Central Midfield",  "number": "10", "dateOfBirth": "Jan 16, 1997", "nationality": ["France"],   "height": "1,64m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "apl_mar_03", "name": "Alice Sombath",        "position": "Right-Back",        "number": "2",  "dateOfBirth": "Oct 25, 2001", "nationality": ["France"],   "height": "1,65m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "apl_mar_04", "name": "Kenza Vrithia",        "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Sep 3, 2001",  "nationality": ["France"],   "height": "1,65m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "244",
+            "name": "Montpellier HSC",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/3570.png",
+            "stadiumName": "Stade Bernard Gasset",
+            "stadiumSeats": 1280,
+            "last_season_position": 6,
+            "players": [
+                { "id": "apl_mtp_01", "name": "Méline Gérard",        "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jan 11, 1993", "nationality": ["France"],   "height": "1,72m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_mtp_02", "name": "Sandie Toletti",        "position": "Central Midfield",  "number": "10", "dateOfBirth": "May 28, 1997", "nationality": ["France"],   "height": "1,70m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "apl_mtp_03", "name": "Océane Deslandes",      "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Dec 15, 1997", "nationality": ["France"],   "height": "1,71m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "apl_mtp_04", "name": "Laura Bourgouin",       "position": "Left Winger",       "number": "11", "dateOfBirth": "Jul 20, 1998", "nationality": ["France"],   "height": "1,63m", "foot": "left",  "marketValue": "€120k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "12",
+            "name": "FC Nantes",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/12.png",
+            "stadiumName": "Stade Marcel-Saupin",
+            "stadiumSeats": 1880,
+            "last_season_position": 7,
+            "players": [
+                { "id": "apl_nts_01", "name": "Anaïs Girard",         "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jun 20, 1998", "nationality": ["France"],   "height": "1,69m", "foot": "right", "marketValue": "€40k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_nts_02", "name": "Emelyne Laurent",       "position": "Right Winger",      "number": "7",  "dateOfBirth": "Jan 24, 1999", "nationality": ["France"],   "height": "1,62m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "apl_nts_03", "name": "Laurie Gilberte",       "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Mar 8, 2000",  "nationality": ["France"],   "height": "1,69m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_nts_04", "name": "Selma Bacha",           "position": "Left-Back",         "number": "3",  "dateOfBirth": "Nov 9, 2000",  "nationality": ["France"],   "height": "1,59m", "foot": "left",  "marketValue": "€400k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "1154",
+            "name": "Paris FC",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/1154.png",
+            "stadiumName": "Stade Charléty",
+            "stadiumSeats": 19151,
+            "last_season_position": 3,
+            "players": [
+                { "id": "apl_pfc_01", "name": "Pauline Peyraud-Magnin","position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Mar 17, 1992", "nationality": ["France"],   "height": "1,73m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "apl_pfc_02", "name": "Marie-Antoinette Katoto","position": "Centre-Forward",   "number": "9",  "dateOfBirth": "Feb 14, 1999", "nationality": ["France"],   "height": "1,67m", "foot": "right", "marketValue": "€1.50m","contract": "Jun 30, 2027" },
+                { "id": "apl_pfc_03", "name": "Grace Geyoro",          "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Apr 2, 1997",  "nationality": ["France"],   "height": "1,63m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2027" },
+                { "id": "apl_pfc_04", "name": "Sandy Baltimore",       "position": "Left Winger",       "number": "11", "dateOfBirth": "Nov 23, 2000", "nationality": ["France"],   "height": "1,63m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2027" },
+                { "id": "apl_pfc_05", "name": "Sakina Karchaoui",      "position": "Left-Back",         "number": "14", "dateOfBirth": "Jan 6, 1996",  "nationality": ["France"],   "height": "1,58m", "foot": "left",  "marketValue": "€500k", "contract": "Jun 30, 2026" },
+                { "id": "apl_pfc_06", "name": "Eve Périsset",          "position": "Right-Back",        "number": "2",  "dateOfBirth": "Dec 21, 1994", "nationality": ["France"],   "height": "1,69m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "apl_pfc_07", "name": "Maéva Mpome",          "position": "Centre-Forward",    "number": "19", "dateOfBirth": "Apr 12, 2002", "nationality": ["France"],   "height": "1,72m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "583",
+            "name": "Paris Saint-Germain",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/583.png",
+            "stadiumName": "Campus PSG",
+            "stadiumSeats": 1100,
+            "last_season_position": 2,
+            "players": [
+                { "id": "apl_psg_01", "name": "Barbora Votíková",      "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Sep 28, 1999", "nationality": ["Czech Republic"], "height": "1,80m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "apl_psg_02", "name": "Lieke Martens",         "position": "Left Winger",       "number": "11", "dateOfBirth": "Dec 16, 1992", "nationality": ["Netherlands"], "height": "1,68m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2026" },
+                { "id": "apl_psg_03", "name": "Tabitha Chawinga",      "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Feb 15, 1997", "nationality": ["Malawi"],    "height": "1,73m", "foot": "right", "marketValue": "€800k", "contract": "Jun 30, 2027" },
+                { "id": "apl_psg_04", "name": "Laurina Fazer",         "position": "Right-Back",        "number": "2",  "dateOfBirth": "Aug 10, 1999", "nationality": ["France"],   "height": "1,68m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" },
+                { "id": "apl_psg_05", "name": "Sara Dabritz",          "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Feb 15, 1994", "nationality": ["Germany"],  "height": "1,68m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2026" },
+                { "id": "apl_psg_06", "name": "Ramona Bachmann",       "position": "Right Winger",      "number": "7",  "dateOfBirth": "Dec 25, 1990", "nationality": ["Switzerland"], "height": "1,63m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "apl_psg_07", "name": "Griedge Mbock",         "position": "Centre-Back",       "number": "5",  "dateOfBirth": "Apr 28, 1996", "nationality": ["France"],   "height": "1,77m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "385",
+            "name": "Racing Club de Strasbourg",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/385.png",
+            "stadiumName": "Stade de la Meinau",
+            "stadiumSeats": 26100,
+            "last_season_position": 9,
+            "players": [
+                { "id": "apl_str_01", "name": "Solenn Bartolomei",     "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Nov 5, 1993",  "nationality": ["France"],   "height": "1,70m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_str_02", "name": "Maéva Sarr",            "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Jun 10, 2001", "nationality": ["France"],   "height": "1,65m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_str_03", "name": "Laurie Gilberte",       "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Mar 8, 2000",  "nationality": ["France"],   "height": "1,69m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_str_04", "name": "Zora Brunner",          "position": "Right Winger",      "number": "7",  "dateOfBirth": "Sep 17, 2004", "nationality": ["Switzerland"], "height": "1,65m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "18",
+            "name": "AS Saint-Étienne",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/18.png",
+            "stadiumName": "Stade Salif Keïta",
+            "stadiumSeats": 1000,
+            "last_season_position": 10,
+            "players": [
+                { "id": "apl_sse_01", "name": "Enora Barthel",         "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "May 24, 2000", "nationality": ["France"],   "height": "1,72m", "foot": "right", "marketValue": "€30k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_sse_02", "name": "Romane Bruneau",        "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Oct 3, 2001",  "nationality": ["France"],   "height": "1,68m", "foot": "right", "marketValue": "€25k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_sse_03", "name": "Léa Godard",            "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Feb 19, 2002", "nationality": ["France"],   "height": "1,64m", "foot": "right", "marketValue": "€25k",  "contract": "Jun 30, 2026" },
+                { "id": "apl_sse_04", "name": "Maëlys Mpome",          "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Aug 7, 2003",  "nationality": ["France"],   "height": "1,66m", "foot": "right", "marketValue": "€30k",  "contract": "Jun 30, 2026" }
+            ]
+        }
+    ]
+}

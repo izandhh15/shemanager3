@@ -1,0 +1,294 @@
+<?php
+
+return [
+    // Page title
+    'window' => 'Window',
+    'window_open' => ':window Window Open',
+    'budget' => 'Budget',
+    'budget_committed' => 'committed',
+
+    // Tab labels
+    'outgoing' => 'Outgoing',
+    'incoming' => 'Incoming',
+    'scouting_tab' => 'Scouting',
+
+    // Window countdown
+    'window_closes_in' => 'closes on :date',
+    'window_opens_in' => 'opens on :date',
+
+    // Wage bill
+    'wage_bill' => 'Wage Bill',
+
+    // Section headers
+    'pre_contract_offers_received' => 'Pre-Contract Offers Received',
+    'pre_contract_offers_help' => 'Players in final year of contract with offers from other clubs',
+    'players_leaving_free' => 'Players Leaving on Free',
+    'players_leaving_free_help' => 'Players who have signed a pre-contract with another club',
+    'expiring_contracts_section' => 'Players in Final Year of Contract',
+    'pending_renewals_section' => 'Pending Renewals',
+    'loans_out_section' => 'Active Loans (Out)',
+    'loan_searches_section' => 'Searching for Loan Destination',
+    'loan_searches_help' => 'Players looking for a club to go on loan',
+    'counter_offers_received' => 'Counter Offer(s) Received',
+    'counter_offers_help' => 'Clubs have responded with a different price than you offered',
+
+    // Legacy keys kept for compatibility
+    'loans' => 'Loans',
+
+    // Pending bids
+    'your_pending_bids' => 'Your Pending Bids',
+    'pending_bids_help' => 'Bids sent that are awaiting a response from the selling club',
+    'loan_request' => 'Loan Request',
+    'loan_no_fee' => 'Loan (no fee)',
+    'free_transfer' => 'Free (no contract)',
+    'free_agent' => 'Free Agent',
+    'sign_free_agent' => 'Sign Free Agent',
+    'window_closed_for_signing' => 'Transfer window closed — signing unavailable.',
+    'wage_exceeds_budget' => 'Wage demand exceeds your wage budget.',
+    'response_next_matchday' => 'Response on the next matchday',
+
+    // Rejected bids
+    'rejected_bids' => 'Rejected Bids',
+    'bid_rejected' => 'Bid rejected',
+
+    // Incoming transfers
+    'incoming_transfers' => 'Incoming Transfers',
+    'completing_when_window' => 'will be completed when the :window window opens',
+    'deal_agreed' => 'Deal agreed',
+
+    // Unsolicited offers
+    'unsolicited_offers' => 'Unsolicited Offers',
+    'unsolicited_offers_help' => 'Other clubs want to sign your players',
+
+    // Offers received
+    'offers_received' => 'Offers Received',
+    'offers_received_help' => 'Offers received for players you have listed for sale',
+    'expires_in_days' => 'Expires in :days days',
+    'from' => 'from',
+
+    // Agreed transfers
+    'agreed_transfers' => 'Agreed Transfers',
+
+    // Listed players
+    'listed_players' => 'Players for Sale',
+    'listed_players_help' => 'Players you have put on the transfer market',
+    'list_more_from_squad' => 'List more players for sale from Squad',
+    'no_offers_yet' => 'No offers yet',
+    'offers_count' => ':count offer(s)',
+    'best' => 'Best',
+
+    // Recent transfers
+    'recent_sales' => 'Recent Sales',
+    'recent_signings' => 'Recent Signings',
+
+    // Scouting
+    'scout_search_desc' => 'Your scout will search for players and present a shortlist of candidates that best fit your team. The more specific your criteria, the better the results.',
+    'position_required' => 'Position *',
+    'select_position' => 'Select position...',
+    'specific_positions' => 'Specific Positions',
+    'position_groups' => 'Position Groups (broader search)',
+    'league' => 'League',
+    'scope' => 'Search scope',
+    'scope_domestic' => 'Domestic',
+    'scope_international' => 'International',
+    'scope_international_locked' => 'Requires scouting level 3 or higher.',
+    'age_range' => 'Age Range',
+    'ability_range' => 'Ability Range',
+    'value_range' => 'Market Value Range',
+    'contract' => 'Contract',
+    'expiring_contract' => 'Final year of contract',
+    'start_scout_search' => 'Start Search',
+
+    // Scout searching
+    'scout_searching' => 'The scout is searching...',
+    'looking_for' => 'Looking for',
+    'cancel_search' => 'Cancel Search',
+
+    // Scout results
+    'scout_results' => 'Search Results',
+    'all_ages' => 'All',
+    'no_players_found' => 'No players found matching your criteria.',
+    'try_broadening' => 'Try broadening your search.',
+    'ability' => 'Ability',
+
+    // Scouting player page
+    'market_value' => 'Market Value',
+    'contract_until' => 'Contract until',
+    'technical' => 'Technical',
+    'physical' => 'Physical',
+    'submit_bid' => 'Submit Bid',
+    'bid_pending' => 'Bid Pending',
+    'bid_awaiting_response' => 'Awaiting Response',
+    'counter_offer_received' => 'Counter Offer Received',
+    'transfer_agreed' => 'Transfer Agreed',
+    'accept_counter' => 'Accept Counter Offer',
+    'already_bidding' => 'You already have a bid for this player',
+    'scouting_assessment' => 'Scouting Assessment',
+    'financial_details' => 'Financial Details',
+    'estimated_asking_price' => 'Estimated Asking Price',
+    'wage_demand' => 'Wage Demand',
+    'your_transfer_budget' => 'Your Transfer Budget',
+    'transfer_fee_exceeds_budget' => 'The transfer fee exceeds your budget. You cannot bid for this player.',
+    'asking_price' => 'Asking price',
+    'request_loan' => 'Request Loan',
+
+    // Bid evaluation responses
+    'bid_accepted' => ':team has accepted your bid.',
+    'counter_offer_made' => ':team has made a counter offer of :amount.',
+    'bid_rejected_too_low' => ':team has rejected your bid. It was well below their valuation.',
+    'bid_rejected_not_interested' => 'The player is not interested in joining your club.',
+    'loan_rejected_key_player' => ':team rejected the loan request. :player is a key player for them.',
+    'loan_accepted' => ':team has agreed to loan :player to your club.',
+    'loan_rejected_keep' => ':team has decided to keep :player for now.',
+    'loan_rejected_not_interested' => ':player is not interested in joining your club on loan.',
+
+    // Loans page
+    'loaned_to' => 'Loaned :team_a',
+    'active_loans_in' => 'Active Loans (In)',
+    'loaned_from' => 'Loaned :team_de',
+    'searching_destination' => 'Searching for club...',
+    'returns' => 'Returns',
+    'years' => ':count year|:count years',
+
+    // Pre-contract
+    'expiring_contract_hint' => 'Players in their final year of contract can be signed for free. You can make a pre-contract offer from January 1st.',
+    'offered_wage_euros' => 'Offered Wage (euros/yr)',
+    'submit_pre_contract' => 'Offer Pre-Contract',
+
+    // Search history
+    'search_history' => 'Search History',
+    'no_search_history' => 'No previous searches.',
+    'view_results' => 'View',
+    'results_count' => ':count result(s)',
+
+    // Delete search
+    'delete_search' => 'Delete',
+    'delete_search_confirm' => 'Delete this search? Players on your shortlist will not be lost.',
+
+    // Shortlist sorting
+    'sort_by' => 'Sort',
+    'sort_name' => 'Name',
+    'sort_age' => 'Age',
+    'sort_ability' => 'Ability',
+    'sort_price' => 'Price',
+
+    // Empty states
+    'no_outgoing_activity' => 'No outgoing activity',
+    'no_incoming_activity' => 'No incoming activity',
+
+    // Scout search button
+    'new_scout_search' => 'New Search',
+
+    // Counter-offer detail
+    'your_bid_amount' => 'Your bid: :amount',
+    'they_ask' => 'They ask: :amount',
+
+    // Transfers help text
+    'transfers_help_toggle' => 'How do transfers work?',
+    'transfers_help_intro' => 'Manage your outgoing transfers, contracts and loans. Offers arrive each matchday based on market conditions.',
+    'transfers_help_selling_title' => 'Selling players',
+    'transfers_help_selling_list' => 'List players for sale from the Squad page. Other clubs will make offers based on the player\'s value.',
+    'transfers_help_selling_unsolicited' => 'You may also receive unsolicited offers for unlisted players — especially high-value ones.',
+    'transfers_help_selling_accept' => 'Accepted transfers complete when the next transfer window opens.',
+    'transfers_help_contracts_title' => 'Contracts & Renewals',
+    'transfers_help_contracts_expiring' => 'Players in their final year of contract can be signed for free by other clubs via pre-contract from January.',
+    'transfers_help_contracts_renew' => 'Renew players before it\'s too late. Negotiations happen over matchdays — the player may accept, counter, or decline.',
+    'transfers_help_contracts_wages' => 'Keep an eye on your wage bill. Higher wages attract better players but reduce your transfer budget.',
+    'transfers_help_loans_title' => 'Loans',
+    'transfers_help_loans_out' => 'Loan out young or surplus players. They will develop while playing for another club and return at end of season.',
+
+    // Scouting help text
+    'scouting_help_toggle' => 'How does scouting work?',
+    'scouting_help_intro' => 'Use your scouts to find players on the transfer market. The better your scouting infrastructure, the better your results.',
+    'scouting_help_search_title' => 'Scout searches',
+    'scouting_help_search_filters' => 'Set filters (position, age, ability, value) and your scout will search for matching players.',
+    'scouting_help_search_time' => 'Each search takes a few matchdays to complete. You can only run one search at a time.',
+    'scouting_help_search_scope' => 'Domestic searches find players in your league. International searches require scouting level 3+.',
+    'scouting_help_shortlist_title' => 'Shortlist & Offers',
+    'scouting_help_shortlist_star' => 'Star players from scout results to add them to your shortlist for easy comparison.',
+    'scouting_help_shortlist_bid' => 'Submit a bid from the shortlist. The selling club responds next matchday — they may accept, reject, or counter.',
+    'scouting_help_shortlist_loan' => 'You can also request a loan instead of a permanent transfer.',
+    'scouting_help_shortlist_precontract' => 'Players in their final year of contract can be signed for free via pre-contract from January.',
+
+    // Transfer activity summary
+    'transfer_activity_title' => ':window Transfer Window Summary',
+    'transfer_activity_summer' => 'Summer',
+    'transfer_activity_winter' => 'Winter',
+    'transfer_activity_transfers' => 'Transfers',
+    'transfer_activity_free_agents' => 'Free Agent Signings',
+    'transfer_activity_no_transfers' => 'No transfers this window.',
+    'transfer_activity_no_free_agents' => 'No free agent signings this window.',
+    'transfer_activity_player' => 'Player',
+    'transfer_activity_from' => 'From',
+    'transfer_activity_to' => 'To',
+    'transfer_activity_fee' => 'Fee',
+    'transfer_activity_position' => 'Pos',
+    'transfer_activity_age' => 'Age',
+    'transfer_activity_foreign' => 'Foreign',
+    'transfer_activity_other_leagues' => 'Other leagues',
+    'transfer_activity_out' => 'Out',
+    'transfer_activity_in' => 'In',
+
+    // Decline renewal
+    'reconsider_renewal' => 'Reconsider',
+    'declined_renewals' => 'Declined Renewals',
+
+    // Renewal negotiation
+    'renewal_counter_offers' => 'Renewal Counter-Offers',
+    'renewal_counter_offers_help' => 'These players have responded to your renewal offers',
+    'renewal_offers_sent' => 'Renewals In Progress',
+    'renewal_offers_sent_help' => 'Your renewal offers are being considered',
+    'negotiate' => 'Negotiate',
+    'negotiating' => 'Negotiating...',
+    'player_countered' => 'The player has counter-offered',
+    'your_offer' => 'Your offer (euros/yr)',
+    'current_wage' => 'Current',
+    'player_demand' => 'Asks',
+    'response_next_matchday' => 'Response on the next matchday',
+    'accept_counter' => 'Accept',
+    'mood_willing' => 'Willing to renew',
+    'mood_open' => 'Open to negotiate',
+    'mood_reluctant' => 'Reluctant',
+    'contract_duration' => 'Contract duration',
+
+    // Explorer
+    'explore_tab' => 'Explore',
+    'explore_title' => 'Explore teams',
+    'explore_hint' => 'Browse other teams\' squads. For detailed ability and pricing info, use scouting.',
+    'explore_select_competition' => 'Select a competition',
+    'explore_select_team' => 'Select a team to view their squad',
+    'explore_teams_count' => ':count teams',
+    'explore_squad_title' => 'Squad',
+    'explore_no_teams' => 'No teams available.',
+    'explore_scouting_nudge' => 'Want more info? Start a scout search.',
+    'explore_on_loan' => 'On loan from :club',
+    'explore_loaned_out' => 'Loaned to :club',
+    'explore_contract_year' => 'Contract',
+    'explore_mobile_teams' => 'Teams',
+    'explore_mobile_squad' => 'Squad',
+    'explore_goalkeepers' => 'Goalkeepers',
+    'explore_defenders' => 'Defenders',
+    'explore_midfielders' => 'Midfielders',
+    'explore_forwards' => 'Forwards',
+    'explore_age' => 'Age',
+    'explore_value' => 'Value',
+
+    // Tracking
+    'tracking_slots' => ':used/:max tracking slots',
+    'start_tracking' => 'Track',
+    'stop_tracking' => 'Stop',
+    'track_to_unlock' => 'Track to unlock intel',
+    'track_to_unlock_desc' => 'Assign your scout to track this player. Intel unlocks over matchdays.',
+    'tracking_in_progress' => 'Tracking...',
+    'no_tracking_slots' => 'No tracking slots available',
+    'willingness' => 'Willingness',
+    'rival_interest' => 'Other clubs interested',
+    'willingness_very_interested' => 'Very interested',
+    'willingness_open' => 'Open to move',
+    'willingness_undecided' => 'Undecided',
+    'willingness_reluctant' => 'Reluctant',
+    'willingness_not_interested' => 'Not interested',
+    'intel_surface' => 'Surface',
+    'intel_report' => 'Report',
+    'intel_deep' => 'Deep Intel',
+];

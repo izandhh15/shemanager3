@@ -1,0 +1,52 @@
+{
+    "qualifying": [
+        {
+            "round": 1,
+            "name": "cup.round_of_64",
+            "note": "Ronda 1 — Ruta de Campeonas. 21 equipos, ida y vuelta.",
+            "first_leg_date": "2025-08-20",
+            "second_leg_date": "2025-08-27"
+        },
+        {
+            "round": 2,
+            "name": "cup.round_of_32",
+            "note": "Ronda 2 — Ruta de Campeonas + Ruta de Liga. 52 equipos (26 partidos), ida y vuelta.",
+            "first_leg_date": "2025-09-17",
+            "second_leg_date": "2025-09-24"
+        },
+        {
+            "round": 3,
+            "name": "cup.round_of_16",
+            "note": "Ronda 3 — Ruta de Campeonas + Ruta de Liga. 16 equipos (8 partidos), ida y vuelta.",
+            "first_leg_date": "2025-10-01",
+            "second_leg_date": "2025-10-08"
+        }
+    ],
+    "league": [
+        { "round": 1, "date": "2025-10-15" },
+        { "round": 2, "date": "2025-10-29" },
+        { "round": 3, "date": "2025-11-12" },
+        { "round": 4, "date": "2025-11-26" },
+        { "round": 5, "date": "2025-12-10" },
+        { "round": 6, "date": "2026-01-14" }
+    ],
+    "knockout": [
+        {
+            "round": 1,
+            "name": "cup.quarter_finals",
+            "first_leg_date": "2026-03-18",
+            "second_leg_date": "2026-03-25"
+        },
+        {
+            "round": 2,
+            "name": "cup.semi_finals",
+            "first_leg_date": "2026-04-22",
+            "second_leg_date": "2026-04-29"
+        },
+        {
+            "round": 3,
+            "name": "cup.final",
+            "date": "2026-05-30"
+        }
+    ]
+}

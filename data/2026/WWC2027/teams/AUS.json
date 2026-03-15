@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3433.png",
+    "name": "Australia",
+    "players": [
+        { "id": "wnt_aus_01", "name": "Mackenzie Arnold", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jun 4, 1994", "nationality": ["Australia"], "height": "1,78m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_aus_02", "name": "Lydia Williams", "position": "Goalkeeper", "number": "18", "dateOfBirth": "May 13, 1988", "nationality": ["Australia"], "height": "1,78m", "foot": "right", "marketValue": "€100k" },
+        { "id": "wnt_aus_03", "name": "Sam Kerr", "position": "Centre-Forward", "number": "20", "dateOfBirth": "Sep 10, 1993", "nationality": ["Australia"], "height": "1,63m", "foot": "right", "marketValue": "€1.50m" },
+        { "id": "wnt_aus_04", "name": "Caitlin Foord", "position": "Left Winger", "number": "9", "dateOfBirth": "Nov 1, 1994", "nationality": ["Australia"], "height": "1,65m", "foot": "right", "marketValue": "€700k" },
+        { "id": "wnt_aus_05", "name": "Hayley Raso", "position": "Right Winger", "number": "17", "dateOfBirth": "Sep 5, 1994", "nationality": ["Australia"], "height": "1,60m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_aus_06", "name": "Steph Catley", "position": "Left-Back", "number": "7", "dateOfBirth": "Jan 26, 1994", "nationality": ["Australia"], "height": "1,65m", "foot": "left", "marketValue": "€400k" },
+        { "id": "wnt_aus_07", "name": "Clare Polkinghorne", "position": "Centre-Back", "number": "4", "dateOfBirth": "Dec 1, 1989", "nationality": ["Australia"], "height": "1,72m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_aus_08", "name": "Elise Kellond-Knight", "position": "Defensive Midfield", "number": "14", "dateOfBirth": "Apr 10, 1990", "nationality": ["Australia"], "height": "1,70m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_aus_09", "name": "Emily van Egmond", "position": "Central Midfield", "number": "10", "dateOfBirth": "Jun 6, 1993", "nationality": ["Australia"], "height": "1,71m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_aus_10", "name": "Tameka Yallop", "position": "Central Midfield", "number": "8", "dateOfBirth": "Dec 6, 1991", "nationality": ["Australia"], "height": "1,60m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_aus_11", "name": "Mary Fowler", "position": "Right Winger", "number": "11", "dateOfBirth": "Feb 14, 2003", "nationality": ["Australia"], "height": "1,67m", "foot": "right", "marketValue": "€1.50m" },
+        { "id": "wnt_aus_12", "name": "Katrina Gorry", "position": "Central Midfield", "number": "6", "dateOfBirth": "May 13, 1992", "nationality": ["Australia"], "height": "1,57m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_aus_13", "name": "Kyah Simon", "position": "Centre-Forward", "number": "19", "dateOfBirth": "Mar 19, 1992", "nationality": ["Australia"], "height": "1,69m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_aus_14", "name": "Aivi Luik", "position": "Central Midfield", "number": "13", "dateOfBirth": "Jul 25, 1992", "nationality": ["Australia"], "height": "1,59m", "foot": "right", "marketValue": "€80k" },
+        { "id": "wnt_aus_15", "name": "Charlotte Grant", "position": "Centre-Back", "number": "5", "dateOfBirth": "Oct 19, 1993", "nationality": ["Australia"], "height": "1,73m", "foot": "right", "marketValue": "€100k" },
+        { "id": "wnt_aus_16", "name": "Princess Ibini", "position": "Left Winger", "number": "22", "dateOfBirth": "Feb 26, 1995", "nationality": ["Australia"], "height": "1,65m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_aus_17", "name": "Alanna Kennedy", "position": "Centre-Back", "number": "3", "dateOfBirth": "Jan 21, 1995", "nationality": ["Australia"], "height": "1,78m", "foot": "right", "marketValue": "€350k" },
+        { "id": "wnt_aus_18", "name": "Courtney Nevin", "position": "Left-Back", "number": "15", "dateOfBirth": "Jun 24, 2001", "nationality": ["Australia"], "height": "1,65m", "foot": "left", "marketValue": "€200k" },
+        { "id": "wnt_aus_19", "name": "Sharn Freier", "position": "Right-Back", "number": "2", "dateOfBirth": "Feb 5, 2000", "nationality": ["Australia"], "height": "1,67m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_aus_20", "name": "Clare Wheeler", "position": "Central Midfield", "number": "16", "dateOfBirth": "Dec 14, 1998", "nationality": ["Australia"], "height": "1,69m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_aus_21", "name": "Holly McNamara", "position": "Left Winger", "number": "21", "dateOfBirth": "Sep 18, 2003", "nationality": ["Australia"], "height": "1,67m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_aus_22", "name": "Cortnee Vine", "position": "Right Winger", "number": "23", "dateOfBirth": "Jul 30, 1999", "nationality": ["Australia"], "height": "1,65m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_aus_23", "name": "Teagan Micah", "position": "Goalkeeper", "number": "12", "dateOfBirth": "Aug 5, 1999", "nationality": ["Australia"], "height": "1,75m", "foot": "right", "marketValue": "€100k" }
+    ]
+}

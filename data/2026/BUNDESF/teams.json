@@ -1,0 +1,212 @@
+{
+    "id": "BUNDESF",
+    "name": "Google Pixel Frauen-Bundesliga",
+    "clubs": [
+        {
+            "transfermarktId": "15",
+            "name": "Bayer 04 Leverkusen",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/15.png",
+            "stadiumName": "Ulrich-Haberland-Stadion",
+            "stadiumSeats": 3200,
+            "players": [
+                { "id": "bfl_lev_01", "name": "Lena Nuding",        "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "May 18, 2003", "nationality": ["Germany"],   "height": "1,75m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_lev_02", "name": "Nicole Anyomi",       "position": "Right Winger",      "number": "11", "dateOfBirth": "Apr 13, 2000", "nationality": ["Germany"],   "height": "1,70m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_lev_03", "name": "Paulina Krumbiegel",  "position": "Left Winger",       "number": "7",  "dateOfBirth": "Feb 24, 1997", "nationality": ["Germany"],   "height": "1,63m", "foot": "left",  "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_lev_04", "name": "Mia Teucke",          "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Mar 12, 2001", "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€120k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_lev_05", "name": "Karolina Lea Vilhjalmsdottir", "position": "Central Midfield", "number": "8", "dateOfBirth": "Aug 8, 1999", "nationality": ["Iceland"], "height": "1,68m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_lev_06", "name": "Gia Corley",          "position": "Left Winger",       "number": "17", "dateOfBirth": "Nov 18, 2002", "nationality": ["United States"], "height": "1,68m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_lev_07", "name": "Elisa Senß",          "position": "Central Midfield",  "number": "6",  "dateOfBirth": "Jun 13, 1998", "nationality": ["Germany"],   "height": "1,63m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_lev_08", "name": "Laura Haas",          "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jul 7, 2000",  "nationality": ["Germany"],   "height": "1,69m", "foot": "right", "marketValue": "€180k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "27",
+            "name": "FC Bayern München",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/27.png",
+            "stadiumName": "FC Bayern Campus",
+            "stadiumSeats": 2500,
+            "players": [
+                { "id": "bfl_bay_01", "name": "Maria Luisa Grohs",   "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Mar 29, 1999", "nationality": ["Germany"],   "height": "1,84m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_bay_02", "name": "Lea Schüller",         "position": "Centre-Forward",    "number": "11", "dateOfBirth": "Nov 12, 1997", "nationality": ["Germany"],   "height": "1,73m", "foot": "right", "marketValue": "€1.50m","contract": "Jun 30, 2027" },
+                { "id": "bfl_bay_03", "name": "Giulia Gwinn",         "position": "Right-Back",        "number": "7",  "dateOfBirth": "Jun 29, 1999", "nationality": ["Germany"],   "height": "1,65m", "foot": "right", "marketValue": "€1.20m","contract": "Jun 30, 2027" },
+                { "id": "bfl_bay_04", "name": "Klara Bühl",           "position": "Left Winger",       "number": "17", "dateOfBirth": "Dec 11, 2000", "nationality": ["Germany"],   "height": "1,70m", "foot": "left",  "marketValue": "€1.00m","contract": "Jun 30, 2026" },
+                { "id": "bfl_bay_05", "name": "Pernille Harder",      "position": "Central Midfield",  "number": "10", "dateOfBirth": "Nov 15, 1992", "nationality": ["Denmark"],   "height": "1,64m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_bay_06", "name": "Sydney Lohmann",       "position": "Central Midfield",  "number": "13", "dateOfBirth": "Jun 19, 2000", "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_bay_07", "name": "Jovana Damnjanović",   "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jan 11, 2001", "nationality": ["Serbia"],    "height": "1,76m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_bay_08", "name": "Glódís Viggósdóttir",  "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Jun 3, 1996",  "nationality": ["Iceland"],   "height": "1,79m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_bay_09", "name": "Sarah Zadrazil",       "position": "Defensive Midfield","number": "6",  "dateOfBirth": "Feb 5, 1993",  "nationality": ["Austria"],   "height": "1,67m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_bay_10", "name": "Weronika Zawistowska", "position": "Left Winger",       "number": "19", "dateOfBirth": "Jan 14, 2004", "nationality": ["Poland"],    "height": "1,65m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "45457",
+            "name": "Carl Zeiss Jena",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/45457.png",
+            "stadiumName": "Ernst-Abbe-Sportfeld",
+            "stadiumSeats": 10445,
+            "players": [
+                { "id": "bfl_jen_01", "name": "Isabell Thamm",       "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jan 30, 2000", "nationality": ["Germany"],   "height": "1,70m", "foot": "right", "marketValue": "€40k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_jen_02", "name": "Melissa Kössler",      "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Sep 9, 1998",  "nationality": ["Germany"],   "height": "1,71m", "foot": "right", "marketValue": "€50k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_jen_03", "name": "Linda Dallmann",       "position": "Attacking Midfield","number": "10", "dateOfBirth": "Apr 14, 1994", "nationality": ["Germany"],   "height": "1,66m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_jen_04", "name": "Antonia Schwarz",      "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jun 5, 2001",  "nationality": ["Germany"],   "height": "1,68m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "1",
+            "name": "1. FC Köln",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/1.png",
+            "stadiumName": "Franz-Kremer-Stadion",
+            "stadiumSeats": 5457,
+            "players": [
+                { "id": "bfl_kol_01", "name": "Valeria Kleiner",      "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jul 31, 2001", "nationality": ["Germany"],   "height": "1,74m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_kol_02", "name": "Laura Haas",           "position": "Right-Back",        "number": "2",  "dateOfBirth": "Nov 2, 2000",  "nationality": ["Germany"],   "height": "1,65m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_kol_03", "name": "Anne Moll",            "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Aug 14, 2001", "nationality": ["Germany"],   "height": "1,67m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_kol_04", "name": "Sjoeke Nüsken",        "position": "Central Midfield",  "number": "6",  "dateOfBirth": "Jul 1, 2002",  "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2028" },
+                { "id": "bfl_kol_05", "name": "Elisa Senß",           "position": "Centre-Back",       "number": "5",  "dateOfBirth": "Jun 13, 1998", "nationality": ["Germany"],   "height": "1,63m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "16",
+            "name": "Eintracht Frankfurt",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/16.png",
+            "stadiumName": "Stadion am Brentanobad",
+            "stadiumSeats": 5650,
+            "players": [
+                { "id": "bfl_ein_01", "name": "Stina Johannes",       "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Oct 30, 1998", "nationality": ["Germany"],   "height": "1,81m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_ein_02", "name": "Laura Freigang",        "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Feb 1, 1998",  "nationality": ["Germany"],   "height": "1,72m", "foot": "left",  "marketValue": "€700k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_ein_03", "name": "Tanja Pawollek",        "position": "Left-Back",         "number": "3",  "dateOfBirth": "Jun 9, 1996",  "nationality": ["Germany"],   "height": "1,67m", "foot": "left",  "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_ein_04", "name": "Barbara Dunst",         "position": "Attacking Midfield","number": "10", "dateOfBirth": "May 10, 1998", "nationality": ["Austria"],   "height": "1,64m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_ein_05", "name": "Sara Doorsoun",         "position": "Centre-Back",       "number": "5",  "dateOfBirth": "Jan 22, 1992", "nationality": ["Germany"],   "height": "1,74m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_ein_06", "name": "Lara Prasnikar",        "position": "Left Winger",       "number": "11", "dateOfBirth": "Nov 25, 1999", "nationality": ["Slovenia"],  "height": "1,70m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "800",
+            "name": "SGS Essen",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/800.png",
+            "stadiumName": "Stadion Essen",
+            "stadiumSeats": 20650,
+            "players": [
+                { "id": "bfl_ess_01", "name": "Ann-Katrin Berger",    "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Oct 9, 1990",  "nationality": ["Germany"],   "height": "1,75m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_ess_02", "name": "Mia Bücher",           "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Nov 3, 1998",  "nationality": ["Germany"],   "height": "1,70m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_ess_03", "name": "Chantal Hagel",        "position": "Right-Back",        "number": "2",  "dateOfBirth": "Jun 19, 2001", "nationality": ["Germany"],   "height": "1,68m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_ess_04", "name": "Svenja Fölmli",        "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Nov 13, 2001", "nationality": ["Switzerland"],"height": "1,63m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_ess_05", "name": "Sveindís Jonsdóttir",  "position": "Left Winger",       "number": "11", "dateOfBirth": "Jul 15, 1996", "nationality": ["Iceland"],   "height": "1,70m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "336",
+            "name": "SC Freiburg",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/336.png",
+            "stadiumName": "Schwarzwald-Stadion",
+            "stadiumSeats": 24000,
+            "players": [
+                { "id": "bfl_fri_01", "name": "Rafaela Borggräfe",    "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Sep 23, 1997", "nationality": ["Germany"],   "height": "1,71m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_fri_02", "name": "Sandra Starke",        "position": "Left Winger",       "number": "11", "dateOfBirth": "Nov 3, 1993",  "nationality": ["Germany"],   "height": "1,67m", "foot": "left",  "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_fri_03", "name": "Janine Minge",         "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Jun 18, 2000", "nationality": ["Germany"],   "height": "1,74m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_fri_04", "name": "Isabella Schmid",      "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Dec 14, 1997", "nationality": ["Germany"],   "height": "1,64m", "foot": "right", "marketValue": "€120k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_fri_05", "name": "Lena Lattwein",        "position": "Attacking Midfield","number": "10", "dateOfBirth": "Apr 28, 2000", "nationality": ["Germany"],   "height": "1,64m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "41",
+            "name": "Hamburger SV",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/41.png",
+            "stadiumName": "Volksparkstadion",
+            "stadiumSeats": 57000,
+            "players": [
+                { "id": "bfl_hsv_01", "name": "Carina Schlüter",      "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Mar 4, 1997",  "nationality": ["Germany"],   "height": "1,76m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_hsv_02", "name": "Franziska Kett",        "position": "Right-Back",        "number": "2",  "dateOfBirth": "Feb 18, 2000", "nationality": ["Germany"],   "height": "1,67m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_hsv_03", "name": "Leena Bühl",            "position": "Right Winger",      "number": "7",  "dateOfBirth": "May 29, 2002", "nationality": ["Germany"],   "height": "1,65m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_hsv_04", "name": "Lena Kesting",          "position": "Centre-Back",       "number": "5",  "dateOfBirth": "Aug 16, 2001", "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_hsv_05", "name": "Lisa Seiler",           "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jun 22, 1999", "nationality": ["Germany"],   "height": "1,68m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "1899",
+            "name": "TSG 1899 Hoffenheim",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/1899.png",
+            "stadiumName": "Dietmar Hopp Stadion",
+            "stadiumSeats": 6350,
+            "players": [
+                { "id": "bfl_hof_01", "name": "Martina Tufekovic",    "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Mar 20, 1999", "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_hof_02", "name": "Chantal Hagel",        "position": "Right-Back",        "number": "2",  "dateOfBirth": "Jun 19, 2001", "nationality": ["Germany"],   "height": "1,68m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_hof_03", "name": "Sarai Linder",         "position": "Left-Back",         "number": "3",  "dateOfBirth": "Oct 17, 2003", "nationality": ["Germany"],   "height": "1,66m", "foot": "left",  "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_hof_04", "name": "Melissa Kössler",      "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Sep 9, 1998",  "nationality": ["Germany"],   "height": "1,71m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_hof_05", "name": "Hasret Kayikçi",       "position": "Right Winger",      "number": "7",  "dateOfBirth": "Mar 15, 1994", "nationality": ["Switzerland"],"height": "1,62m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "4",
+            "name": "1. FC Nürnberg",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/4.png",
+            "stadiumName": "Max-Morlock-Stadion",
+            "stadiumSeats": 50000,
+            "players": [
+                { "id": "bfl_nur_01", "name": "Janina Leitzig",       "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Mar 20, 2001", "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_nur_02", "name": "Johanna Elsig",         "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Dec 15, 1997", "nationality": ["Germany"],   "height": "1,70m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_nur_03", "name": "Lisa Schmitt",          "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Jul 3, 2000",  "nationality": ["Germany"],   "height": "1,64m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_nur_04", "name": "Alicia Regnery",        "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Apr 29, 2001", "nationality": ["Germany"],   "height": "1,66m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "23826",
+            "name": "RB Leipzig",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/23826.png",
+            "stadiumName": "Sportanlage Gontardweg",
+            "stadiumSeats": 1300,
+            "players": [
+                { "id": "bfl_rbl_01", "name": "Elvira Herzog",         "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Aug 2, 2000",  "nationality": ["Germany"],   "height": "1,75m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_rbl_02", "name": "Vivien Endemann",       "position": "Right Winger",      "number": "7",  "dateOfBirth": "Nov 29, 2001", "nationality": ["Germany"],   "height": "1,68m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_rbl_03", "name": "Emma Holmgren",         "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Apr 7, 2002",  "nationality": ["Sweden"],    "height": "1,73m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_rbl_04", "name": "Lea Schüller",          "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Nov 3, 2002",  "nationality": ["Germany"],   "height": "1,65m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_rbl_05", "name": "Lisa Schmitz",          "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Aug 19, 2000", "nationality": ["Germany"],   "height": "1,67m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "89",
+            "name": "1. FC Union Berlin",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/89.png",
+            "stadiumName": "Stadion An der Alten Försterei",
+            "stadiumSeats": 22012,
+            "players": [
+                { "id": "bfl_ubl_01", "name": "Friederike Repkow",    "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jan 10, 1997", "nationality": ["Germany"],   "height": "1,73m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_ubl_02", "name": "Antonia Nauer",        "position": "Centre-Back",       "number": "4",  "dateOfBirth": "May 15, 2001", "nationality": ["Germany"],   "height": "1,70m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_ubl_03", "name": "Marie Bölstler",       "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Aug 6, 2000",  "nationality": ["Germany"],   "height": "1,64m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_ubl_04", "name": "Celin Ilgaz",          "position": "Left Winger",       "number": "11", "dateOfBirth": "Feb 22, 2003", "nationality": ["Germany"],   "height": "1,62m", "foot": "left",  "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_ubl_05", "name": "Lena Lattwein",        "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Apr 28, 2000", "nationality": ["Germany"],   "height": "1,64m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "86",
+            "name": "Werder Bremen",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/86.png",
+            "stadiumName": "Weserstadion Platz 12",
+            "stadiumSeats": 5500,
+            "players": [
+                { "id": "bfl_wer_01", "name": "Sofie Zdebel",         "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jun 5, 1998",  "nationality": ["Germany"],   "height": "1,68m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" },
+                { "id": "bfl_wer_02", "name": "Felicitas Rauch",       "position": "Left-Back",         "number": "3",  "dateOfBirth": "Dec 11, 1998", "nationality": ["Germany"],   "height": "1,70m", "foot": "left",  "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_wer_03", "name": "Pia Wellmann",          "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Oct 22, 2001", "nationality": ["Germany"],   "height": "1,65m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_wer_04", "name": "Julia Beyer",           "position": "Right Winger",      "number": "7",  "dateOfBirth": "Jan 30, 2002", "nationality": ["Germany"],   "height": "1,65m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_wer_05", "name": "Sjoeke Nüsken",        "position": "Defensive Midfield","number": "6",  "dateOfBirth": "Jul 1, 2002",  "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "24",
+            "name": "VfL Wolfsburg",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/24.png",
+            "stadiumName": "AOK Stadion",
+            "stadiumSeats": 5200,
+            "players": [
+                { "id": "bfl_wob_01", "name": "Merle Frohms",         "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jan 28, 1995", "nationality": ["Germany"],   "height": "1,79m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_wob_02", "name": "Alexandra Popp",       "position": "Centre-Forward",    "number": "11", "dateOfBirth": "Apr 6, 1991",  "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_wob_03", "name": "Ewa Pajor",            "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jul 29, 2000", "nationality": ["Poland"],    "height": "1,72m", "foot": "right", "marketValue": "€1.00m","contract": "Jun 30, 2027" },
+                { "id": "bfl_wob_04", "name": "Lena Oberdorf",        "position": "Defensive Midfield","number": "6",  "dateOfBirth": "Dec 19, 2001", "nationality": ["Germany"],   "height": "1,74m", "foot": "right", "marketValue": "€3.00m","contract": "Jun 30, 2028" },
+                { "id": "bfl_wob_05", "name": "Svenja Huth",          "position": "Right Winger",      "number": "7",  "dateOfBirth": "Jan 25, 1991", "nationality": ["Germany"],   "height": "1,68m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "bfl_wob_06", "name": "Dominique Janssen",    "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Jan 17, 1995", "nationality": ["Netherlands"],"height": "1,71m", "foot": "left",  "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_wob_07", "name": "Fenna Kalma",          "position": "Centre-Forward",    "number": "19", "dateOfBirth": "May 2, 2001",  "nationality": ["Netherlands"],"height": "1,76m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2027" },
+                { "id": "bfl_wob_08", "name": "Rebecka Blomqvist",    "position": "Left Winger",       "number": "17", "dateOfBirth": "Jun 9, 1999",  "nationality": ["Sweden"],    "height": "1,71m", "foot": "left",  "marketValue": "€400k", "contract": "Jun 30, 2027" }
+            ]
+        }
+    ]
+}

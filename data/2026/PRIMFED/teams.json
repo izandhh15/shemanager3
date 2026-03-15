@@ -1,0 +1,174 @@
+{
+  "id": "PRIMFED",
+  "name": "Primera Federación Iberdrola",
+  "clubs": [
+    {
+      "transfermarktId": "331",
+      "name": "CD Filial Fundación Club Atlético Osasuna",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/331.png",
+      "stadiumName": "Complejo Deportivo Tajonar",
+      "stadiumSeats": 3000,
+      "players": [
+        { "id": "pf_osa_01", "name": "Leire Armendáriz", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Feb 12, 2002", "nationality": ["Spain"], "height": "1,71m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" },
+        { "id": "pf_osa_02", "name": "Amaia Ezquerro", "position": "Centre-Back", "number": "4", "dateOfBirth": "Sep 20, 2003", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€12k", "contract": "Jun 30, 2026" },
+        { "id": "pf_osa_03", "name": "Irati Irigoien", "position": "Central Midfield", "number": "8", "dateOfBirth": "Mar 5, 2004", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€12k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "88001",
+      "name": "CD Alba Fundación Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/88001.png",
+      "stadiumName": "Ciudad Deportiva de Albacete",
+      "stadiumSeats": 3000,
+      "players": [
+        { "id": "pf_alba_01", "name": "Paula Sancho", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jun 11, 1999", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€12k", "contract": "Jun 30, 2026" },
+        { "id": "pf_alba_02", "name": "Sara Revuelta", "position": "Centre-Back", "number": "5", "dateOfBirth": "Nov 14, 2001", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€10k", "contract": "Jun 30, 2026" },
+        { "id": "pf_alba_03", "name": "Claudia Fernández", "position": "Central Midfield", "number": "8", "dateOfBirth": "Apr 22, 2002", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€10k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "1108",
+      "name": "Deportivo Alavés Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/1108.png",
+      "stadiumName": "Mendizorrotza",
+      "stadiumSeats": 19840,
+      "players": [
+        { "id": "pf_ala_01", "name": "Garazi Guede", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Oct 8, 1998", "nationality": ["Spain"], "height": "1,74m", "foot": "right", "marketValue": "€20k", "contract": "Jun 30, 2026" },
+        { "id": "pf_ala_02", "name": "Maite Arozarena", "position": "Right-Back", "number": "2", "dateOfBirth": "May 25, 2000", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" },
+        { "id": "pf_ala_03", "name": "Amaia Martínez", "position": "Centre-Back", "number": "4", "dateOfBirth": "Jul 9, 2001", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" },
+        { "id": "pf_ala_04", "name": "Itziar Ibarrondo", "position": "Central Midfield", "number": "8", "dateOfBirth": "Jan 30, 2002", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "2497",
+      "name": "Real Oviedo Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/2497.png",
+      "stadiumName": "Carlos Tartiere",
+      "stadiumSeats": 30500,
+      "players": [
+        { "id": "pf_ovi_01", "name": "Lorena García", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Mar 29, 1996", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" },
+        { "id": "pf_ovi_02", "name": "Andrea Torres", "position": "Centre-Back", "number": "4", "dateOfBirth": "Aug 14, 2001", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€12k", "contract": "Jun 30, 2026" },
+        { "id": "pf_ovi_03", "name": "Elena Martínez", "position": "Central Midfield", "number": "8", "dateOfBirth": "Dec 11, 2002", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€12k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "13131",
+      "name": "FC Barcelona Femení B",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/131.png",
+      "stadiumName": "Estadi Johan Cruyff",
+      "stadiumSeats": 6000,
+      "players": [
+        { "id": "pf_fcbb_01", "name": "Júlia Català", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jan 17, 2004", "nationality": ["Spain"], "height": "1,72m", "foot": "right", "marketValue": "€20k", "contract": "Jun 30, 2026" },
+        { "id": "pf_fcbb_02", "name": "Laia Codina", "position": "Centre-Back", "number": "5", "dateOfBirth": "Oct 21, 1999", "nationality": ["Spain"], "height": "1,71m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "pf_fcbb_03", "name": "Ona Batlle", "position": "Right-Back", "number": "2", "dateOfBirth": "Jun 10, 1999", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2027" },
+        { "id": "pf_fcbb_04", "name": "Teresa Romero", "position": "Left Winger", "number": "11", "dateOfBirth": "Sep 3, 2005", "nationality": ["Spain"], "height": "1,61m", "foot": "left", "marketValue": "€25k", "contract": "Jun 30, 2026" },
+        { "id": "pf_fcbb_05", "name": "Marina Salvat", "position": "Central Midfield", "number": "8", "dateOfBirth": "May 12, 2004", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€20k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "1313",
+      "name": "Club Atlético de Madrid B",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/13.png",
+      "stadiumName": "Centro Deportivo Wanda",
+      "stadiumSeats": 3000,
+      "players": [
+        { "id": "pf_atmb_01", "name": "Carmen Álvarez", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Feb 8, 2003", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" },
+        { "id": "pf_atmb_02", "name": "Noa Pérez", "position": "Centre-Back", "number": "4", "dateOfBirth": "Oct 3, 2004", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€12k", "contract": "Jun 30, 2026" },
+        { "id": "pf_atmb_03", "name": "Paula Ortega", "position": "Attacking Midfield", "number": "10", "dateOfBirth": "Jul 25, 2005", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "15015",
+      "name": "Fundación Real Betis Féminas",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/150.png",
+      "stadiumName": "Ciudad Deportiva Luis del Sol",
+      "stadiumSeats": 4000,
+      "players": [
+        { "id": "pf_bet_01", "name": "Paola Juárez", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Feb 5, 1999", "nationality": ["Mexico"], "height": "1,68m", "foot": "right", "marketValue": "€30k", "contract": "Jun 30, 2026" },
+        { "id": "pf_bet_02", "name": "Claudia Romero", "position": "Centre-Back", "number": "4", "dateOfBirth": "Apr 16, 2000", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€20k", "contract": "Jun 30, 2026" },
+        { "id": "pf_bet_03", "name": "Vero Ojeda", "position": "Left Winger", "number": "11", "dateOfBirth": "Aug 7, 2001", "nationality": ["Spain"], "height": "1,63m", "foot": "left", "marketValue": "€20k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "88002",
+      "name": "Cacereño Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/88002.png",
+      "stadiumName": "Príncipe Felipe",
+      "stadiumSeats": 8000,
+      "players": [
+        { "id": "pf_cac_01", "name": "Andrea Domínguez", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Nov 22, 1998", "nationality": ["Spain"], "height": "1,71m", "foot": "right", "marketValue": "€10k", "contract": "Jun 30, 2026" },
+        { "id": "pf_cac_02", "name": "Pilar Medina", "position": "Centre-Back", "number": "5", "dateOfBirth": "Mar 18, 2000", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€10k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "88003",
+      "name": "SE AEM",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/88003.png",
+      "stadiumName": "Camps Universitat Autònoma",
+      "stadiumSeats": 2000,
+      "players": [
+        { "id": "pf_aem_01", "name": "Abril Pujol", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Sep 14, 2001", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€8k", "contract": "Jun 30, 2026" },
+        { "id": "pf_aem_02", "name": "Neus Domínguez", "position": "Central Midfield", "number": "8", "dateOfBirth": "Jan 4, 2002", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€8k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "88004",
+      "name": "CE Europa",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/88004.png",
+      "stadiumName": "Camp Europa",
+      "stadiumSeats": 2000,
+      "players": [
+        { "id": "pf_eur_01", "name": "Ariadna Mas", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Apr 6, 2000", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€8k", "contract": "Jun 30, 2026" },
+        { "id": "pf_eur_02", "name": "Martina Vidal", "position": "Centre-Back", "number": "4", "dateOfBirth": "Jul 29, 2002", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€8k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "4188",
+      "name": "Real Madrid CF Femenino B",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/418.png",
+      "stadiumName": "Estadio Alfredo Di Stéfano",
+      "stadiumSeats": 6000,
+      "players": [
+        { "id": "pf_rmab_01", "name": "Lucía de Hoyos", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Aug 3, 2004", "nationality": ["Spain"], "height": "1,73m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" },
+        { "id": "pf_rmab_02", "name": "Andrea Rodríguez", "position": "Centre-Back", "number": "4", "dateOfBirth": "Mar 11, 2005", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€12k", "contract": "Jun 30, 2026" },
+        { "id": "pf_rmab_03", "name": "Clara García", "position": "Attacking Midfield", "number": "10", "dateOfBirth": "Nov 20, 2005", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "88005",
+      "name": "CD Tenerife Femenino B",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/88005.png",
+      "stadiumName": "Ciudad Deportiva Granadilla",
+      "stadiumSeats": 3000,
+      "players": [
+        { "id": "pf_tenb_01", "name": "Sara Hernández", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Oct 7, 2003", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€8k", "contract": "Jun 30, 2026" },
+        { "id": "pf_tenb_02", "name": "Leyre Morales", "position": "Centre-Back", "number": "5", "dateOfBirth": "May 19, 2004", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€8k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "1050",
+      "name": "Villarreal CF Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/1050.png",
+      "stadiumName": "Ciudad Deportiva de Villarreal",
+      "stadiumSeats": 2500,
+      "players": [
+        { "id": "pf_vil_01", "name": "Paula Toro", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Mar 15, 1997", "nationality": ["Spain"], "height": "1,74m", "foot": "right", "marketValue": "€25k", "contract": "Jun 30, 2026" },
+        { "id": "pf_vil_02", "name": "Alba Redondo", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Jan 20, 1999", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+        { "id": "pf_vil_03", "name": "Marta López", "position": "Left Winger", "number": "11", "dateOfBirth": "Jun 8, 2000", "nationality": ["Spain"], "height": "1,64m", "foot": "left", "marketValue": "€40k", "contract": "Jun 30, 2026" },
+        { "id": "pf_vil_04", "name": "Lorena Navarro", "position": "Right-Back", "number": "2", "dateOfBirth": "Aug 30, 2001", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€20k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "88006",
+      "name": "Valencia Féminas CF",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/88006.png",
+      "stadiumName": "Paiporta",
+      "stadiumSeats": 3000,
+      "players": [
+        { "id": "pf_val_01", "name": "Andrea Pereira", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Mar 5, 1999", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€15k", "contract": "Jun 30, 2026" },
+        { "id": "pf_val_02", "name": "Claudia Pérez", "position": "Centre-Back", "number": "4", "dateOfBirth": "Feb 20, 2001", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€12k", "contract": "Jun 30, 2026" },
+        { "id": "pf_val_03", "name": "Nora Torres", "position": "Central Midfield", "number": "8", "dateOfBirth": "Nov 11, 2002", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€12k", "contract": "Jun 30, 2026" }
+      ]
+    }
+  ]
+}

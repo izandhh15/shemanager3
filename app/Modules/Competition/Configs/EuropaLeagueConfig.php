@@ -1,0 +1,83 @@
+<?php
+
+namespace App\Modules\Competition\Configs;
+
+use App\Modules\Competition\Contracts\CompetitionConfig;
+
+class EuropaLeagueConfig implements CompetitionConfig
+{
+    /**
+     * UEL knockout round prize money (in cents).
+     */
+    private const KNOCKOUT_PRIZE_MONEY = [
+        1 => 50_000_000,       // €500K - Knockout Playoff
+        2 => 100_000_000,      // €1M - Round of 16
+        3 => 150_000_000,      // €1.5M - Quarter-finals
+        4 => 250_000_000,      // €2.5M - Semi-finals
+        5 => 500_000_000,      // €5M - Final (winner)
+    ];
+
+    public function getTvRevenue(int $position): int
+    {
+        // Europa League prize money is roughly 50-60% of UCL
+        $base = 500_000_000; // €5M base
+        $positionBonus = max(0, 37 - $position) * 100_000_000; // €1M per position
+
+        return $base + $positionBonus;
+    }
+
+    public function getPositionFactor(int $position): float
+    {
+        if ($position <= 8) {
+            return 1.10;
+        }
+        if ($position <= 24) {
+            return 1.0;
+        }
+
+        return 0.90;
+    }
+
+    public function getTopScorerAwardName(): string
+    {
+        return 'season.top_scorer';
+    }
+
+    public function getBestGoalkeeperAwardName(): string
+    {
+        return 'season.best_goalkeeper';
+    }
+
+    public function getKnockoutPrizeMoney(int $roundNumber): int
+    {
+        return self::KNOCKOUT_PRIZE_MONEY[$roundNumber] ?? 0;
+    }
+
+    public function getStandingsZones(): array
+    {
+        return [
+            [
+                'minPosition' => 1,
+                'maxPosition' => 8,
+                'borderColor' => 'orange-500',
+                'bgColor' => 'bg-orange-500',
+                'label' => 'game.uel_direct_knockout',
+            ],
+            [
+                'minPosition' => 9,
+                'maxPosition' => 24,
+                'borderColor' => 'yellow-500',
+                'bgColor' => 'bg-yellow-500',
+                'label' => 'game.uel_knockout_playoff',
+            ],
+            [
+                'minPosition' => 25,
+                'maxPosition' => 36,
+                'borderColor' => 'red-500',
+                'bgColor' => 'bg-red-500',
+                'label' => 'game.uel_eliminated',
+            ],
+        ];
+    }
+
+}

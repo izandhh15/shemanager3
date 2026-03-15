@@ -1,0 +1,35 @@
+{
+    "knockout": [
+        {
+            "round": 1,
+            "name": "cup.round_of_64",
+            "note": "Primera ronda: 22 equipos (11 partidos eliminatorios). 11 clasificados pasan a Segunda ronda.",
+            "first_leg_date": "2025-10-01",
+            "second_leg_date": "2025-10-08"
+        },
+        {
+            "round": 2,
+            "name": "cup.round_of_32",
+            "note": "Segunda ronda: 21 equipos directos + 11 ganadores Primera ronda = 32 equipos (16 partidos). 16 pasan a QF.",
+            "first_leg_date": "2025-10-22",
+            "second_leg_date": "2025-10-29"
+        },
+        {
+            "round": 3,
+            "name": "cup.quarter_finals",
+            "first_leg_date": "2025-11-19",
+            "second_leg_date": "2025-11-26"
+        },
+        {
+            "round": 4,
+            "name": "cup.semi_finals",
+            "first_leg_date": "2026-03-11",
+            "second_leg_date": "2026-03-18"
+        },
+        {
+            "round": 5,
+            "name": "cup.final",
+            "date": "2026-05-13"
+        }
+    ]
+}

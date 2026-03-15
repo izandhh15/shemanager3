@@ -1,0 +1,1648 @@
+<?php
+
+namespace App\Modules\Match\Services;
+
+use App\Modules\Match\DTOs\MatchEventData;
+use App\Modules\Match\DTOs\MatchResult;
+use App\Modules\Lineup\Enums\DefensiveLineHeight;
+use App\Modules\Lineup\Enums\Formation;
+use App\Modules\Lineup\Enums\Mentality;
+use App\Modules\Lineup\Enums\PlayingStyle;
+use App\Modules\Lineup\Enums\PressingIntensity;
+use App\Models\Game;
+use App\Models\GamePlayer;
+use App\Models\Team;
+use Carbon\Carbon;
+use Illuminate\Support\Collection;
+use App\Support\PositionMapper;
+use App\Modules\Player\Services\InjuryService;
+use App\Modules\Match\Services\EnergyCalculator;
+
+class MatchSimulator
+{
+    public function __construct(
+        private readonly InjuryService $injuryService = new InjuryService,
+    ) {}
+
+    /**
+     * Match performance cache - stores per-player performance modifiers for the current match.
+     * Each player gets a random "form on the day" that affects their contribution.
+     * Range: 0.7 to 1.3 (30% variance from their base ability)
+     *
+     * @var array<string, float>
+     */
+    private array $matchPerformance = [];
+
+    // Position weights for goal scoring (used by pickGoalScorer with dampened quality)
+    private const GOAL_SCORING_WEIGHTS = [
+        'Centre-Forward' => 25,
+        'Second Striker' => 22,
+        'Left Winger' => 15,
+        'Right Winger' => 15,
+        'Attacking Midfield' => 12,
+        'Central Midfield' => 6,
+        'Left Midfield' => 5,
+        'Right Midfield' => 5,
+        'Defensive Midfield' => 3,
+        'Left-Back' => 2,
+        'Right-Back' => 2,
+        'Centre-Back' => 2,
+        'Goalkeeper' => 0,
+    ];
+
+    // Position weights for assists (higher = more likely to assist)
+    private const ASSIST_WEIGHTS = [
+        'Attacking Midfield' => 25,
+        'Left Winger' => 20,
+        'Right Winger' => 20,
+        'Central Midfield' => 15,
+        'Left Midfield' => 12,
+        'Right Midfield' => 12,
+        'Second Striker' => 10,
+        'Centre-Forward' => 8,
+        'Left-Back' => 8,
+        'Right-Back' => 8,
+        'Defensive Midfield' => 6,
+        'Centre-Back' => 2,
+        'Goalkeeper' => 1,
+    ];
+
+    // Position weights for fouls/cards (higher = more likely to get carded)
+    private const CARD_WEIGHTS = [
+        'Centre-Back' => 20,
+        'Defensive Midfield' => 18,
+        'Left-Back' => 12,
+        'Right-Back' => 12,
+        'Central Midfield' => 10,
+        'Left Midfield' => 8,
+        'Right Midfield' => 8,
+        'Attacking Midfield' => 6,
+        'Centre-Forward' => 8,
+        'Second Striker' => 6,
+        'Left Winger' => 5,
+        'Right Winger' => 5,
+        'Goalkeeper' => 4,
+    ];
+
+    /**
+     * Simulate a match result between two teams.
+     *
+     * @param  Collection<GamePlayer>  $homePlayers  Players for home team (lineup)
+     * @param  Collection<GamePlayer>  $awayPlayers  Players for away team (lineup)
+     * @param  Formation|null  $homeFormation  Formation for home team
+     * @param  Formation|null  $awayFormation  Formation for away team
+     * @param  Mentality|null  $homeMentality  Mentality for home team
+     * @param  Mentality|null  $awayMentality  Mentality for away team
+     * @param  Game|null  $game  Optional game for medical tier effects on injuries
+     */
+    public function simulate(
+        Team $homeTeam,
+        Team $awayTeam,
+        Collection $homePlayers,
+        Collection $awayPlayers,
+        ?Formation $homeFormation = null,
+        ?Formation $awayFormation = null,
+        ?Mentality $homeMentality = null,
+        ?Mentality $awayMentality = null,
+        ?Game $game = null,
+        ?PlayingStyle $homePlayingStyle = null,
+        ?PlayingStyle $awayPlayingStyle = null,
+        ?PressingIntensity $homePressing = null,
+        ?PressingIntensity $awayPressing = null,
+        ?DefensiveLineHeight $homeDefLine = null,
+        ?DefensiveLineHeight $awayDefLine = null,
+        ?Collection $homeBenchPlayers = null,
+        ?Collection $awayBenchPlayers = null,
+        string $matchSeed = '',
+    ): MatchResult {
+        return $this->simulateRemainder(
+            $homeTeam, $awayTeam,
+            $homePlayers, $awayPlayers,
+            $homeFormation, $awayFormation,
+            $homeMentality, $awayMentality,
+            fromMinute: 0,
+            game: $game,
+            homePlayingStyle: $homePlayingStyle,
+            awayPlayingStyle: $awayPlayingStyle,
+            homePressing: $homePressing,
+            awayPressing: $awayPressing,
+            homeDefLine: $homeDefLine,
+            awayDefLine: $awayDefLine,
+            homeBenchPlayers: $homeBenchPlayers,
+            awayBenchPlayers: $awayBenchPlayers,
+            matchSeed: $matchSeed,
+        );
+    }
+
+    /**
+     * Reassign goal/assist events from players who were removed from the match
+     * (via injury or red card) to available teammates.
+     *
+     * For red cards, the first red card per team triggers a full xG recalculation
+     * via simulateGoalsWithRedCardSplit(). This method handles any remaining cases
+     * (injuries, or a second red card in the same match) by reassigning WHO scored.
+     *
+     * @return Collection<MatchEventData>
+     */
+    private function reassignEventsFromUnavailablePlayers(
+        Collection $events,
+        Collection $homePlayers,
+        Collection $awayPlayers,
+    ): Collection {
+        // Build map of player_id => minute they were removed
+        $removedAt = [];
+        foreach ($events as $event) {
+            if (in_array($event->type, ['injury', 'red_card']) && ! isset($removedAt[$event->gamePlayerId])) {
+                $removedAt[$event->gamePlayerId] = $event->minute;
+            }
+        }
+
+        if (empty($removedAt)) {
+            return $events;
+        }
+
+        return $events->map(function (MatchEventData $event) use ($removedAt, $homePlayers, $awayPlayers) {
+            if (! in_array($event->type, ['goal', 'assist'])) {
+                return $event;
+            }
+
+            if (! isset($removedAt[$event->gamePlayerId])) {
+                return $event;
+            }
+
+            if ($event->minute < $removedAt[$event->gamePlayerId]) {
+                return $event;
+            }
+
+            // Find the team's players and exclude anyone removed at or before this minute
+            $teamPlayers = $homePlayers->contains('id', $event->gamePlayerId)
+                ? $homePlayers
+                : $awayPlayers;
+
+            $availablePlayers = $teamPlayers->reject(function ($p) use ($removedAt, $event) {
+                return isset($removedAt[$p->id]) && $removedAt[$p->id] <= $event->minute;
+            });
+
+            $replacement = $event->type === 'goal'
+                ? $this->pickGoalScorer($availablePlayers)
+                : $this->pickPlayerByPosition($availablePlayers, self::ASSIST_WEIGHTS);
+
+            if (! $replacement) {
+                return $event;
+            }
+
+            return $event->type === 'goal'
+                ? MatchEventData::goal($event->teamId, $replacement->id, $event->minute)
+                : MatchEventData::assist($event->teamId, $replacement->id, $event->minute);
+        });
+    }
+
+    /**
+     * Pick a player based on position weights and player quality.
+     * Uses effective score (base ability × match performance) for weighting.
+     *
+     * Players with position weight of 0 are excluded entirely (e.g., goalkeepers can't score).
+     */
+    private function pickPlayerByPosition(Collection $players, array $weights): ?GamePlayer
+    {
+        if ($players->isEmpty()) {
+            return null;
+        }
+
+        // Build weighted array with quality multiplier
+        $weighted = [];
+        foreach ($players as $player) {
+            $positionWeight = $weights[$player->position] ?? 5;
+
+            // Skip players with zero position weight (e.g., goalkeepers for scoring)
+            if ($positionWeight === 0) {
+                continue;
+            }
+
+            // Use effective score which includes match-day performance
+            $effectiveScore = $this->getEffectiveScore($player);
+
+            // Quality multiplier: players above 70 get bonus, below get penalty
+            // Now includes the hidden performance modifier for randomness
+            $qualityMultiplier = $effectiveScore / 70;
+            $weight = (int) max(1, round($positionWeight * $qualityMultiplier));
+
+            for ($i = 0; $i < $weight; $i++) {
+                $weighted[] = $player;
+            }
+        }
+
+        if (empty($weighted)) {
+            return $players->random();
+        }
+
+        return $weighted[array_rand($weighted)];
+    }
+
+    /**
+     * Pick a goal scorer with dampened quality weighting and diminishing returns.
+     *
+     * Differs from pickPlayerByPosition() in two ways:
+     * 1. Uses sqrt-dampened quality multiplier (pow(score/70, 0.5)) instead of linear,
+     *    reducing the advantage of high-rated players from 29% to 13%.
+     * 2. Halves weight for each prior goal in the same match, making hat-tricks rare.
+     *
+     * @param  array<string, int>  $goalCounts  Map of player ID to goals scored so far this match
+     */
+    private function pickGoalScorer(Collection $players, array $goalCounts = []): ?GamePlayer
+    {
+        if ($players->isEmpty()) {
+            return null;
+        }
+
+        $weighted = [];
+        foreach ($players as $player) {
+            $positionWeight = self::GOAL_SCORING_WEIGHTS[$player->position] ?? 5;
+
+            if ($positionWeight === 0) {
+                continue;
+            }
+
+            $effectiveScore = $this->getEffectiveScore($player);
+
+            // Dampened quality multiplier: sqrt reduces the gap between high and low rated players
+            $qualityMultiplier = pow($effectiveScore / 70, 0.5);
+
+            $weight = $positionWeight * $qualityMultiplier;
+
+            // Diminishing returns: halve weight for each prior goal in this match
+            $priorGoals = $goalCounts[$player->id] ?? 0;
+            if ($priorGoals > 0) {
+                $weight /= pow(2, $priorGoals);
+            }
+
+            $weight = (int) max(1, round($weight));
+
+            for ($i = 0; $i < $weight; $i++) {
+                $weighted[] = $player;
+            }
+        }
+
+        if (empty($weighted)) {
+            return $players->random();
+        }
+
+        return $weighted[array_rand($weighted)];
+    }
+
+    /**
+     * Calculate team strength based on lineup player attributes.
+     * Incorporates match-day performance modifiers and energy/stamina for realistic variance.
+     *
+     * @param  Collection<GamePlayer>  $lineup
+     * @param  int  $fromMinute  Start of the simulation period (for energy averaging)
+     * @param  array<string, int>  $playerEntryMinutes  Map of player ID to minute they entered the match
+     */
+    private function calculateTeamStrength(Collection $lineup, int $fromMinute = 0, array $playerEntryMinutes = [], float $tacticalDrainMultiplier = 1.0): float
+    {
+        if ($lineup->count() < 7) {
+            // Fallback for severely depleted lineup - reflects amateur/semi-pro level
+            return 0.30;
+        }
+
+        // Calculate effective attributes with match performance modifier
+        $totalStrength = 0;
+        foreach ($lineup as $player) {
+            $performance = $this->getMatchPerformance($player);
+
+            // Apply performance modifier to each attribute
+            // Technical ability is most affected by "form on the day"
+            $effectiveTechnical = $player->technical_ability * $performance;
+            // Physical attributes are more consistent
+            $effectivePhysical = $player->physical_ability * (0.5 + $performance * 0.5);
+            // Fitness and morale are not modified - they influence performance
+            $fitness = $player->fitness;
+            $morale = $player->morale;
+
+            // Weighted contribution — ability-dominant so team quality differences are wide
+            // Fitness/morale still affect matches through getMatchPerformance() modifiers
+            $playerStrength = ($effectiveTechnical * 0.55) +
+                              ($effectivePhysical * 0.35) +
+                              ($fitness * 0.05) +
+                              ($morale * 0.05);
+
+            // Apply energy/stamina modifier
+            $entryMinute = $playerEntryMinutes[$player->id] ?? 0;
+            $isGK = $player->position === 'Goalkeeper';
+            $avgEnergy = EnergyCalculator::averageEnergy(
+                $player->physical_ability,
+                $player->age($player->game->current_date),
+                $isGK,
+                $entryMinute,
+                $fromMinute,
+                93,
+                $tacticalDrainMultiplier,
+            );
+            $playerStrength *= EnergyCalculator::effectivenessModifier($avgEnergy);
+
+            $totalStrength += $playerStrength;
+        }
+
+        // Average across all players, normalized to 0-1 range
+        return ($totalStrength / $lineup->count()) / 100;
+    }
+
+    /**
+     * Calculate striker quality bonus for expected goals.
+     *
+     * Elite forwards (90+) provide a significant boost to their team's
+     * expected goals, reflecting their ability to create chances from nothing.
+     *
+     * @param  Collection<GamePlayer>  $lineup
+     * @return float Bonus expected goals (0.0 to ~0.5)
+     */
+    private function calculateStrikerBonus(Collection $lineup): float
+    {
+        $forwardPositions = ['Centre-Forward', 'Second Striker', 'Left Winger', 'Right Winger'];
+
+        // Get the best forward in the lineup (using effective score for match-day variance)
+        $bestForwardScore = 0;
+        foreach ($lineup as $player) {
+            if (in_array($player->position, $forwardPositions)) {
+                $effectiveScore = $this->getEffectiveScore($player);
+                $bestForwardScore = max($bestForwardScore, $effectiveScore);
+            }
+        }
+
+        // No bonus if no forwards or if best forward is below 85
+        if ($bestForwardScore < 85) {
+            return 0.0;
+        }
+
+        // Bonus scales from 0 at 85 to ~0.25 at 100
+        // Formula: (rating - 85) / 60 gives 0.0 to 0.25 range
+        // Only truly elite forwards provide a noticeable boost
+        // A 94-rated Mbappé gets +0.15 expected goals
+        // A 88-rated striker gets +0.05 expected goals
+        return ($bestForwardScore - 85) / 60;
+    }
+
+    /**
+     * Get the highest physical ability among forward players in a lineup.
+     * Used to check if opponent forwards can nullify a high defensive line.
+     */
+    private function getBestForwardPhysical(Collection $lineup): int
+    {
+        $forwardPositions = ['Centre-Forward', 'Second Striker', 'Left Winger', 'Right Winger'];
+        $best = 0;
+
+        foreach ($lineup as $player) {
+            if (in_array($player->position, $forwardPositions)) {
+                $best = max($best, $player->physical_ability);
+            }
+        }
+
+        return $best;
+    }
+
+    /**
+     * Generate a Poisson-distributed random number.
+     */
+    private function poissonRandom(float $lambda): int
+    {
+        $L = exp(-$lambda);
+        $k = 0;
+        $p = 1.0;
+
+        do {
+            $k++;
+            $p *= mt_rand() / mt_getrandmax();
+        } while ($p > $L);
+
+        return max(0, $k - 1);
+    }
+
+    /**
+     * Return true with given percentage chance.
+     */
+    private function percentChance(float $percent): bool
+    {
+        return (mt_rand() / mt_getrandmax() * 100) < $percent;
+    }
+
+    /**
+     * Get or generate match performance modifier for a player.
+     *
+     * This creates a "hidden" form rating that introduces per-match randomness.
+     * A player with high morale and fitness has a better chance of a good performance.
+     *
+     * Performance distribution (bell curve centered around 1.0):
+     * - 0.70-0.85: Poor day (rare for high morale/fitness players)
+     * - 0.85-0.95: Below average
+     * - 0.95-1.05: Average
+     * - 1.05-1.15: Above average
+     * - 1.15-1.30: Outstanding day (rare)
+     *
+     * @return float Performance modifier (0.7 to 1.3)
+     */
+    private function getMatchPerformance(GamePlayer $player): float
+    {
+        // Return cached performance if already calculated this match
+        if (isset($this->matchPerformance[$player->id])) {
+            return $this->matchPerformance[$player->id];
+        }
+
+        // Base randomness using normal distribution (bell curve)
+        // Box-Muller transform for normal distribution
+        $u1 = max(0.0001, mt_rand() / mt_getrandmax());
+        $u2 = mt_rand() / mt_getrandmax();
+        $z = sqrt(-2 * log($u1)) * cos(2 * M_PI * $u2);
+
+        // Standard deviation controls randomness (configurable)
+        // ~68% of performances fall within ±stdDev of baseline
+        // ~95% fall within ±2*stdDev
+        $stdDev = config('match_simulation.performance_std_dev', 0.12);
+        $basePerformance = 1.0 + ($z * $stdDev);
+
+        // Morale influences performance more than fitness
+        // High morale (80+) slightly increases chance of good performance
+        // Low morale (<50) increases chance of poor performance
+        $moraleModifier = ($player->morale - 65) / 200; // Range: -0.075 to +0.175
+
+        // Fitness affects consistency - low fitness increases variance
+        $fitnessModifier = 0;
+        if ($player->fitness < 70) {
+            // Low fitness = more likely to have a poor game
+            $fitnessModifier = ($player->fitness - 70) / 300; // Negative modifier
+        }
+
+        $performance = $basePerformance + $moraleModifier + $fitnessModifier;
+
+        // Clamp to configurable range
+        $minPerf = config('match_simulation.performance_min', 0.70);
+        $maxPerf = config('match_simulation.performance_max', 1.30);
+        $performance = max($minPerf, min($maxPerf, $performance));
+
+        // Cache for this match
+        $this->matchPerformance[$player->id] = $performance;
+
+        return $performance;
+    }
+
+    /**
+     * Reset match performance cache (call before each new match simulation).
+     */
+    private function resetMatchPerformance(): void
+    {
+        $this->matchPerformance = [];
+    }
+
+    /**
+     * Get the effective overall score for a player in this match.
+     * Combines base ability with match-day performance.
+     */
+    private function getEffectiveScore(GamePlayer $player): float
+    {
+        $performance = $this->getMatchPerformance($player);
+
+        return $player->overall_score * $performance;
+    }
+
+    /**
+     * Get all match performance modifiers after simulation.
+     * Useful for post-match player ratings display.
+     *
+     * @return array<string, float> Map of player ID to performance modifier (0.7-1.3)
+     */
+    public function getMatchPerformances(): array
+    {
+        return $this->matchPerformance;
+    }
+
+    /**
+     * Convert match performance to a display rating (1-10 scale).
+     * This can be used for post-match player ratings.
+     *
+     * @param  float  $performance  The raw performance modifier (0.7-1.3)
+     * @return float Rating on 1-10 scale
+     */
+    public static function performanceToRating(float $performance): float
+    {
+        // Map 0.7-1.3 to 4.0-9.5 scale (typical football rating range)
+        // 0.7 -> 4.0 (very poor)
+        // 1.0 -> 6.5 (average)
+        // 1.3 -> 9.0 (outstanding)
+        $rating = 4.0 + (($performance - 0.7) / 0.6) * 5.0;
+
+        return round(max(1.0, min(10.0, $rating)), 1);
+    }
+
+    /**
+     * Calculate cosmetic possession percentages from tactics and team strength.
+     * Purely display — does not affect simulation outcomes.
+     *
+     * @return array{home: int, away: int} Possession percentages (sum = 100)
+     */
+    public function calculatePossession(
+        float $homeStrength,
+        float $awayStrength,
+        Formation $homeFormation,
+        Formation $awayFormation,
+        Mentality $homeMentality,
+        Mentality $awayMentality,
+        PlayingStyle $homePlayingStyle,
+        PlayingStyle $awayPlayingStyle,
+        PressingIntensity $homePressing,
+        PressingIntensity $awayPressing,
+        string $matchSeed = '',
+    ): array {
+        $cfg = config('match_simulation.possession');
+
+        $homeScore = 50.0
+            + ($cfg['playing_style'][$homePlayingStyle->value] ?? 0)
+            + ($cfg['pressing'][$homePressing->value] ?? 0)
+            + ($cfg['mentality'][$homeMentality->value] ?? 0)
+            + ($cfg['formation_midfield'][$homeFormation->value] ?? 0);
+
+        $awayScore = 50.0
+            + ($cfg['playing_style'][$awayPlayingStyle->value] ?? 0)
+            + ($cfg['pressing'][$awayPressing->value] ?? 0)
+            + ($cfg['mentality'][$awayMentality->value] ?? 0)
+            + ($cfg['formation_midfield'][$awayFormation->value] ?? 0);
+
+        // Strength bonus: stronger team gets up to ±strength_max_bonus
+        $maxBonus = $cfg['strength_max_bonus'] ?? 5;
+        if ($homeStrength + $awayStrength > 0) {
+            $strengthShare = $homeStrength / ($homeStrength + $awayStrength); // 0.0–1.0
+            $homeScore += ($strengthShare - 0.5) * 2 * $maxBonus;
+            $awayScore += (0.5 - $strengthShare) * 2 * $maxBonus;
+        }
+
+        // Deterministic noise seeded from match ID
+        $noiseRange = $cfg['noise_range'] ?? 3;
+        if ($matchSeed !== '' && $noiseRange > 0) {
+            $seed = crc32($matchSeed);
+            mt_srand($seed);
+            $homeNoise = (mt_rand(0, 2 * $noiseRange * 100) - $noiseRange * 100) / 100;
+            mt_srand($seed + 1);
+            $awayNoise = (mt_rand(0, 2 * $noiseRange * 100) - $noiseRange * 100) / 100;
+            mt_srand();
+            $homeScore += $homeNoise;
+            $awayScore += $awayNoise;
+        }
+
+        // Normalize to percentages
+        $total = max($homeScore + $awayScore, 1);
+        $homePct = (int) round($homeScore / $total * 100);
+        $homePct = max(25, min(75, $homePct)); // clamp to realistic range
+        $awayPct = 100 - $homePct;
+
+        return ['home' => $homePct, 'away' => $awayPct];
+    }
+
+    /**
+     * Calculate base expected goals from strength ratio, formation, mentality, and match fraction.
+     * Does not include tactical instruction modifiers, striker bonus, or max goals cap.
+     *
+     * @return array{0: float, 1: float} [homeXG, awayXG]
+     */
+    private function calculateBaseExpectedGoals(
+        float $homeStrength,
+        float $awayStrength,
+        Formation $homeFormation,
+        Formation $awayFormation,
+        Mentality $homeMentality,
+        Mentality $awayMentality,
+        float $baseGoals,
+        float $matchFraction,
+    ): array {
+        $ratioExponent = config('match_simulation.ratio_exponent', 2.0);
+        $homeAdvantageGoals = config('match_simulation.home_advantage_goals', 0.15);
+
+        $strengthRatio = $awayStrength > 0 ? $homeStrength / $awayStrength : 1.0;
+
+        $homeXG = (pow($strengthRatio, $ratioExponent) * $baseGoals + $homeAdvantageGoals)
+            * $homeFormation->attackModifier()
+            * $awayFormation->defenseModifier()
+            * $homeMentality->ownGoalsModifier()
+            * $awayMentality->opponentGoalsModifier()
+            * $matchFraction;
+
+        $awayXG = (pow(1 / $strengthRatio, $ratioExponent) * $baseGoals)
+            * $awayFormation->attackModifier()
+            * $homeFormation->defenseModifier()
+            * $awayMentality->ownGoalsModifier()
+            * $homeMentality->opponentGoalsModifier()
+            * $matchFraction;
+
+        return [$homeXG, $awayXG];
+    }
+
+    /**
+     * Apply all tactical instruction modifiers to base expected goals.
+     * Covers playing style, pressing (with minute-based fade), defensive line
+     * (with high-line nullification), and tactical interactions.
+     *
+     * @return array{0: float, 1: float} [homeXG, awayXG]
+     */
+    private function applyTacticalModifiers(
+        float $homeXG,
+        float $awayXG,
+        PlayingStyle $homePlayingStyle,
+        PlayingStyle $awayPlayingStyle,
+        PressingIntensity $homePressing,
+        PressingIntensity $awayPressing,
+        DefensiveLineHeight $homeDefLine,
+        DefensiveLineHeight $awayDefLine,
+        Mentality $homeMentality,
+        Mentality $awayMentality,
+        float $effectiveMinute,
+        Collection $homePlayers,
+        Collection $awayPlayers,
+    ): array {
+        // Playing Style: own xG modifier and opponent xG modifier
+        $homeXG *= $homePlayingStyle->ownXGModifier();
+        $homeXG *= $awayPlayingStyle->opponentXGModifier();
+        $awayXG *= $awayPlayingStyle->ownXGModifier();
+        $awayXG *= $homePlayingStyle->opponentXGModifier();
+
+        // Pressing: opponent xG modifier (with minute-based fade for High Press)
+        $homeXG *= $awayPressing->opponentXGModifier((int) $effectiveMinute);
+        $awayXG *= $homePressing->opponentXGModifier((int) $effectiveMinute);
+
+        // Defensive Line: own xG and opponent xG modifiers
+        // Check if opponent's best forward nullifies the high line
+        $homeDefLineOwn = $homeDefLine->ownXGModifier();
+        $homeDefLineOpp = $homeDefLine->opponentXGModifier();
+        $awayDefLineOwn = $awayDefLine->ownXGModifier();
+        $awayDefLineOpp = $awayDefLine->opponentXGModifier();
+
+        $homePhysicalThreshold = $homeDefLine->physicalThreshold();
+        if ($homePhysicalThreshold > 0 && $this->getBestForwardPhysical($awayPlayers) >= $homePhysicalThreshold) {
+            $homeDefLineOwn = 1.0;
+            $homeDefLineOpp = 1.0;
+        }
+        $awayPhysicalThreshold = $awayDefLine->physicalThreshold();
+        if ($awayPhysicalThreshold > 0 && $this->getBestForwardPhysical($homePlayers) >= $awayPhysicalThreshold) {
+            $awayDefLineOwn = 1.0;
+            $awayDefLineOpp = 1.0;
+        }
+
+        $homeXG *= $homeDefLineOwn;
+        $awayXG *= $homeDefLineOpp;
+        $awayXG *= $awayDefLineOwn;
+        $homeXG *= $awayDefLineOpp;
+
+        // Tactical Interactions
+        $interactions = config('match_simulation.tactical_interactions', []);
+
+        // Counter-Attack vs opponent's Attacking mentality + High Line → bonus own xG
+        $counterBonus = $interactions['counter_vs_attacking_high_line'] ?? 1.0;
+        if ($homePlayingStyle === PlayingStyle::COUNTER_ATTACK && $awayMentality === Mentality::ATTACKING && $awayDefLine === DefensiveLineHeight::HIGH_LINE) {
+            $homeXG *= $counterBonus;
+        }
+        if ($awayPlayingStyle === PlayingStyle::COUNTER_ATTACK && $homeMentality === Mentality::ATTACKING && $homeDefLine === DefensiveLineHeight::HIGH_LINE) {
+            $awayXG *= $counterBonus;
+        }
+
+        // Possession disrupted by opponent's High Press → penalty to own xG
+        $possessionPenalty = $interactions['possession_disrupted_by_high_press'] ?? 1.0;
+        if ($homePlayingStyle === PlayingStyle::POSSESSION && $awayPressing === PressingIntensity::HIGH_PRESS) {
+            $homeXG *= $possessionPenalty;
+        }
+        if ($awayPlayingStyle === PlayingStyle::POSSESSION && $homePressing === PressingIntensity::HIGH_PRESS) {
+            $awayXG *= $possessionPenalty;
+        }
+
+        // Direct bypasses opponent's High Press → bonus to own xG
+        $directBonus = $interactions['direct_bypasses_high_press'] ?? 1.0;
+        if ($homePlayingStyle === PlayingStyle::DIRECT && $awayPressing === PressingIntensity::HIGH_PRESS) {
+            $homeXG *= $directBonus;
+        }
+        if ($awayPlayingStyle === PlayingStyle::DIRECT && $homePressing === PressingIntensity::HIGH_PRESS) {
+            $awayXG *= $directBonus;
+        }
+
+        return [$homeXG, $awayXG];
+    }
+
+    /**
+     * Simulate the remainder of a match from a given minute.
+     * Used when a substitution changes the lineup mid-match.
+     * Only generates events for the period [fromMinute+1, 93].
+     */
+    public function simulateRemainder(
+        Team $homeTeam,
+        Team $awayTeam,
+        Collection $homePlayers,
+        Collection $awayPlayers,
+        ?Formation $homeFormation = null,
+        ?Formation $awayFormation = null,
+        ?Mentality $homeMentality = null,
+        ?Mentality $awayMentality = null,
+        int $fromMinute = 45,
+        ?Game $game = null,
+        array $existingInjuryTeamIds = [],
+        array $existingYellowPlayerIds = [],
+        array $homeEntryMinutes = [],
+        array $awayEntryMinutes = [],
+        ?PlayingStyle $homePlayingStyle = null,
+        ?PlayingStyle $awayPlayingStyle = null,
+        ?PressingIntensity $homePressing = null,
+        ?PressingIntensity $awayPressing = null,
+        ?DefensiveLineHeight $homeDefLine = null,
+        ?DefensiveLineHeight $awayDefLine = null,
+        ?Collection $homeBenchPlayers = null,
+        ?Collection $awayBenchPlayers = null,
+        string $matchSeed = '',
+    ): MatchResult {
+        $this->resetMatchPerformance();
+
+        $homeFormation = $homeFormation ?? Formation::F_4_4_2;
+        $awayFormation = $awayFormation ?? Formation::F_4_4_2;
+        $homeMentality = $homeMentality ?? Mentality::BALANCED;
+        $awayMentality = $awayMentality ?? Mentality::BALANCED;
+        $homePlayingStyle = $homePlayingStyle ?? PlayingStyle::BALANCED;
+        $awayPlayingStyle = $awayPlayingStyle ?? PlayingStyle::BALANCED;
+        $homePressing = $homePressing ?? PressingIntensity::STANDARD;
+        $awayPressing = $awayPressing ?? PressingIntensity::STANDARD;
+        $homeDefLine = $homeDefLine ?? DefensiveLineHeight::NORMAL;
+        $awayDefLine = $awayDefLine ?? DefensiveLineHeight::NORMAL;
+
+        // Combined tactical energy drain multiplier per team
+        $homeTacticalDrain = $homePlayingStyle->energyDrainMultiplier() * $homePressing->energyDrainMultiplier();
+        $awayTacticalDrain = $awayPlayingStyle->energyDrainMultiplier() * $awayPressing->energyDrainMultiplier();
+
+        // Scale everything by the fraction of match remaining
+        $matchFraction = max(0, (93 - $fromMinute)) / 93;
+
+        $events = collect();
+        $baseGoals = config('match_simulation.base_goals', 1.3);
+
+        // Preliminary strength calculation (used for card bias and as final strength if no injury sub)
+        $homeStrength = $this->calculateTeamStrength($homePlayers, $fromMinute, $homeEntryMinutes, $homeTacticalDrain);
+        $awayStrength = $this->calculateTeamStrength($awayPlayers, $fromMinute, $awayEntryMinutes, $awayTacticalDrain);
+
+        [$homeExpectedGoals, $awayExpectedGoals] = $this->calculateBaseExpectedGoals(
+            $homeStrength, $awayStrength,
+            $homeFormation, $awayFormation,
+            $homeMentality, $awayMentality,
+            $baseGoals, $matchFraction,
+        );
+
+        $effectiveMinute = $fromMinute + (93 - $fromMinute) / 2;
+
+        [$homeExpectedGoals, $awayExpectedGoals] = $this->applyTacticalModifiers(
+            $homeExpectedGoals, $awayExpectedGoals,
+            $homePlayingStyle, $awayPlayingStyle,
+            $homePressing, $awayPressing,
+            $homeDefLine, $awayDefLine,
+            $homeMentality, $awayMentality,
+            $effectiveMinute,
+            $homePlayers, $awayPlayers,
+        );
+
+        $homeExpectedGoals += $this->calculateStrikerBonus($homePlayers) * $matchFraction;
+        $awayExpectedGoals += $this->calculateStrikerBonus($awayPlayers) * $matchFraction;
+
+        $homeScore = $this->poissonRandom($homeExpectedGoals);
+        $awayScore = $this->poissonRandom($awayExpectedGoals);
+
+        if ($homePlayers->isNotEmpty() && $awayPlayers->isNotEmpty()) {
+            // Generate cards first using the initial Poisson score for goal-difference bias
+            $goalDifference = $homeScore - $awayScore;
+            $homeCardEvents = $this->generateCardEventsInRange($homeTeam->id, $homePlayers, -$goalDifference, $fromMinute + 1, 93, $matchFraction, $existingYellowPlayerIds);
+            $awayCardEvents = $this->generateCardEventsInRange($awayTeam->id, $awayPlayers, $goalDifference, $fromMinute + 1, 93, $matchFraction, $existingYellowPlayerIds);
+            $events = $events->merge($homeCardEvents)->merge($awayCardEvents);
+
+            // Generate injuries and auto-substitute before goal generation
+            // so team strength reflects the replacement player
+            $injuryMaxMinute = 85;
+            $lineupChanged = false;
+
+            if (! in_array($homeTeam->id, $existingInjuryTeamIds) && $fromMinute + 1 <= $injuryMaxMinute) {
+                $homeInjuryEvents = $this->generateInjuryEventsInRange($homeTeam->id, $homePlayers, $fromMinute + 1, $injuryMaxMinute, $game);
+                $events = $events->merge($homeInjuryEvents);
+                if ($homeInjuryEvents->isNotEmpty() && $homeBenchPlayers !== null && $homeBenchPlayers->isNotEmpty()) {
+                    [$subEvents, $homePlayers, $homeBenchPlayers] = $this->processInjurySubstitution(
+                        $homeTeam->id, $homeInjuryEvents, $homePlayers, $homeBenchPlayers
+                    );
+                    $events = $events->merge($subEvents);
+                    if ($subEvents->isNotEmpty()) {
+                        $lineupChanged = true;
+                    }
+                }
+            }
+            if (! in_array($awayTeam->id, $existingInjuryTeamIds) && $fromMinute + 1 <= $injuryMaxMinute) {
+                $awayInjuryEvents = $this->generateInjuryEventsInRange($awayTeam->id, $awayPlayers, $fromMinute + 1, $injuryMaxMinute, $game);
+                $events = $events->merge($awayInjuryEvents);
+                if ($awayInjuryEvents->isNotEmpty() && $awayBenchPlayers !== null && $awayBenchPlayers->isNotEmpty()) {
+                    [$subEvents, $awayPlayers, $awayBenchPlayers] = $this->processInjurySubstitution(
+                        $awayTeam->id, $awayInjuryEvents, $awayPlayers, $awayBenchPlayers
+                    );
+                    $events = $events->merge($subEvents);
+                    if ($subEvents->isNotEmpty()) {
+                        $lineupChanged = true;
+                    }
+                }
+            }
+
+            // Recalculate strength and goals with updated lineup if an injury sub occurred
+            if ($lineupChanged) {
+                $homeStrength = $this->calculateTeamStrength($homePlayers, $fromMinute, $homeEntryMinutes, $homeTacticalDrain);
+                $awayStrength = $this->calculateTeamStrength($awayPlayers, $fromMinute, $awayEntryMinutes, $awayTacticalDrain);
+
+                [$homeExpectedGoals, $awayExpectedGoals] = $this->calculateBaseExpectedGoals(
+                    $homeStrength, $awayStrength,
+                    $homeFormation, $awayFormation,
+                    $homeMentality, $awayMentality,
+                    $baseGoals, $matchFraction,
+                );
+
+                [$homeExpectedGoals, $awayExpectedGoals] = $this->applyTacticalModifiers(
+                    $homeExpectedGoals, $awayExpectedGoals,
+                    $homePlayingStyle, $awayPlayingStyle,
+                    $homePressing, $awayPressing,
+                    $homeDefLine, $awayDefLine,
+                    $homeMentality, $awayMentality,
+                    $effectiveMinute,
+                    $homePlayers, $awayPlayers,
+                );
+
+                $homeExpectedGoals += $this->calculateStrikerBonus($homePlayers) * $matchFraction;
+                $awayExpectedGoals += $this->calculateStrikerBonus($awayPlayers) * $matchFraction;
+
+                $homeScore = $this->poissonRandom($homeExpectedGoals);
+                $awayScore = $this->poissonRandom($awayExpectedGoals);
+            }
+
+            // Check for red cards — if found, split goal generation into two periods
+            $homeRedCard = $homeCardEvents->first(fn (MatchEventData $e) => $e->type === 'red_card');
+            $awayRedCard = $awayCardEvents->first(fn (MatchEventData $e) => $e->type === 'red_card');
+
+            if ($homeRedCard || $awayRedCard) {
+                [$homeScore, $awayScore, $goalEvents] = $this->simulateGoalsWithRedCardSplit(
+                    $homeTeam, $awayTeam,
+                    $homePlayers, $awayPlayers,
+                    $homeFormation, $awayFormation,
+                    $homeMentality, $awayMentality,
+                    $homePlayingStyle, $awayPlayingStyle,
+                    $homePressing, $awayPressing,
+                    $homeDefLine, $awayDefLine,
+                    $homeStrength, $awayStrength,
+                    $homeEntryMinutes, $awayEntryMinutes,
+                    $homeTacticalDrain, $awayTacticalDrain,
+                    $fromMinute, $baseGoals, $homeRedCard, $awayRedCard,
+                );
+                $events = $events->merge($goalEvents);
+            } else {
+                // No red cards: single-period goal generation (existing path)
+                $maxGoalsCap = config('match_simulation.max_goals_cap', 0);
+                if ($maxGoalsCap > 0) {
+                    $homeScore = min($homeScore, $maxGoalsCap);
+                    $awayScore = min($awayScore, $maxGoalsCap);
+                }
+
+                $homeGoalEvents = $this->generateGoalEventsInRange(
+                    $homeScore, $homeTeam->id, $awayTeam->id,
+                    $homePlayers, $awayPlayers, $fromMinute + 1, 93
+                );
+                $awayGoalEvents = $this->generateGoalEventsInRange(
+                    $awayScore, $awayTeam->id, $homeTeam->id,
+                    $awayPlayers, $homePlayers, $fromMinute + 1, 93
+                );
+                $events = $events->merge($homeGoalEvents)->merge($awayGoalEvents);
+            }
+
+            $events = $events->sortBy('minute')->values();
+
+            $events = $this->reassignEventsFromUnavailablePlayers(
+                $events, $homePlayers, $awayPlayers
+            );
+        }
+
+        $possession = $this->calculatePossession(
+            $homeStrength, $awayStrength,
+            $homeFormation, $awayFormation,
+            $homeMentality, $awayMentality,
+            $homePlayingStyle, $awayPlayingStyle,
+            $homePressing, $awayPressing,
+            $matchSeed,
+        );
+
+        return new MatchResult($homeScore, $awayScore, $events, $possession['home'], $possession['away']);
+    }
+
+    /**
+     * Re-generate goals when a red card splits the match into two periods.
+     *
+     * Period 1: [fromMinute+1, splitMinute] — full-strength teams.
+     * Period 2: [splitMinute+1, 93] — red-carded player removed, strength
+     * recalculated, and man-down xG modifiers applied.
+     *
+     * @return array{0: int, 1: int, 2: Collection<MatchEventData>} [homeScore, awayScore, goalEvents]
+     */
+    private function simulateGoalsWithRedCardSplit(
+        Team $homeTeam,
+        Team $awayTeam,
+        Collection $homePlayers,
+        Collection $awayPlayers,
+        Formation $homeFormation,
+        Formation $awayFormation,
+        Mentality $homeMentality,
+        Mentality $awayMentality,
+        PlayingStyle $homePlayingStyle,
+        PlayingStyle $awayPlayingStyle,
+        PressingIntensity $homePressing,
+        PressingIntensity $awayPressing,
+        DefensiveLineHeight $homeDefLine,
+        DefensiveLineHeight $awayDefLine,
+        float $homeStrength,
+        float $awayStrength,
+        array $homeEntryMinutes,
+        array $awayEntryMinutes,
+        float $homeTacticalDrain,
+        float $awayTacticalDrain,
+        int $fromMinute,
+        float $baseGoals,
+        ?MatchEventData $homeRedCard,
+        ?MatchEventData $awayRedCard,
+    ): array {
+        $splitMinute = min(
+            $homeRedCard ? $homeRedCard->minute : 94,
+            $awayRedCard ? $awayRedCard->minute : 94,
+        );
+
+        // --- Period 1: [fromMinute+1, splitMinute] with full-strength teams ---
+        $fraction1 = max(0, $splitMinute - $fromMinute) / 93;
+        $effectiveMinute1 = $fromMinute + ($splitMinute - $fromMinute) / 2;
+
+        [$homeXG1, $awayXG1] = $this->calculateBaseExpectedGoals(
+            $homeStrength, $awayStrength,
+            $homeFormation, $awayFormation,
+            $homeMentality, $awayMentality,
+            $baseGoals, $fraction1,
+        );
+
+        [$homeXG1, $awayXG1] = $this->applyTacticalModifiers(
+            $homeXG1, $awayXG1,
+            $homePlayingStyle, $awayPlayingStyle,
+            $homePressing, $awayPressing,
+            $homeDefLine, $awayDefLine,
+            $homeMentality, $awayMentality,
+            $effectiveMinute1,
+            $homePlayers, $awayPlayers,
+        );
+
+        $homeXG1 += $this->calculateStrikerBonus($homePlayers) * $fraction1;
+        $awayXG1 += $this->calculateStrikerBonus($awayPlayers) * $fraction1;
+
+        $homeScore1 = $this->poissonRandom($homeXG1);
+        $awayScore1 = $this->poissonRandom($awayXG1);
+
+        $goalEvents = collect();
+        $goalEvents = $goalEvents
+            ->merge($this->generateGoalEventsInRange($homeScore1, $homeTeam->id, $awayTeam->id, $homePlayers, $awayPlayers, $fromMinute + 1, $splitMinute))
+            ->merge($this->generateGoalEventsInRange($awayScore1, $awayTeam->id, $homeTeam->id, $awayPlayers, $homePlayers, $fromMinute + 1, $splitMinute));
+
+        // --- Remove red-carded player(s) for period 2 ---
+        $homePlayers2 = $homePlayers;
+        $awayPlayers2 = $awayPlayers;
+
+        if ($homeRedCard && $homeRedCard->minute <= $splitMinute) {
+            $homePlayers2 = $homePlayers2->reject(fn ($p) => $p->id === $homeRedCard->gamePlayerId);
+        }
+        if ($awayRedCard && $awayRedCard->minute <= $splitMinute) {
+            $awayPlayers2 = $awayPlayers2->reject(fn ($p) => $p->id === $awayRedCard->gamePlayerId);
+        }
+
+        // --- Period 2: [splitMinute+1, 93] with reduced team(s) ---
+        $fraction2 = max(0, 93 - $splitMinute) / 93;
+        $effectiveMinute2 = $splitMinute + (93 - $splitMinute) / 2;
+
+        $homeStrength2 = $this->calculateTeamStrength($homePlayers2, $splitMinute, $homeEntryMinutes, $homeTacticalDrain);
+        $awayStrength2 = $this->calculateTeamStrength($awayPlayers2, $splitMinute, $awayEntryMinutes, $awayTacticalDrain);
+
+        [$homeXG2, $awayXG2] = $this->calculateBaseExpectedGoals(
+            $homeStrength2, $awayStrength2,
+            $homeFormation, $awayFormation,
+            $homeMentality, $awayMentality,
+            $baseGoals, $fraction2,
+        );
+
+        [$homeXG2, $awayXG2] = $this->applyTacticalModifiers(
+            $homeXG2, $awayXG2,
+            $homePlayingStyle, $awayPlayingStyle,
+            $homePressing, $awayPressing,
+            $homeDefLine, $awayDefLine,
+            $homeMentality, $awayMentality,
+            $effectiveMinute2,
+            $homePlayers2, $awayPlayers2,
+        );
+
+        // Apply man-down xG modifiers from config
+        $attackModifier = config('match_simulation.red_card_impact.attack_modifier', 0.80);
+        $defenseModifier = config('match_simulation.red_card_impact.defense_modifier', 1.15);
+
+        if ($homePlayers2->count() < $homePlayers->count()) {
+            $homeXG2 *= $attackModifier;
+            $awayXG2 *= $defenseModifier;
+        }
+        if ($awayPlayers2->count() < $awayPlayers->count()) {
+            $awayXG2 *= $attackModifier;
+            $homeXG2 *= $defenseModifier;
+        }
+
+        $homeXG2 += $this->calculateStrikerBonus($homePlayers2) * $fraction2;
+        $awayXG2 += $this->calculateStrikerBonus($awayPlayers2) * $fraction2;
+
+        $homeScore2 = $this->poissonRandom($homeXG2);
+        $awayScore2 = $this->poissonRandom($awayXG2);
+
+        $goalEvents = $goalEvents
+            ->merge($this->generateGoalEventsInRange($homeScore2, $homeTeam->id, $awayTeam->id, $homePlayers2, $awayPlayers2, $splitMinute + 1, 93))
+            ->merge($this->generateGoalEventsInRange($awayScore2, $awayTeam->id, $homeTeam->id, $awayPlayers2, $homePlayers2, $splitMinute + 1, 93));
+
+        // Combine scores and apply cap
+        $homeScore = $homeScore1 + $homeScore2;
+        $awayScore = $awayScore1 + $awayScore2;
+
+        $maxGoalsCap = config('match_simulation.max_goals_cap', 0);
+        if ($maxGoalsCap > 0) {
+            $homeScore = min($homeScore, $maxGoalsCap);
+            $awayScore = min($awayScore, $maxGoalsCap);
+        }
+
+        return [$homeScore, $awayScore, $goalEvents];
+    }
+
+    /**
+     * Process an injury substitution: replace the injured player with the best bench option.
+     *
+     * @return array{0: Collection, 1: Collection, 2: Collection} [subEvents, updatedLineup, updatedBench]
+     */
+    private function processInjurySubstitution(
+        string $teamId,
+        Collection $injuryEvents,
+        Collection $lineup,
+        Collection $bench,
+    ): array {
+        $subEvents = collect();
+
+        // Only process the first injury (max 1 per team per match)
+        $injury = $injuryEvents->first();
+        if (! $injury) {
+            return [$subEvents, $lineup, $bench];
+        }
+
+        $injuredPlayer = $lineup->firstWhere('id', $injury->gamePlayerId);
+        if (! $injuredPlayer) {
+            return [$subEvents, $lineup, $bench];
+        }
+
+        $replacement = $this->findBestBenchReplacement($injuredPlayer, $bench);
+        if (! $replacement) {
+            return [$subEvents, $lineup, $bench];
+        }
+
+        // Create substitution event at injury minute + 1
+        $subMinute = min($injury->minute + 1, 93);
+        $subEvents->push(MatchEventData::substitution($teamId, $injuredPlayer->id, $replacement->id, $subMinute));
+
+        // Update lineup: remove injured, add replacement
+        $lineup = $lineup->reject(fn ($p) => $p->id === $injuredPlayer->id)->push($replacement)->values();
+
+        // Update bench: remove replacement
+        $bench = $bench->reject(fn ($p) => $p->id === $replacement->id)->values();
+
+        return [$subEvents, $lineup, $bench];
+    }
+
+    /**
+     * Find the best bench player to replace an injured player.
+     *
+     * Priority: same exact position > same position group > best available (excluding GKs for outfield).
+     */
+    private function findBestBenchReplacement(GamePlayer $injuredPlayer, Collection $benchPlayers): ?GamePlayer
+    {
+        if ($benchPlayers->isEmpty()) {
+            return null;
+        }
+
+        $injuredPosition = $injuredPlayer->position;
+        $injuredGroup = PositionMapper::getPositionGroup($injuredPosition);
+
+        // Priority 1: Same exact position, highest overall score
+        $samePosition = $benchPlayers->filter(fn ($p) => $p->position === $injuredPosition);
+        if ($samePosition->isNotEmpty()) {
+            return $samePosition->sortByDesc(fn ($p) => $p->overall_score)->first();
+        }
+
+        // Priority 2: Same position group, highest overall score
+        $sameGroup = $benchPlayers->filter(fn ($p) => PositionMapper::getPositionGroup($p->position) === $injuredGroup);
+        if ($sameGroup->isNotEmpty()) {
+            return $sameGroup->sortByDesc(fn ($p) => $p->overall_score)->first();
+        }
+
+        // Priority 3: Best available (exclude GKs unless injured player was GK)
+        $candidates = $injuredGroup === 'Goalkeeper'
+            ? $benchPlayers
+            : $benchPlayers->reject(fn ($p) => $p->position === 'Goalkeeper');
+
+        if ($candidates->isEmpty()) {
+            $candidates = $benchPlayers;
+        }
+
+        return $candidates->sortByDesc(fn ($p) => $p->overall_score)->first();
+    }
+
+    /**
+     * Generate goal events with minutes constrained to a range.
+     */
+    private function generateGoalEventsInRange(
+        int $goalCount,
+        string $scoringTeamId,
+        string $concedingTeamId,
+        Collection $scoringTeamPlayers,
+        Collection $concedingTeamPlayers,
+        int $minMinute,
+        int $maxMinute,
+    ): Collection {
+        $events = collect();
+        $usedMinutes = [];
+        $goalCounts = [];
+
+        for ($i = 0; $i < $goalCount; $i++) {
+            $minute = $this->generateUniqueMinuteInRange($usedMinutes, $minMinute, $maxMinute);
+            $usedMinutes[] = $minute;
+
+            $ownGoalChance = config('match_simulation.own_goal_chance', 2.0);
+            if ($this->percentChance($ownGoalChance) && $concedingTeamPlayers->isNotEmpty()) {
+                $ownGoalScorer = $this->pickPlayerByPosition($concedingTeamPlayers, [
+                    'Centre-Back' => 40,
+                    'Left-Back' => 20,
+                    'Right-Back' => 20,
+                    'Defensive Midfield' => 15,
+                    'Goalkeeper' => 5,
+                ]);
+
+                if ($ownGoalScorer) {
+                    $events->push(MatchEventData::ownGoal($concedingTeamId, $ownGoalScorer->id, $minute));
+                    continue;
+                }
+            }
+
+            $scorer = $this->pickGoalScorer($scoringTeamPlayers, $goalCounts);
+            if (! $scorer) {
+                continue;
+            }
+
+            $events->push(MatchEventData::goal($scoringTeamId, $scorer->id, $minute));
+            $goalCounts[$scorer->id] = ($goalCounts[$scorer->id] ?? 0) + 1;
+
+            $assistChance = config('match_simulation.assist_chance', 60.0);
+            if ($this->percentChance($assistChance)) {
+                $assister = $this->pickPlayerByPosition(
+                    $scoringTeamPlayers->reject(fn ($p) => $p->id === $scorer->id),
+                    self::ASSIST_WEIGHTS
+                );
+
+                if ($assister) {
+                    $events->push(MatchEventData::assist($scoringTeamId, $assister->id, $minute));
+                }
+            }
+        }
+
+        return $events;
+    }
+
+    /**
+     * Generate card events with minutes constrained to a range.
+     */
+    private function generateCardEventsInRange(
+        string $teamId,
+        Collection $players,
+        int $goalDifference,
+        int $minMinute,
+        int $maxMinute,
+        float $matchFraction,
+        array $existingYellowPlayerIds = [],
+    ): Collection {
+        $events = collect();
+
+        $baseYellowCards = config('match_simulation.yellow_cards_per_team', 1.5);
+
+        // Scale by match fraction
+        $yellowCardsPerTeam = max(0.1, $baseYellowCards * $matchFraction);
+        $yellowCount = $this->poissonRandom($yellowCardsPerTeam);
+
+        $usedMinutes = [];
+        // Seed with players who already have a yellow earlier in this match
+        $playersWithYellow = collect();
+        foreach ($existingYellowPlayerIds as $playerId) {
+            $playersWithYellow->put($playerId, $minMinute - 1);
+        }
+
+        for ($i = 0; $i < $yellowCount; $i++) {
+            $player = $this->pickPlayerByPosition($players, self::CARD_WEIGHTS);
+            if (! $player) {
+                continue;
+            }
+
+            if ($playersWithYellow->has($player->id)) {
+                $firstYellowMinute = (int) $playersWithYellow->get($player->id);
+                $minute = $this->generateUniqueMinuteInRange($usedMinutes, max($minMinute, $firstYellowMinute + 1), $maxMinute);
+                $usedMinutes[] = $minute;
+                $events->push(MatchEventData::redCard($teamId, $player->id, $minute, true));
+                $players = $players->reject(fn ($p) => $p->id === $player->id);
+            } else {
+                $minute = $this->generateUniqueMinuteInRange($usedMinutes, $minMinute, $maxMinute);
+                $usedMinutes[] = $minute;
+                $events->push(MatchEventData::yellowCard($teamId, $player->id, $minute));
+                $playersWithYellow->put($player->id, $minute);
+            }
+        }
+
+        $baseRedChance = config('match_simulation.direct_red_chance', 1.5);
+        $redChanceModifier = $goalDifference < 0 ? abs($goalDifference) * 0.5 : 0;
+        $directRedChance = ($baseRedChance + $redChanceModifier) * $matchFraction;
+
+        if ($this->percentChance($directRedChance)) {
+            $player = $this->pickPlayerByPosition($players, self::CARD_WEIGHTS);
+            if ($player && ! $playersWithYellow->has($player->id)) {
+                $minute = $this->generateUniqueMinuteInRange($usedMinutes, $minMinute, $maxMinute);
+                $events->push(MatchEventData::redCard($teamId, $player->id, $minute, false));
+                $players = $players->reject(fn ($p) => $p->id === $player->id);
+            }
+        }
+
+        return $events;
+    }
+
+    /**
+     * Generate injury events with minutes constrained to a range.
+     */
+    private function generateInjuryEventsInRange(
+        string $teamId,
+        Collection $players,
+        int $minMinute,
+        int $maxMinute,
+        ?Game $game = null,
+    ): Collection {
+        $events = collect();
+
+        foreach ($players as $player) {
+            if ($this->injuryService->rollForInjury($player, null, null, $game)) {
+                $injury = $this->injuryService->generateInjury($player, $game);
+
+                $minute = rand($minMinute, $maxMinute);
+                $events->push(MatchEventData::injury(
+                    $teamId,
+                    $player->id,
+                    $minute,
+                    $injury['type'],
+                    $injury['weeks'],
+                ));
+
+                break;
+            }
+        }
+
+        return $events;
+    }
+
+    /**
+     * Generate a unique minute within a specific range.
+     */
+    private function generateUniqueMinuteInRange(array $usedMinutes, int $minMinute, int $maxMinute): int
+    {
+        $minMinute = max(1, min($minMinute, $maxMinute));
+        $maxMinute = max($minMinute, $maxMinute);
+
+        $attempts = 0;
+        do {
+            $minute = rand($minMinute, $maxMinute);
+            $attempts++;
+        } while (in_array($minute, $usedMinutes) && $attempts < 20);
+
+        return $minute;
+    }
+
+    /**
+     * Simulate extra time (30 minutes of play, or remainder from a given minute).
+     * Lower expected goals than normal time. Supports formation/mentality modifiers.
+     *
+     * @param  int  $fromMinute  Start minute (90 for full ET, or mid-ET after a sub/tactic change)
+     */
+    public function simulateExtraTime(
+        Team $homeTeam,
+        Team $awayTeam,
+        Collection $homePlayers,
+        Collection $awayPlayers,
+        array $homeEntryMinutes = [],
+        array $awayEntryMinutes = [],
+        int $fromMinute = 90,
+        ?Formation $homeFormation = null,
+        ?Formation $awayFormation = null,
+        ?Mentality $homeMentality = null,
+        ?Mentality $awayMentality = null,
+        ?PlayingStyle $homePlayingStyle = null,
+        ?PlayingStyle $awayPlayingStyle = null,
+        ?PressingIntensity $homePressing = null,
+        ?PressingIntensity $awayPressing = null,
+        ?DefensiveLineHeight $homeDefLine = null,
+        ?DefensiveLineHeight $awayDefLine = null,
+    ): MatchResult {
+        $events = collect();
+
+        $homeFormation = $homeFormation ?? Formation::F_4_4_2;
+        $awayFormation = $awayFormation ?? Formation::F_4_4_2;
+        $homeMentality = $homeMentality ?? Mentality::BALANCED;
+        $awayMentality = $awayMentality ?? Mentality::BALANCED;
+        $homePlayingStyle = $homePlayingStyle ?? PlayingStyle::BALANCED;
+        $awayPlayingStyle = $awayPlayingStyle ?? PlayingStyle::BALANCED;
+        $homePressing = $homePressing ?? PressingIntensity::STANDARD;
+        $awayPressing = $awayPressing ?? PressingIntensity::STANDARD;
+        $homeDefLine = $homeDefLine ?? DefensiveLineHeight::NORMAL;
+        $awayDefLine = $awayDefLine ?? DefensiveLineHeight::NORMAL;
+
+        // Combined tactical energy drain multiplier
+        $homeTacticalDrain = $homePlayingStyle->energyDrainMultiplier() * $homePressing->energyDrainMultiplier();
+        $awayTacticalDrain = $awayPlayingStyle->energyDrainMultiplier() * $awayPressing->energyDrainMultiplier();
+
+        // Scale ET fraction based on remaining minutes (full ET = 30/90, partial if re-simulating)
+        $etMinutesRemaining = max(0, 120 - $fromMinute);
+        $etFraction = $etMinutesRemaining / 90.0;
+
+        // Ratio-based xG — energy already accounts for fatigue
+        $homeStrength = $this->calculateTeamStrength($homePlayers, $fromMinute, $homeEntryMinutes, $homeTacticalDrain);
+        $awayStrength = $this->calculateTeamStrength($awayPlayers, $fromMinute, $awayEntryMinutes, $awayTacticalDrain);
+
+        $baseGoals = config('match_simulation.base_goals', 1.3);
+
+        [$homeExpectedGoals, $awayExpectedGoals] = $this->calculateBaseExpectedGoals(
+            $homeStrength, $awayStrength,
+            $homeFormation, $awayFormation,
+            $homeMentality, $awayMentality,
+            $baseGoals * 0.8, // 20% fatigue reduction
+            $etFraction,
+        );
+
+        $etEffectiveMinute = $fromMinute + ($etMinutesRemaining / 2);
+
+        [$homeExpectedGoals, $awayExpectedGoals] = $this->applyTacticalModifiers(
+            $homeExpectedGoals, $awayExpectedGoals,
+            $homePlayingStyle, $awayPlayingStyle,
+            $homePressing, $awayPressing,
+            $homeDefLine, $awayDefLine,
+            $homeMentality, $awayMentality,
+            $etEffectiveMinute,
+            $homePlayers, $awayPlayers,
+        );
+
+        $homeScore = $this->poissonRandom($homeExpectedGoals);
+        $awayScore = $this->poissonRandom($awayExpectedGoals);
+
+        // Generate goal events in range [fromMinute+1, 120]
+        $minMinute = $fromMinute + 1;
+        $maxMinute = 120;
+
+        if ($homePlayers->isNotEmpty() && $awayPlayers->isNotEmpty()) {
+            $homeGoalEvents = $this->generateGoalEventsInRange(
+                $homeScore, $homeTeam->id, $awayTeam->id,
+                $homePlayers, $awayPlayers, $minMinute, $maxMinute
+            );
+
+            $awayGoalEvents = $this->generateGoalEventsInRange(
+                $awayScore, $awayTeam->id, $homeTeam->id,
+                $awayPlayers, $homePlayers, $minMinute, $maxMinute
+            );
+
+            $events = $events->merge($homeGoalEvents)->merge($awayGoalEvents);
+            $events = $events->sortBy('minute')->values();
+
+            $events = $this->reassignEventsFromUnavailablePlayers(
+                $events, $homePlayers, $awayPlayers
+            );
+        }
+
+        $possession = $this->calculatePossession(
+            $homeStrength, $awayStrength,
+            $homeFormation, $awayFormation,
+            $homeMentality, $awayMentality,
+            $homePlayingStyle, $awayPlayingStyle,
+            $homePressing, $awayPressing,
+        );
+
+        return new MatchResult($homeScore, $awayScore, $events, $possession['home'], $possession['away']);
+    }
+
+    /**
+     * Simulate a penalty shootout.
+     * Standard 5 penalties each, then sudden death if tied.
+     *
+     * @return array{0: int, 1: int} [home_score, away_score]
+     */
+    public function simulatePenalties(Collection $homePlayers, Collection $awayPlayers): array
+    {
+        $result = $this->simulatePenaltyShootout($homePlayers, $awayPlayers);
+
+        return [$result['homeScore'], $result['awayScore']];
+    }
+
+    /**
+     * Simulate a detailed penalty shootout with kick-by-kick results (max 5 rounds).
+     *
+     * Each kick is a kicker-vs-goalkeeper duel. If still tied after 5 rounds,
+     * round 5 is rigged so one team scores and the other misses.
+     *
+     * @param  array<string>|null  $homeOrder  Ordered game_player IDs for home kickers
+     * @param  array<string>|null  $awayOrder  Ordered game_player IDs for away kickers
+     * @return array{homeScore: int, awayScore: int, kicks: list<array{round: int, side: string, playerId: string, playerName: string, scored: bool}>}
+     */
+    public function simulatePenaltyShootout(
+        Collection $homePlayers,
+        Collection $awayPlayers,
+        ?array $homeOrder = null,
+        ?array $awayOrder = null,
+    ): array {
+        $homeKickers = $this->buildKickerQueue($homePlayers, $homeOrder);
+        $awayKickers = $this->buildKickerQueue($awayPlayers, $awayOrder);
+
+        // Lower-division cup teams may have no GamePlayer records — coin-flip the result
+        if (empty($homeKickers) || empty($awayKickers)) {
+            $homeWins = (bool) random_int(0, 1);
+
+            return [
+                'homeScore' => $homeWins ? 4 : 3,
+                'awayScore' => $homeWins ? 3 : 4,
+                'kicks' => [],
+            ];
+        }
+
+        // Extract goalkeepers — home kickers face the away GK and vice versa
+        $homeGk = $homePlayers->firstWhere('position', 'Goalkeeper');
+        $awayGk = $awayPlayers->firstWhere('position', 'Goalkeeper');
+
+        $homeScore = 0;
+        $awayScore = 0;
+        $kicks = [];
+        $round = 1;
+        $maxRounds = 5;
+        $homeIdx = 0;
+        $awayIdx = 0;
+
+        // 5 penalties each
+        for ($i = 0; $i < $maxRounds; $i++) {
+            $homeKicker = $homeKickers[$homeIdx % count($homeKickers)];
+            $homeScored = $this->penaltyScored($homeKicker, $awayGk);
+            if ($homeScored) {
+                $homeScore++;
+            }
+            $kicks[] = [
+                'round' => $round,
+                'side' => 'home',
+                'playerId' => $homeKicker->id,
+                'playerName' => $homeKicker->player->name ?? '',
+                'scored' => $homeScored,
+            ];
+            $homeIdx++;
+
+            $awayKicker = $awayKickers[$awayIdx % count($awayKickers)];
+            $awayScored = $this->penaltyScored($awayKicker, $homeGk);
+            if ($awayScored) {
+                $awayScore++;
+            }
+            $kicks[] = [
+                'round' => $round,
+                'side' => 'away',
+                'playerId' => $awayKicker->id,
+                'playerName' => $awayKicker->player->name ?? '',
+                'scored' => $awayScored,
+            ];
+            $awayIdx++;
+
+            // Check if one team has mathematically won
+            $remainingRounds = $maxRounds - $round;
+            if ($homeScore > $awayScore + $remainingRounds) {
+                break;
+            }
+            if ($awayScore > $homeScore + $remainingRounds) {
+                break;
+            }
+
+            $round++;
+        }
+
+        // If still tied after 5 rounds, rig round 5 so one team wins
+        if ($homeScore === $awayScore) {
+            $homeWins = (bool) random_int(0, 1);
+            $winnerSide = $homeWins ? 'home' : 'away';
+            $loserSide = $homeWins ? 'away' : 'home';
+
+            // Find round-5 kicks
+            $r5WinnerIdx = null;
+            $r5LoserIdx = null;
+            foreach ($kicks as $idx => $kick) {
+                if ($kick['round'] === 5 && $kick['side'] === $winnerSide) {
+                    $r5WinnerIdx = $idx;
+                }
+                if ($kick['round'] === 5 && $kick['side'] === $loserSide) {
+                    $r5LoserIdx = $idx;
+                }
+            }
+
+            // Set winner's R5 to scored, loser's R5 to missed
+            if ($r5WinnerIdx !== null) {
+                $kicks[$r5WinnerIdx]['scored'] = true;
+            }
+            if ($r5LoserIdx !== null) {
+                $kicks[$r5LoserIdx]['scored'] = false;
+            }
+
+            // Recalculate scores from the kicks array
+            $homeScore = collect($kicks)->where('side', 'home')->where('scored', true)->count();
+            $awayScore = collect($kicks)->where('side', 'away')->where('scored', true)->count();
+
+            // Edge case: still tied if earlier rounds compensated — flip one loser scored kick
+            if ($homeScore === $awayScore) {
+                foreach ($kicks as $idx => $kick) {
+                    if ($kick['side'] === $loserSide && $kick['scored'] && $kick['round'] < 5) {
+                        $kicks[$idx]['scored'] = false;
+
+                        break;
+                    }
+                }
+
+                $homeScore = collect($kicks)->where('side', 'home')->where('scored', true)->count();
+                $awayScore = collect($kicks)->where('side', 'away')->where('scored', true)->count();
+            }
+        }
+
+        return [
+            'homeScore' => $homeScore,
+            'awayScore' => $awayScore,
+            'kicks' => $kicks,
+        ];
+    }
+
+    /**
+     * Build an ordered queue of kickers for a penalty shootout.
+     *
+     * When an explicit order is given, those players go first, followed by
+     * remaining players sorted by technical ability. Goalkeepers go last.
+     *
+     * @return list<GamePlayer>
+     */
+    private function buildKickerQueue(Collection $players, ?array $order = null): array
+    {
+        if ($order) {
+            $ordered = collect($order)
+                ->map(fn ($id) => $players->firstWhere('id', $id))
+                ->filter()
+                ->values();
+
+            $remaining = $players
+                ->reject(fn ($p) => in_array($p->id, $order))
+                ->sortByDesc(fn ($p) => $p->technical_ability)
+                ->values();
+
+            return $ordered->merge($remaining)->all();
+        }
+
+        // Default: outfield sorted by technical ability desc, GK last
+        return $players
+            ->sort(function ($a, $b) {
+                $aGk = $a->position === 'Goalkeeper' ? 1 : 0;
+                $bGk = $b->position === 'Goalkeeper' ? 1 : 0;
+                if ($aGk !== $bGk) {
+                    return $aGk - $bGk;
+                }
+
+                return $b->technical_ability - $a->technical_ability;
+            })
+            ->values()
+            ->all();
+    }
+
+    /**
+     * Determine if a penalty is scored.
+     * Kicker-vs-goalkeeper duel with a luck factor.
+     */
+    private function penaltyScored(?GamePlayer $kicker = null, ?GamePlayer $goalkeeper = null): bool
+    {
+        $base = 75;
+
+        if ($kicker) {
+            $base += ($kicker->technical_ability - 50) * 0.15;
+            $base += ($kicker->morale - 50) * 0.06;
+        }
+
+        if ($goalkeeper) {
+            $base -= ($goalkeeper->technical_ability - 50) * 0.10;
+        }
+
+        // Luck factor
+        $base += random_int(-5, 5);
+
+        // Clamp to reasonable range
+        $base = max(50, min(95, $base));
+
+        return $this->percentChance($base);
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "id": "SUPESPF",
+    "name": "Supercopa de España Femenina",
+    "clubs": [
+        { "id": "131", "name": "FC Barcelona Femení" },
+        { "id": "13", "name": "Atlético de Madrid Femenino" },
+        { "id": "418", "name": "Real Madrid Femenino" },
+        { "id": "621", "name": "Athletic Club Femenino" }
+    ]
+}

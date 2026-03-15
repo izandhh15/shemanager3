@@ -1,0 +1,198 @@
+{
+    "id": "BWSL",
+    "name": "Barclays Women's Super League",
+    "clubs": [
+        {
+            "transfermarktId": "11",
+            "name": "Arsenal",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/11.png",
+            "stadiumName": "Emirates Stadium",
+            "stadiumSeats": 60704,
+            "last_season_position": 2,
+            "players": [
+                { "id": "wsl_ars_01", "name": "Manuela Zinsberger",   "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jan 12, 1995", "nationality": ["Austria"],   "height": "1,74m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_ars_02", "name": "Daphne van Domselaar", "position": "Goalkeeper",        "number": "23", "dateOfBirth": "Jan 30, 2000", "nationality": ["Netherlands"], "height": "1,75m", "foot": "right", "marketValue": "€350k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_ars_03", "name": "Vivianne Miedema",     "position": "Centre-Forward",    "number": "11", "dateOfBirth": "Jul 15, 1996", "nationality": ["Netherlands"], "height": "1,79m", "foot": "right", "marketValue": "€2.00m","contract": "Jun 30, 2026" },
+                { "id": "wsl_ars_04", "name": "Leah Williamson",      "position": "Centre-Back",       "number": "6",  "dateOfBirth": "Mar 29, 1997", "nationality": ["England"],   "height": "1,73m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_ars_05", "name": "Beth Mead",            "position": "Right Winger",      "number": "9",  "dateOfBirth": "May 9, 1995",  "nationality": ["England"],   "height": "1,65m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_ars_06", "name": "Frida Maanum",         "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Jul 9, 1999",  "nationality": ["Norway"],    "height": "1,72m", "foot": "right", "marketValue": "€800k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_ars_07", "name": "Lotte Wubben-Moy",    "position": "Centre-Back",       "number": "21", "dateOfBirth": "Jan 17, 1999", "nationality": ["England"],   "height": "1,73m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_ars_08", "name": "Steph Catley",         "position": "Left-Back",         "number": "7",  "dateOfBirth": "Jan 26, 1994", "nationality": ["Australia"], "height": "1,65m", "foot": "left",  "marketValue": "€400k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_ars_09", "name": "Kim Little",           "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Jun 29, 1990", "nationality": ["Scotland"],  "height": "1,57m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_ars_10", "name": "Caitlin Foord",        "position": "Left Winger",       "number": "19", "dateOfBirth": "Nov 1, 1994",  "nationality": ["Australia"], "height": "1,65m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "405",
+            "name": "Aston Villa",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/405.png",
+            "stadiumName": "Villa Park",
+            "stadiumSeats": 42640,
+            "last_season_position": 6,
+            "players": [
+                { "id": "wsl_avl_01", "name": "Daphne van Domselaar", "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jan 30, 2000", "nationality": ["Netherlands"], "height": "1,75m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_avl_02", "name": "Rachel Daly",          "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Dec 6, 1991",  "nationality": ["England"],   "height": "1,74m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_avl_03", "name": "Mayumi Pacheco",       "position": "Left-Back",         "number": "3",  "dateOfBirth": "Jul 24, 2000", "nationality": ["England"],   "height": "1,60m", "foot": "left",  "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_avl_04", "name": "Adriana Leon",         "position": "Right Winger",      "number": "7",  "dateOfBirth": "Aug 2, 1992",  "nationality": ["Canada"],    "height": "1,68m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_avl_05", "name": "Alisha Lehmann",       "position": "Right Winger",      "number": "11", "dateOfBirth": "Jan 21, 1999", "nationality": ["Switzerland"],"height": "1,64m", "foot": "right", "marketValue": "€800k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "1237",
+            "name": "Brighton & Hove Albion",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/1237.png",
+            "stadiumName": "Broadfield Stadium",
+            "stadiumSeats": 6134,
+            "last_season_position": 5,
+            "players": [
+                { "id": "wsl_bha_01", "name": "Megan Walsh",          "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jun 24, 1996", "nationality": ["England"],   "height": "1,72m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_bha_02", "name": "Tatiana Pinto",        "position": "Right Winger",      "number": "7",  "dateOfBirth": "Jun 20, 1997", "nationality": ["Portugal"],  "height": "1,65m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_bha_03", "name": "Victoria Williams",    "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Jan 12, 1994", "nationality": ["Wales"],     "height": "1,73m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_bha_04", "name": "Pauline Peyraud-Magnin","position": "Goalkeeper",       "number": "23", "dateOfBirth": "Mar 17, 1992", "nationality": ["France"],    "height": "1,73m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_bha_05", "name": "Anastasia Kolesnikova","position": "Left Winger",       "number": "11", "dateOfBirth": "Oct 5, 1997",  "nationality": ["Russia"],    "height": "1,66m", "foot": "left",  "marketValue": "€150k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "631",
+            "name": "Chelsea FC Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/631.png",
+            "stadiumName": "Kingsmeadow",
+            "stadiumSeats": 4850,
+            "last_season_position": 1,
+            "players": [
+                { "id": "wsl_che_01", "name": "Hannah Hampton",       "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Nov 16, 1998", "nationality": ["England"],   "height": "1,83m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_che_02", "name": "Sam Kerr",             "position": "Centre-Forward",    "number": "20", "dateOfBirth": "Sep 10, 1993", "nationality": ["Australia"], "height": "1,63m", "foot": "right", "marketValue": "€1.50m","contract": "Jun 30, 2026" },
+                { "id": "wsl_che_03", "name": "Erin Cuthbert",        "position": "Central Midfield",  "number": "22", "dateOfBirth": "Jul 19, 1998", "nationality": ["Scotland"],  "height": "1,56m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_che_04", "name": "Mayra Ramírez",        "position": "Left Winger",       "number": "9",  "dateOfBirth": "Jun 12, 2000", "nationality": ["Colombia"],  "height": "1,80m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_che_05", "name": "Millie Bright",        "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Aug 9, 1993",  "nationality": ["England"],   "height": "1,74m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_che_06", "name": "Niamh Charles",        "position": "Right-Back",        "number": "2",  "dateOfBirth": "Jun 21, 1999", "nationality": ["England"],   "height": "1,72m", "foot": "right", "marketValue": "€350k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_che_07", "name": "Sjoeke Nüsken",        "position": "Central Midfield",  "number": "6",  "dateOfBirth": "Jul 1, 2002",  "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2028" },
+                { "id": "wsl_che_08", "name": "Aggie Beever-Jones",   "position": "Right Winger",      "number": "14", "dateOfBirth": "Sep 21, 2003", "nationality": ["England"],   "height": "1,68m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_che_09", "name": "Lucy Bronze",          "position": "Right-Back",        "number": "2",  "dateOfBirth": "Oct 28, 1991", "nationality": ["England"],   "height": "1,73m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "29",
+            "name": "Everton",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/29.png",
+            "stadiumName": "Goodison Park",
+            "stadiumSeats": 39414,
+            "last_season_position": 8,
+            "players": [
+                { "id": "wsl_eve_01", "name": "Emily Ramsey",         "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Feb 14, 2000", "nationality": ["England"],   "height": "1,68m", "foot": "right", "marketValue": "€120k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_eve_02", "name": "Clare Wheeler",        "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Dec 14, 1998", "nationality": ["Ireland"],   "height": "1,69m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_eve_03", "name": "Aurora Mikalsen",      "position": "Goalkeeper",        "number": "23", "dateOfBirth": "Sep 8, 2002",  "nationality": ["Norway"],    "height": "1,75m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_eve_04", "name": "Katja Snoeijs",        "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Oct 17, 1998", "nationality": ["Netherlands"],"height": "1,72m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "1003",
+            "name": "Leicester City",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/1003.png",
+            "stadiumName": "King Power Stadium",
+            "stadiumSeats": 32212,
+            "last_season_position": 10,
+            "players": [
+                { "id": "wsl_lei_01", "name": "Janina Leitzig",       "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Mar 20, 2001", "nationality": ["Germany"],   "height": "1,72m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_lei_02", "name": "Hannah Cain",          "position": "Right Winger",      "number": "7",  "dateOfBirth": "Jun 11, 2000", "nationality": ["England"],   "height": "1,62m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_lei_03", "name": "Ashleigh Plumptre",    "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Dec 30, 1998", "nationality": ["England"],   "height": "1,71m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_lei_04", "name": "Clarissa Larisey",     "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Mar 8, 1999",  "nationality": ["United States"],"height": "1,70m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "31",
+            "name": "Liverpool FC Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/31.png",
+            "stadiumName": "Totally Wicked Stadium",
+            "stadiumSeats": 18000,
+            "last_season_position": 7,
+            "players": [
+                { "id": "wsl_liv_01", "name": "Rachael Laws",         "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Feb 8, 1990",  "nationality": ["England"],   "height": "1,72m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_liv_02", "name": "Marie Höbinger",       "position": "Central Midfield",  "number": "10", "dateOfBirth": "Mar 21, 2000", "nationality": ["Austria"],   "height": "1,63m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_liv_03", "name": "Fuka Nagano",          "position": "Attacking Midfield","number": "8",  "dateOfBirth": "Jun 11, 2000", "nationality": ["Japan"],     "height": "1,60m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_liv_04", "name": "Olivia Smith",         "position": "Right Winger",      "number": "7",  "dateOfBirth": "Mar 5, 2002",  "nationality": ["United States"],"height": "1,65m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_liv_05", "name": "Ceri Holland",         "position": "Central Midfield",  "number": "6",  "dateOfBirth": "Feb 4, 1997",  "nationality": ["Wales"],     "height": "1,62m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "99017",
+            "name": "London City Lionesses",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/99017.png",
+            "stadiumName": "Hayes Lane",
+            "stadiumSeats": 5000,
+            "last_season_position": "D2 1st",
+            "players": [
+                { "id": "wsl_lcl_01", "name": "Khiara Keating",       "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Sep 7, 2002",  "nationality": ["England"],   "height": "1,73m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_lcl_02", "name": "Shekiera Martinez",    "position": "Left-Back",         "number": "3",  "dateOfBirth": "May 1, 1997",  "nationality": ["United States"],"height": "1,68m", "foot": "left",  "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_lcl_03", "name": "Emma Koivisto",        "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Jul 5, 1998",  "nationality": ["Finland"],   "height": "1,72m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_lcl_04", "name": "Taylor Kornieck",      "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Dec 31, 1997", "nationality": ["United States"],"height": "1,74m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_lcl_05", "name": "Jenna Nighswonger",    "position": "Right-Back",        "number": "2",  "dateOfBirth": "Sep 29, 2000", "nationality": ["United States"],"height": "1,71m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "281",
+            "name": "Manchester City Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/281.png",
+            "stadiumName": "Academy Stadium",
+            "stadiumSeats": 7000,
+            "last_season_position": 4,
+            "players": [
+                { "id": "wsl_mci_01", "name": "Ellie Roebuck",        "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Sep 23, 1999", "nationality": ["England"],   "height": "1,75m", "foot": "right", "marketValue": "€350k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_mci_02", "name": "Lauren Hemp",          "position": "Left Winger",       "number": "11", "dateOfBirth": "Aug 7, 2000",  "nationality": ["England"],   "height": "1,63m", "foot": "right", "marketValue": "€1.80m","contract": "Jun 30, 2027" },
+                { "id": "wsl_mci_03", "name": "Georgia Stanway",      "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Jan 3, 1999",  "nationality": ["England"],   "height": "1,65m", "foot": "right", "marketValue": "€900k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_mci_04", "name": "Laia Aleixandri",      "position": "Centre-Back",       "number": "14", "dateOfBirth": "Jun 11, 2001", "nationality": ["Spain"],     "height": "1,74m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_mci_05", "name": "Chloe Kelly",          "position": "Right Winger",      "number": "9",  "dateOfBirth": "Jan 15, 1998", "nationality": ["England"],   "height": "1,64m", "foot": "right", "marketValue": "€800k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_mci_06", "name": "Alex Greenwood",       "position": "Left-Back",         "number": "3",  "dateOfBirth": "Sep 7, 1993",  "nationality": ["England"],   "height": "1,68m", "foot": "left",  "marketValue": "€350k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_mci_07", "name": "Yui Hasegawa",         "position": "Central Midfield",  "number": "6",  "dateOfBirth": "Apr 23, 1997", "nationality": ["Japan"],     "height": "1,60m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "wsl_mci_08", "name": "Jill Roord",           "position": "Attacking Midfield","number": "10", "dateOfBirth": "Apr 22, 1997", "nationality": ["Netherlands"],"height": "1,72m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "985",
+            "name": "Manchester United Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/985.png",
+            "stadiumName": "Leigh Sports Village",
+            "stadiumSeats": 12000,
+            "last_season_position": 3,
+            "players": [
+                { "id": "wsl_mun_01", "name": "Mary Earps",           "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Mar 7, 1993",  "nationality": ["England"],   "height": "1,78m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_mun_02", "name": "Alessia Russo",        "position": "Centre-Forward",    "number": "23", "dateOfBirth": "Feb 8, 1999",  "nationality": ["England"],   "height": "1,77m", "foot": "right", "marketValue": "€1.20m","contract": "Jun 30, 2027" },
+                { "id": "wsl_mun_03", "name": "Maya Le Tissier",      "position": "Centre-Back",       "number": "14", "dateOfBirth": "May 16, 2002", "nationality": ["England"],   "height": "1,72m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_mun_04", "name": "Ella Toone",           "position": "Attacking Midfield","number": "7",  "dateOfBirth": "Sep 2, 1999",  "nationality": ["England"],   "height": "1,62m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_mun_05", "name": "Nikita Parris",        "position": "Right Winger",      "number": "17", "dateOfBirth": "Mar 10, 1994", "nationality": ["England"],   "height": "1,58m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_mun_06", "name": "Grace Clinton",        "position": "Central Midfield",  "number": "20", "dateOfBirth": "Oct 22, 2003", "nationality": ["England"],   "height": "1,67m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_mun_07", "name": "Jayde Riviere",        "position": "Right-Back",        "number": "2",  "dateOfBirth": "May 1, 2000",  "nationality": ["Canada"],    "height": "1,67m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "148",
+            "name": "Tottenham Hotspur Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/148.png",
+            "stadiumName": "Brisbane Road",
+            "stadiumSeats": 9271,
+            "last_season_position": 11,
+            "players": [
+                { "id": "wsl_tot_01", "name": "Rebecca Spencer",      "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Oct 26, 1993", "nationality": ["England"],   "height": "1,74m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "wsl_tot_02", "name": "Jessica Naz",          "position": "Right Winger",      "number": "7",  "dateOfBirth": "Sep 5, 2000",  "nationality": ["England"],   "height": "1,58m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_tot_03", "name": "Drew Spence",          "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Dec 23, 1992", "nationality": ["England"],   "height": "1,64m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_tot_04", "name": "Martha Thomas",        "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Oct 6, 1996",  "nationality": ["Scotland"],  "height": "1,71m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_tot_05", "name": "Kerys Harrop",         "position": "Centre-Back",       "number": "4",  "dateOfBirth": "May 10, 1989", "nationality": ["England"],   "height": "1,70m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "379",
+            "name": "West Ham United Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/379.png",
+            "stadiumName": "Victoria Road",
+            "stadiumSeats": 6078,
+            "last_season_position": 9,
+            "players": [
+                { "id": "wsl_whu_01", "name": "Mackenzie Arnold",     "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jun 4, 1994",  "nationality": ["Australia"], "height": "1,78m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_whu_02", "name": "Adriana Leon",         "position": "Left Winger",       "number": "11", "dateOfBirth": "Aug 2, 1992",  "nationality": ["Canada"],    "height": "1,68m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_whu_03", "name": "Viviane Asseyi",       "position": "Right Winger",      "number": "7",  "dateOfBirth": "May 31, 1994", "nationality": ["France"],    "height": "1,70m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_whu_04", "name": "Hawa Cissoko",         "position": "Left-Back",         "number": "3",  "dateOfBirth": "May 29, 2000", "nationality": ["France"],    "height": "1,72m", "foot": "left",  "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "wsl_whu_05", "name": "Kate Longhurst",       "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Sep 4, 1989",  "nationality": ["England"],   "height": "1,66m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" }
+            ]
+        }
+    ]
+}

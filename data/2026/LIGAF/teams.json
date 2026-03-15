@@ -1,0 +1,248 @@
+{
+  "id": "LIGAF",
+  "name": "Liga F",
+  "clubs": [
+    {
+      "transfermarktId": "6674",
+      "name": "Alhama CF ElPozo",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/6674.png",
+      "stadiumName": "Estadio Municipal de Alhama de Murcia",
+      "stadiumSeats": 3000,
+      "players": [
+        { "id": "lf_alhama_01", "name": "Laura Martínez", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Mar 5, 1996", "nationality": ["Spain"], "height": "1,72m", "foot": "right", "marketValue": "€40k", "contract": "Jun 30, 2026" },
+        { "id": "lf_alhama_02", "name": "Vera Martínez", "position": "Centre-Back", "number": "4", "dateOfBirth": "Oct 14, 1994", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_alhama_03", "name": "Nadia Khalid", "position": "Left-Back", "number": "3", "dateOfBirth": "Sep 8, 2000", "nationality": ["Spain"], "height": "1,64m", "foot": "left", "marketValue": "€50k", "contract": "Jun 30, 2026" },
+        { "id": "lf_alhama_04", "name": "Sheila García", "position": "Central Midfield", "number": "8", "dateOfBirth": "Dec 20, 1997", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_alhama_05", "name": "Fiona Brown", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Jun 14, 1999", "nationality": ["Scotland"], "height": "1,68m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_alhama_06", "name": "Jade Boho", "position": "Right Winger", "number": "7", "dateOfBirth": "Feb 28, 1996", "nationality": ["Equatorial Guinea"], "height": "1,65m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" },
+        { "id": "lf_alhama_07", "name": "Claudia Vancea", "position": "Left Winger", "number": "11", "dateOfBirth": "May 2, 2002", "nationality": ["Romania"], "height": "1,62m", "foot": "left", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_alhama_08", "name": "Adriana Leal", "position": "Defensive Midfield", "number": "6", "dateOfBirth": "Jul 19, 1998", "nationality": ["Spain"], "height": "1,66m", "foot": "right", "marketValue": "€50k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "621",
+      "name": "Athletic Club Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/621.png",
+      "stadiumName": "Estadio de Lezama",
+      "stadiumSeats": 5000,
+      "players": [
+        { "id": "lf_ath_01", "name": "Ane Etxezarreta", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jul 12, 1997", "nationality": ["Spain"], "height": "1,73m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+        { "id": "lf_ath_02", "name": "Nerea Eizagirre", "position": "Goalkeeper", "number": "25", "dateOfBirth": "May 14, 1995", "nationality": ["Spain"], "height": "1,77m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2027" },
+        { "id": "lf_ath_03", "name": "Ancieta Ugarte", "position": "Right-Back", "number": "2", "dateOfBirth": "Jan 22, 2002", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" },
+        { "id": "lf_ath_04", "name": "Eunate Arraiza", "position": "Centre-Back", "number": "5", "dateOfBirth": "Sep 30, 1997", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_ath_05", "name": "Iraia Iturregi", "position": "Centre-Back", "number": "4", "dateOfBirth": "Mar 7, 1996", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€120k", "contract": "Jun 30, 2026" },
+        { "id": "lf_ath_06", "name": "Yolanda Agote", "position": "Left-Back", "number": "3", "dateOfBirth": "Dec 14, 1993", "nationality": ["Spain"], "height": "1,62m", "foot": "left", "marketValue": "€80k", "contract": "Jun 30, 2026" },
+        { "id": "lf_ath_07", "name": "Garazi Murua", "position": "Central Midfield", "number": "6", "dateOfBirth": "Jul 4, 2000", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2027" },
+        { "id": "lf_ath_08", "name": "Patricia Larqué", "position": "Defensive Midfield", "number": "8", "dateOfBirth": "Nov 25, 1996", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_ath_09", "name": "Amaia Soriano", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Aug 18, 1997", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+        { "id": "lf_ath_10", "name": "Lucía García", "position": "Left Winger", "number": "11", "dateOfBirth": "Jun 26, 1998", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+        { "id": "lf_ath_11", "name": "Naiara Beristain", "position": "Right Winger", "number": "7", "dateOfBirth": "Apr 18, 2002", "nationality": ["Spain"], "height": "1,66m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2027" },
+        { "id": "lf_ath_12", "name": "Maite Etxezarreta", "position": "Attacking Midfield", "number": "10", "dateOfBirth": "Jan 10, 2000", "nationality": ["Spain"], "height": "1,60m", "foot": "right", "marketValue": "€120k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "13",
+      "name": "Atlético de Madrid Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/13.png",
+      "stadiumName": "Cívitas Metropolitano",
+      "stadiumSeats": 68456,
+      "players": [
+        { "id": "lf_atm_01", "name": "Lola Gallardo", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Mar 30, 1992", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_02", "name": "Silvia Lloris", "position": "Goalkeeper", "number": "13", "dateOfBirth": "Sep 11, 1999", "nationality": ["Spain"], "height": "1,72m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_03", "name": "Merel van Dongen", "position": "Left-Back", "number": "3", "dateOfBirth": "Sep 17, 1992", "nationality": ["Netherlands"], "height": "1,70m", "foot": "left", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_04", "name": "Stine Larsen", "position": "Centre-Back", "number": "4", "dateOfBirth": "May 5, 1996", "nationality": ["Denmark"], "height": "1,72m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_05", "name": "Elena Linari", "position": "Centre-Back", "number": "5", "dateOfBirth": "Nov 2, 1994", "nationality": ["Italy"], "height": "1,80m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_06", "name": "Ainhoa Moraza", "position": "Right-Back", "number": "2", "dateOfBirth": "May 28, 1994", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_07", "name": "Silvia Meseguer", "position": "Defensive Midfield", "number": "8", "dateOfBirth": "Oct 4, 1992", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_08", "name": "Amanda Sampedro", "position": "Central Midfield", "number": "10", "dateOfBirth": "Jan 14, 1993", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_09", "name": "Virginia Torrecilla", "position": "Central Midfield", "number": "12", "dateOfBirth": "May 19, 1994", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_10", "name": "Deyna Castellanos", "position": "Centre-Forward", "number": "19", "dateOfBirth": "Dec 9, 1999", "nationality": ["Venezuela"], "height": "1,65m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2027" },
+        { "id": "lf_atm_11", "name": "Leicy Santos", "position": "Right Winger", "number": "16", "dateOfBirth": "Apr 26, 1996", "nationality": ["Colombia"], "height": "1,60m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_12", "name": "Ludmila Da Silva", "position": "Left Winger", "number": "11", "dateOfBirth": "May 15, 1994", "nationality": ["Brazil"], "height": "1,64m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+        { "id": "lf_atm_13", "name": "Rasheedat Ajibade", "position": "Right Winger", "number": "7", "dateOfBirth": "Dec 26, 2000", "nationality": ["Nigeria"], "height": "1,65m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "131",
+      "name": "FC Barcelona Femení",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/131.png",
+      "stadiumName": "Estadi Johan Cruyff",
+      "stadiumSeats": 6000,
+      "players": [
+        { "id": "lf_fcb_01", "name": "Sandra Paños", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Feb 22, 1992", "nationality": ["Spain"], "height": "1,72m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2026" },
+        { "id": "lf_fcb_02", "name": "Catalina Coll", "position": "Goalkeeper", "number": "13", "dateOfBirth": "Apr 13, 2001", "nationality": ["Spain"], "height": "1,75m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+        { "id": "lf_fcb_03", "name": "Lucy Bronze", "position": "Right-Back", "number": "2", "dateOfBirth": "Oct 28, 1991", "nationality": ["England"], "height": "1,73m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2026" },
+        { "id": "lf_fcb_04", "name": "Irene Paredes", "position": "Centre-Back", "number": "4", "dateOfBirth": "Jul 4, 1991", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2026" },
+        { "id": "lf_fcb_05", "name": "Júlia Bartel", "position": "Centre-Back", "number": "5", "dateOfBirth": "Aug 10, 1999", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2027" },
+        { "id": "lf_fcb_06", "name": "Mapi León", "position": "Left-Back", "number": "14", "dateOfBirth": "Feb 20, 1997", "nationality": ["Spain"], "height": "1,64m", "foot": "left", "marketValue": "€350k", "contract": "Jun 30, 2027" },
+        { "id": "lf_fcb_07", "name": "Jana Fernández", "position": "Right-Back", "number": "22", "dateOfBirth": "Apr 14, 1997", "nationality": ["Spain"], "height": "1,64m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+        { "id": "lf_fcb_08", "name": "Keira Walsh", "position": "Defensive Midfield", "number": "8", "dateOfBirth": "Apr 8, 1997", "nationality": ["England"], "height": "1,68m", "foot": "right", "marketValue": "€2.00m", "contract": "Jun 30, 2027" },
+        { "id": "lf_fcb_09", "name": "Aitana Bonmatí", "position": "Central Midfield", "number": "6", "dateOfBirth": "Jan 18, 2000", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€5.00m", "contract": "Jun 30, 2027" },
+        { "id": "lf_fcb_10", "name": "Alexia Putellas", "position": "Central Midfield", "number": "11", "dateOfBirth": "Feb 4, 1994", "nationality": ["Spain"], "height": "1,72m", "foot": "left", "marketValue": "€3.50m", "contract": "Jun 30, 2026" },
+        { "id": "lf_fcb_11", "name": "Ingrid Engen", "position": "Central Midfield", "number": "9", "dateOfBirth": "Jun 26, 1998", "nationality": ["Norway"], "height": "1,70m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2026" },
+        { "id": "lf_fcb_12", "name": "Vicky López", "position": "Central Midfield", "number": "18", "dateOfBirth": "Jun 15, 2006", "nationality": ["Spain"], "height": "1,60m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2028" },
+        { "id": "lf_fcb_13", "name": "Fridolina Rolfö", "position": "Left Winger", "number": "7", "dateOfBirth": "Nov 24, 1993", "nationality": ["Sweden"], "height": "1,74m", "foot": "right", "marketValue": "€1.20m", "contract": "Jun 30, 2027" },
+        { "id": "lf_fcb_14", "name": "Caroline Graham Hansen", "position": "Right Winger", "number": "17", "dateOfBirth": "Feb 18, 1995", "nationality": ["Norway"], "height": "1,62m", "foot": "left", "marketValue": "€1.50m", "contract": "Jun 30, 2026" },
+        { "id": "lf_fcb_15", "name": "Claudia Pina", "position": "Left Winger", "number": "20", "dateOfBirth": "Mar 12, 2001", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€800k", "contract": "Jun 30, 2026" },
+        { "id": "lf_fcb_16", "name": "Salma Paralluelo", "position": "Centre-Forward", "number": "21", "dateOfBirth": "Jun 19, 2003", "nationality": ["Spain"], "height": "1,72m", "foot": "right", "marketValue": "€2.50m", "contract": "Jun 30, 2028" }
+      ]
+    },
+    {
+      "transfermarktId": "897",
+      "name": "Deportivo Abanca",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/897.png",
+      "stadiumName": "Abanca Riazor",
+      "stadiumSeats": 34600,
+      "players": [
+        { "id": "lf_dep_01", "name": "Miriam Llorente", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Nov 3, 1995", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_dep_02", "name": "Lorena Navarro", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Feb 11, 1991", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" },
+        { "id": "lf_dep_03", "name": "Aldana Cometti", "position": "Centre-Back", "number": "5", "dateOfBirth": "May 11, 1997", "nationality": ["Argentina"], "height": "1,67m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_dep_04", "name": "Estela Iruela", "position": "Left Winger", "number": "11", "dateOfBirth": "Jan 21, 1996", "nationality": ["Spain"], "height": "1,66m", "foot": "left", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_dep_05", "name": "Paula Gutiérrez", "position": "Central Midfield", "number": "8", "dateOfBirth": "Apr 9, 1999", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "44021",
+      "name": "DUX Logroño",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/44021.png",
+      "stadiumName": "Estadio de Las Gaunas",
+      "stadiumSeats": 7000,
+      "players": [
+        { "id": "lf_dux_01", "name": "Cristina González", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Feb 16, 1996", "nationality": ["Spain"], "height": "1,71m", "foot": "right", "marketValue": "€40k", "contract": "Jun 30, 2026" },
+        { "id": "lf_dux_02", "name": "Maika Albéniz", "position": "Centre-Back", "number": "4", "dateOfBirth": "Sep 6, 1996", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€50k", "contract": "Jun 30, 2026" },
+        { "id": "lf_dux_03", "name": "Carla Bautista", "position": "Right Winger", "number": "7", "dateOfBirth": "Jun 30, 2002", "nationality": ["Spain"], "height": "1,60m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_dux_04", "name": "Paula Penedo", "position": "Central Midfield", "number": "8", "dateOfBirth": "Jan 12, 1998", "nationality": ["Spain"], "height": "1,64m", "foot": "right", "marketValue": "€50k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "1532",
+      "name": "SD Eibar Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/1532.png",
+      "stadiumName": "Ipurúa",
+      "stadiumSeats": 7083,
+      "players": [
+        { "id": "lf_eib_01", "name": "Marta García", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Sep 4, 1996", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_eib_02", "name": "Estefanía Fuentes", "position": "Centre-Back", "number": "4", "dateOfBirth": "Mar 11, 1997", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€50k", "contract": "Jun 30, 2026" },
+        { "id": "lf_eib_03", "name": "Maite Zubicaray", "position": "Left Winger", "number": "11", "dateOfBirth": "Nov 15, 1999", "nationality": ["Spain"], "height": "1,64m", "foot": "left", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_eib_04", "name": "Irene Guerrero", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Apr 4, 2001", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "714",
+      "name": "RCD Espanyol Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/714.png",
+      "stadiumName": "RCDE Stadium",
+      "stadiumSeats": 40500,
+      "players": [
+        { "id": "lf_espa_01", "name": "Carmen Menayo", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Aug 2, 1997", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_espa_02", "name": "Eva Navarro", "position": "Left Winger", "number": "10", "dateOfBirth": "Jan 12, 2001", "nationality": ["Spain"], "height": "1,63m", "foot": "left", "marketValue": "€250k", "contract": "Jun 30, 2027" },
+        { "id": "lf_espa_03", "name": "Berta Pujadas", "position": "Centre-Back", "number": "4", "dateOfBirth": "Mar 25, 1999", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" },
+        { "id": "lf_espa_04", "name": "Claudia Amado", "position": "Attacking Midfield", "number": "8", "dateOfBirth": "Jul 7, 2002", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_espa_05", "name": "Isidora Olave", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Dec 8, 1997", "nationality": ["Chile"], "height": "1,68m", "foot": "right", "marketValue": "€120k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "76513",
+      "name": "FC Badalona Women",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/76513.png",
+      "stadiumName": "Estadi Municipal de Badalona",
+      "stadiumSeats": 4500,
+      "players": [
+        { "id": "lf_bad_01", "name": "Bàrbara Latorre", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Mar 12, 1998", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€30k", "contract": "Jun 30, 2026" },
+        { "id": "lf_bad_02", "name": "Ana González", "position": "Centre-Back", "number": "4", "dateOfBirth": "Nov 28, 1997", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€30k", "contract": "Jun 30, 2026" },
+        { "id": "lf_bad_03", "name": "Marta Torres", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Sep 17, 2001", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€30k", "contract": "Jun 30, 2026" },
+        { "id": "lf_bad_04", "name": "Laia Balliu", "position": "Central Midfield", "number": "8", "dateOfBirth": "Jun 5, 2000", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€25k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "16795",
+      "name": "Granada CF Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/16795.png",
+      "stadiumName": "Nuevo Los Cármenes",
+      "stadiumSeats": 22500,
+      "players": [
+        { "id": "lf_gra_01", "name": "Anabel García", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Oct 18, 1996", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€40k", "contract": "Jun 30, 2026" },
+        { "id": "lf_gra_02", "name": "Nadia Ramos", "position": "Centre-Back", "number": "4", "dateOfBirth": "Feb 7, 1998", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€40k", "contract": "Jun 30, 2026" },
+        { "id": "lf_gra_03", "name": "Dalila Ippolito", "position": "Attacking Midfield", "number": "10", "dateOfBirth": "May 30, 2001", "nationality": ["Argentina"], "height": "1,62m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+        { "id": "lf_gra_04", "name": "Lucía Rincón", "position": "Central Midfield", "number": "8", "dateOfBirth": "Aug 14, 2000", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€50k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "3368",
+      "name": "Levante UD Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/3368.png",
+      "stadiumName": "Estadi Ciutat de Valencia",
+      "stadiumSeats": 25534,
+      "players": [
+        { "id": "lf_lev_01", "name": "Raquel García", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jul 18, 1995", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_lev_02", "name": "Marta Corredera", "position": "Central Midfield", "number": "8", "dateOfBirth": "Jun 29, 1992", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_lev_03", "name": "María Méndez", "position": "Right Winger", "number": "7", "dateOfBirth": "Nov 2, 2004", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+        { "id": "lf_lev_04", "name": "Claudia Zornoza", "position": "Defensive Midfield", "number": "6", "dateOfBirth": "Jun 28, 1992", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_lev_05", "name": "Esther Sullastres", "position": "Centre-Back", "number": "4", "dateOfBirth": "Jan 4, 1997", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "13001",
+      "name": "Madrid CFF",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/13001.png",
+      "stadiumName": "Campo de Fútbol de La Albufera",
+      "stadiumSeats": 4000,
+      "players": [
+        { "id": "lf_cff_01", "name": "Elena Sáez", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jul 20, 1996", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_cff_02", "name": "Celia Jiménez", "position": "Centre-Back", "number": "4", "dateOfBirth": "Apr 8, 1994", "nationality": ["Spain"], "height": "1,71m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" },
+        { "id": "lf_cff_03", "name": "Teresa Abelleira", "position": "Central Midfield", "number": "6", "dateOfBirth": "Jul 27, 2001", "nationality": ["Spain"], "height": "1,66m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+        { "id": "lf_cff_04", "name": "Natalia Ramos", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Oct 10, 1999", "nationality": ["Spain"], "height": "1,66m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "418",
+      "name": "Real Madrid CF Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/418.png",
+      "stadiumName": "Estadio Alfredo Di Stéfano",
+      "stadiumSeats": 6000,
+      "players": [
+        { "id": "lf_rma_01", "name": "Misa Rodríguez", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jun 19, 1999", "nationality": ["Spain"], "height": "1,80m", "foot": "right", "marketValue": "€600k", "contract": "Jun 30, 2027" },
+        { "id": "lf_rma_02", "name": "Enith Salon", "position": "Goalkeeper", "number": "13", "dateOfBirth": "Aug 11, 1997", "nationality": ["Netherlands"], "height": "1,78m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rma_03", "name": "Olga Carmona", "position": "Right-Back", "number": "2", "dateOfBirth": "Jun 12, 2000", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€1.50m", "contract": "Jun 30, 2027" },
+        { "id": "lf_rma_04", "name": "Kathellen Sousa", "position": "Centre-Back", "number": "5", "dateOfBirth": "Jun 4, 1997", "nationality": ["Brazil"], "height": "1,72m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rma_05", "name": "Rocío Gálvez", "position": "Centre-Back", "number": "4", "dateOfBirth": "Sep 6, 1999", "nationality": ["Spain"], "height": "1,69m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rma_06", "name": "Sofía Navarro", "position": "Left-Back", "number": "3", "dateOfBirth": "Nov 19, 2001", "nationality": ["Spain"], "height": "1,65m", "foot": "left", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rma_07", "name": "Caroline Weir", "position": "Central Midfield", "number": "14", "dateOfBirth": "Jun 20, 1995", "nationality": ["Scotland"], "height": "1,60m", "foot": "left", "marketValue": "€800k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rma_08", "name": "Maite Oroz", "position": "Central Midfield", "number": "10", "dateOfBirth": "Mar 24, 2002", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+        { "id": "lf_rma_09", "name": "Athenea del Castillo", "position": "Left Winger", "number": "17", "dateOfBirth": "Oct 21, 2000", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€1.00m", "contract": "Jun 30, 2027" },
+        { "id": "lf_rma_10", "name": "Linda Caicedo", "position": "Right Winger", "number": "7", "dateOfBirth": "Feb 22, 2004", "nationality": ["Colombia"], "height": "1,60m", "foot": "right", "marketValue": "€3.00m", "contract": "Jun 30, 2028" },
+        { "id": "lf_rma_11", "name": "Esther González", "position": "Centre-Forward", "number": "11", "dateOfBirth": "Nov 3, 1994", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€700k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rma_12", "name": "Signe Bruun", "position": "Centre-Forward", "number": "9", "dateOfBirth": "May 28, 1998", "nationality": ["Denmark"], "height": "1,74m", "foot": "right", "marketValue": "€500k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "681",
+      "name": "Real Sociedad Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/681.png",
+      "stadiumName": "Zubieta",
+      "stadiumSeats": 3000,
+      "players": [
+        { "id": "lf_rso_01", "name": "Mariasun Quiñones", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jan 6, 2000", "nationality": ["Spain"], "height": "1,73m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+        { "id": "lf_rso_02", "name": "Nuria Rábano", "position": "Centre-Back", "number": "4", "dateOfBirth": "Mar 25, 1998", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rso_03", "name": "Amaiur Sarriegi", "position": "Centre-Forward", "number": "9", "dateOfBirth": "May 9, 1997", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rso_04", "name": "Eider Arana", "position": "Left Winger", "number": "11", "dateOfBirth": "Feb 4, 2000", "nationality": ["Spain"], "height": "1,63m", "foot": "left", "marketValue": "€120k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rso_05", "name": "Patricia Jardón", "position": "Central Midfield", "number": "8", "dateOfBirth": "Dec 18, 1998", "nationality": ["Spain"], "height": "1,64m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+        { "id": "lf_rso_06", "name": "Ainitze Arbilla", "position": "Right-Back", "number": "2", "dateOfBirth": "Sep 21, 2003", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" }
+      ]
+    },
+    {
+      "transfermarktId": "368",
+      "name": "Sevilla FC Femenino",
+      "image": "https://tmssl.akamaized.net/images/wappen/big/368.png",
+      "stadiumName": "Ciudad Deportiva José Ramón Cisneros",
+      "stadiumSeats": 3000,
+      "players": [
+        { "id": "lf_sev_01", "name": "María Bores", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Oct 16, 1994", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" },
+        { "id": "lf_sev_02", "name": "Cinta Rodríguez", "position": "Centre-Back", "number": "5", "dateOfBirth": "Jan 22, 1996", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_sev_03", "name": "Lucía Miranda", "position": "Central Midfield", "number": "8", "dateOfBirth": "Aug 8, 1997", "nationality": ["Spain"], "height": "1,63m", "foot": "right", "marketValue": "€60k", "contract": "Jun 30, 2026" },
+        { "id": "lf_sev_04", "name": "Raquel Pinel", "position": "Right Winger", "number": "7", "dateOfBirth": "Mar 25, 2001", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" },
+        { "id": "lf_sev_05", "name": "Lorena Navarro", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Feb 11, 1991", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€80k", "contract": "Jun 30, 2026" }
+      ]
+    }
+  ]
+}

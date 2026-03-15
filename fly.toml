@@ -1,0 +1,42 @@
+# SheManager — Fly.io configuration
+# Proyecto de Izan Delgado (@izandhh)
+
+app = "shemanager"
+primary_region = "mad"  # Madrid — más cerca de España
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  APP_ENV        = "production"
+  APP_DEBUG      = "false"
+  APP_LOCALE     = "es"
+  LOG_CHANNEL    = "stderr"
+  LOG_LEVEL      = "error"
+  SESSION_DRIVER = "database"
+  CACHE_STORE    = "database"
+  QUEUE_CONNECTION = "database"
+  BETA_MODE      = "false"
+  ALLOW_NEW_SEASON = "true"
+  PORT           = "8080"
+
+[http_service]
+  internal_port       = 8080
+  force_https         = true
+  auto_stop_machines  = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type       = "requests"
+    hard_limit = 50
+    soft_limit = 25
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1
+
+[mounts]
+  source      = "shemanager_storage"
+  destination = "/app/storage"

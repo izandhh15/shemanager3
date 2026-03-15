@@ -1,0 +1,87 @@
+{
+    "seeding": {
+        "round_of_16_byes": [
+            "cr_fcb", "cr_ath", "cr_gra", "cr_rso",
+            "cr_atm", "cr_eib", "cr_rma", "cr_ten"
+        ],
+        "round_of_32_entries": [
+            "cr_alh", "cr_dep", "cr_espa", "cr_cff",
+            "cr_bad", "cr_dux", "cr_lev", "cr_sev"
+        ],
+        "round_of_64_participants": [
+            "cr_aem",  "cr_val",  "cr_get",  "cr_ray",
+            "cr_alba", "cr_vil",  "cr_gui",  "cr_avi",
+            "cr_ala",  "cr_avl",  "cr_hue",  "cr_spo",
+            "cr_cac",  "cr_bal",  "cr_jug",  "cr_hul",
+            "cr_eur",  "cr_biz",  "cr_mal",  "cr_gij",
+            "cr_osa",  "cr_cor",  "cr_olr",  "cr_cor2",
+            "cr_bet",  "cr_elc",  "cr_poz",  "cr_pra",
+            "cr_ovi",  "cr_fem",  "cr_rac",  "cr_ori"
+        ]
+    },
+
+    "round_of_64": [
+        { "match": 1,  "home": "cr_aem",  "away": "cr_ori",  "date": "2025-10-26" },
+        { "match": 2,  "home": "cr_val",  "away": "cr_rac",  "date": "2025-10-26" },
+        { "match": 3,  "home": "cr_alba", "away": "cr_fem",  "date": "2025-10-26" },
+        { "match": 4,  "home": "cr_ovi",  "away": "cr_pra",  "date": "2025-10-26" },
+        { "match": 5,  "home": "cr_bet",  "away": "cr_poz",  "date": "2025-10-26" },
+        { "match": 6,  "home": "cr_elc",  "away": "cr_cor2", "date": "2025-10-26" },
+        { "match": 7,  "home": "cr_osa",  "away": "cr_olr",  "date": "2025-10-26" },
+        { "match": 8,  "home": "cr_cor",  "away": "cr_hul",  "date": "2025-10-26" },
+        { "match": 9,  "home": "cr_eur",  "away": "cr_biz",  "date": "2025-10-26" },
+        { "match": 10, "home": "cr_mal",  "away": "cr_gij",  "date": "2025-10-26" },
+        { "match": 11, "home": "cr_ala",  "away": "cr_avl",  "date": "2025-10-26" },
+        { "match": 12, "home": "cr_hue",  "away": "cr_spo",  "date": "2025-10-26" },
+        { "match": 13, "home": "cr_cac",  "away": "cr_bal",  "date": "2025-10-26" },
+        { "match": 14, "home": "cr_jug",  "away": "cr_avi",  "date": "2025-10-26" },
+        { "match": 15, "home": "cr_vil",  "away": "cr_gui",  "date": "2025-10-26" },
+        { "match": 16, "home": "cr_get",  "away": "cr_ray",  "date": "2025-10-26" }
+    ],
+
+    "round_of_32": [
+        { "match": 17, "home": "cr_alh",  "away": "W1",  "date": "2025-11-30" },
+        { "match": 18, "home": "cr_dep",  "away": "W2",  "date": "2025-11-30" },
+        { "match": 19, "home": "cr_espa", "away": "W3",  "date": "2025-11-30" },
+        { "match": 20, "home": "cr_cff",  "away": "W4",  "date": "2025-11-30" },
+        { "match": 21, "home": "cr_bad",  "away": "W5",  "date": "2025-11-30" },
+        { "match": 22, "home": "cr_dux",  "away": "W6",  "date": "2025-11-30" },
+        { "match": 23, "home": "cr_lev",  "away": "W7",  "date": "2025-11-30" },
+        { "match": 24, "home": "cr_sev",  "away": "W8",  "date": "2025-11-30" },
+        { "match": 25, "home": "W9",  "away": "W10", "date": "2025-11-30" },
+        { "match": 26, "home": "W11", "away": "W12", "date": "2025-11-30" },
+        { "match": 27, "home": "W13", "away": "W14", "date": "2025-11-30" },
+        { "match": 28, "home": "W15", "away": "W16", "date": "2025-11-30" },
+        { "match": 29, "home": "W9",  "away": "W10", "date": "2025-11-30" },
+        { "match": 30, "home": "W11", "away": "W12", "date": "2025-11-30" },
+        { "match": 31, "home": "W13", "away": "W14", "date": "2025-11-30" },
+        { "match": 32, "home": "W15", "away": "W16", "date": "2025-11-30" }
+    ],
+
+    "round_of_16": [
+        { "match": 33, "home": "cr_fcb", "away": "W17", "date": "2026-01-18" },
+        { "match": 34, "home": "cr_ath", "away": "W18", "date": "2026-01-18" },
+        { "match": 35, "home": "cr_gra", "away": "W19", "date": "2026-01-18" },
+        { "match": 36, "home": "cr_rso", "away": "W20", "date": "2026-01-18" },
+        { "match": 37, "home": "cr_atm", "away": "W21", "date": "2026-01-18" },
+        { "match": 38, "home": "cr_eib", "away": "W22", "date": "2026-01-18" },
+        { "match": 39, "home": "cr_rma", "away": "W23", "date": "2026-01-18" },
+        { "match": 40, "home": "cr_ten", "away": "W24", "date": "2026-01-18" }
+    ],
+
+    "quarter_finals": [
+        { "match": 41, "home": "W33", "away": "W34", "date": "2026-03-01" },
+        { "match": 42, "home": "W35", "away": "W36", "date": "2026-03-01" },
+        { "match": 43, "home": "W37", "away": "W38", "date": "2026-03-01" },
+        { "match": 44, "home": "W39", "away": "W40", "date": "2026-03-01" }
+    ],
+
+    "semi_finals": [
+        { "match": 45, "home": "W41", "away": "W42", "date": "2026-04-19" },
+        { "match": 46, "home": "W43", "away": "W44", "date": "2026-04-19" }
+    ],
+
+    "final": [
+        { "match": 47, "home": "W45", "away": "W46", "date": "2026-05-17" }
+    ]
+}

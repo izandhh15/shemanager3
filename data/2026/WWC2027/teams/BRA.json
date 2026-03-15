@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3439.png",
+    "name": "Brazil",
+    "players": [
+        { "id": "wnt_bra_01", "name": "Lorena", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jun 25, 2001", "nationality": ["Brazil"], "height": "1,72m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_bra_02", "name": "Luciana", "position": "Goalkeeper", "number": "23", "dateOfBirth": "Oct 25, 1985", "nationality": ["Brazil"], "height": "1,73m", "foot": "right", "marketValue": "€100k" },
+        { "id": "wnt_bra_03", "name": "Antonia", "position": "Right Winger", "number": "10", "dateOfBirth": "Aug 16, 1998", "nationality": ["Brazil"], "height": "1,65m", "foot": "right", "marketValue": "€1.00m" },
+        { "id": "wnt_bra_04", "name": "Gabi Portilho", "position": "Left Winger", "number": "7", "dateOfBirth": "Nov 2, 2000", "nationality": ["Brazil"], "height": "1,65m", "foot": "left", "marketValue": "€500k" },
+        { "id": "wnt_bra_05", "name": "Bia Zaneratto", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Apr 29, 1993", "nationality": ["Brazil"], "height": "1,73m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_bra_06", "name": "Kerolin", "position": "Right Winger", "number": "11", "dateOfBirth": "Aug 17, 2000", "nationality": ["Brazil"], "height": "1,68m", "foot": "right", "marketValue": "€800k" },
+        { "id": "wnt_bra_07", "name": "Marta", "position": "Centre-Forward", "number": "10", "dateOfBirth": "Feb 19, 1986", "nationality": ["Brazil"], "height": "1,63m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_bra_08", "name": "Adriana", "position": "Centre-Forward", "number": "18", "dateOfBirth": "Sep 28, 1991", "nationality": ["Brazil"], "height": "1,65m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_bra_09", "name": "Tamires", "position": "Left-Back", "number": "3", "dateOfBirth": "May 28, 1990", "nationality": ["Brazil"], "height": "1,59m", "foot": "left", "marketValue": "€150k" },
+        { "id": "wnt_bra_10", "name": "Lauren", "position": "Central Midfield", "number": "6", "dateOfBirth": "Jul 27, 1992", "nationality": ["Brazil"], "height": "1,64m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_bra_11", "name": "Ana Vitória", "position": "Centre-Back", "number": "4", "dateOfBirth": "Dec 27, 1999", "nationality": ["Brazil"], "height": "1,71m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_bra_12", "name": "Kathellen", "position": "Centre-Back", "number": "5", "dateOfBirth": "Jun 4, 1997", "nationality": ["Brazil"], "height": "1,72m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_bra_13", "name": "Rafaelle", "position": "Centre-Back", "number": "15", "dateOfBirth": "Jul 24, 1991", "nationality": ["Brazil"], "height": "1,72m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_bra_14", "name": "Tarciane", "position": "Centre-Back", "number": "13", "dateOfBirth": "Aug 5, 2001", "nationality": ["Brazil"], "height": "1,73m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_bra_15", "name": "Luana", "position": "Right-Back", "number": "2", "dateOfBirth": "Mar 25, 1997", "nationality": ["Brazil"], "height": "1,62m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_bra_16", "name": "Duda Santos", "position": "Central Midfield", "number": "8", "dateOfBirth": "Sep 14, 2003", "nationality": ["Brazil"], "height": "1,70m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_bra_17", "name": "Yaya", "position": "Attacking Midfield", "number": "17", "dateOfBirth": "Jun 21, 2004", "nationality": ["Brazil"], "height": "1,65m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_bra_18", "name": "Priscila", "position": "Central Midfield", "number": "16", "dateOfBirth": "Apr 21, 2001", "nationality": ["Brazil"], "height": "1,60m", "foot": "right", "marketValue": "€250k" },
+        { "id": "wnt_bra_19", "name": "Giovana", "position": "Left Winger", "number": "19", "dateOfBirth": "Jul 1, 2005", "nationality": ["Brazil"], "height": "1,68m", "foot": "left", "marketValue": "€400k" },
+        { "id": "wnt_bra_20", "name": "Geyse", "position": "Centre-Forward", "number": "20", "dateOfBirth": "Apr 13, 1997", "nationality": ["Brazil"], "height": "1,72m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_bra_21", "name": "Vitória Calhau", "position": "Goalkeeper", "number": "12", "dateOfBirth": "Mar 10, 2000", "nationality": ["Brazil"], "height": "1,68m", "foot": "right", "marketValue": "€80k" },
+        { "id": "wnt_bra_22", "name": "Fernanda", "position": "Right-Back", "number": "22", "dateOfBirth": "Feb 26, 2001", "nationality": ["Brazil"], "height": "1,63m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_bra_23", "name": "Echegini", "position": "Defensive Midfield", "number": "14", "dateOfBirth": "Sep 15, 2002", "nationality": ["Brazil"], "height": "1,73m", "foot": "right", "marketValue": "€300k" }
+    ]
+}

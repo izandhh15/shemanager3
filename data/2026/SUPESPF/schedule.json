@@ -1,0 +1,6 @@
+{
+    "knockout": [
+        { "round": 1, "name": "cup.semi_finals", "date": "2026-01-21" },
+        { "round": 2, "name": "cup.final", "date": "2026-01-25" }
+    ]
+}

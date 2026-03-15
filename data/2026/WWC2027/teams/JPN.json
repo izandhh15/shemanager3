@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3435.png",
+    "name": "Japan",
+    "players": [
+        { "id": "wnt_jpn_01", "name": "Ayaka Yamashita", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Feb 4, 2000", "nationality": ["Japan"], "height": "1,70m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_jpn_02", "name": "Saki Kumagai", "position": "Centre-Back", "number": "4", "dateOfBirth": "Oct 17, 1990", "nationality": ["Japan"], "height": "1,68m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_jpn_03", "name": "Risa Shimizu", "position": "Right-Back", "number": "2", "dateOfBirth": "Feb 15, 1994", "nationality": ["Japan"], "height": "1,62m", "foot": "right", "marketValue": "€250k" },
+        { "id": "wnt_jpn_04", "name": "Hana Takahashi", "position": "Centre-Back", "number": "5", "dateOfBirth": "Jun 6, 2000", "nationality": ["Japan"], "height": "1,71m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_jpn_05", "name": "Moeka Minami", "position": "Left-Back", "number": "3", "dateOfBirth": "Sep 14, 1999", "nationality": ["Japan"], "height": "1,61m", "foot": "left", "marketValue": "€200k" },
+        { "id": "wnt_jpn_06", "name": "Honoka Hayashi", "position": "Right-Back", "number": "17", "dateOfBirth": "Sep 29, 2003", "nationality": ["Japan"], "height": "1,65m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_jpn_07", "name": "Momoko Tanikawa", "position": "Defensive Midfield", "number": "6", "dateOfBirth": "Apr 18, 1996", "nationality": ["Japan"], "height": "1,59m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_jpn_08", "name": "Yui Hasegawa", "position": "Central Midfield", "number": "8", "dateOfBirth": "Apr 23, 1997", "nationality": ["Japan"], "height": "1,60m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_jpn_09", "name": "Fuka Nagano", "position": "Attacking Midfield", "number": "10", "dateOfBirth": "Jun 11, 2000", "nationality": ["Japan"], "height": "1,57m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_jpn_10", "name": "Hinata Miyazawa", "position": "Attacking Midfield", "number": "14", "dateOfBirth": "Nov 21, 1999", "nationality": ["Japan"], "height": "1,59m", "foot": "right", "marketValue": "€350k" },
+        { "id": "wnt_jpn_11", "name": "Mana Iwabuchi", "position": "Attacking Midfield", "number": "11", "dateOfBirth": "Mar 18, 1993", "nationality": ["Japan"], "height": "1,58m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_jpn_12", "name": "Maika Hamano", "position": "Left Winger", "number": "7", "dateOfBirth": "Sep 8, 2003", "nationality": ["Japan"], "height": "1,60m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_jpn_13", "name": "Riko Ueki", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Dec 27, 2002", "nationality": ["Japan"], "height": "1,65m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_jpn_14", "name": "Jun Endo", "position": "Right Winger", "number": "16", "dateOfBirth": "Jun 16, 1997", "nationality": ["Japan"], "height": "1,62m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_jpn_15", "name": "Narumi Miura", "position": "Central Midfield", "number": "15", "dateOfBirth": "Jan 6, 2003", "nationality": ["Japan"], "height": "1,62m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_jpn_16", "name": "Aoba Fujino", "position": "Centre-Forward", "number": "18", "dateOfBirth": "Jun 6, 2003", "nationality": ["Japan"], "height": "1,64m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_jpn_17", "name": "Hikaru Naomoto", "position": "Left Winger", "number": "19", "dateOfBirth": "Jun 30, 1999", "nationality": ["Japan"], "height": "1,58m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_jpn_18", "name": "Aika Miyake", "position": "Left-Back", "number": "13", "dateOfBirth": "Apr 7, 1994", "nationality": ["Japan"], "height": "1,60m", "foot": "left", "marketValue": "€150k" },
+        { "id": "wnt_jpn_19", "name": "Chika Hirao", "position": "Centre-Back", "number": "20", "dateOfBirth": "Oct 19, 1999", "nationality": ["Japan"], "height": "1,68m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_jpn_20", "name": "Amane Shibata", "position": "Attacking Midfield", "number": "21", "dateOfBirth": "Apr 12, 2004", "nationality": ["Japan"], "height": "1,59m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_jpn_21", "name": "Koharu Takahashi", "position": "Goalkeeper", "number": "12", "dateOfBirth": "Sep 4, 2003", "nationality": ["Japan"], "height": "1,73m", "foot": "right", "marketValue": "€100k" },
+        { "id": "wnt_jpn_22", "name": "Nana Ichise", "position": "Goalkeeper", "number": "23", "dateOfBirth": "Dec 8, 1994", "nationality": ["Japan"], "height": "1,69m", "foot": "right", "marketValue": "€80k" },
+        { "id": "wnt_jpn_23", "name": "Yuzuho Shiokoshi", "position": "Centre-Back", "number": "22", "dateOfBirth": "Feb 12, 2004", "nationality": ["Japan"], "height": "1,66m", "foot": "right", "marketValue": "€200k" }
+    ]
+}

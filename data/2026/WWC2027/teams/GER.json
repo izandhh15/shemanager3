@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3262.png",
+    "name": "Germany",
+    "players": [
+        { "id": "wnt_ger_01", "name": "Ann-Katrin Berger", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Oct 9, 1990", "nationality": ["Germany"], "height": "1,75m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_ger_02", "name": "Maria Luisa Grohs", "position": "Goalkeeper", "number": "12", "dateOfBirth": "Mar 29, 1999", "nationality": ["Germany"], "height": "1,84m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_ger_03", "name": "Giulia Gwinn", "position": "Right-Back", "number": "7", "dateOfBirth": "Jun 29, 1999", "nationality": ["Germany"], "height": "1,65m", "foot": "right", "marketValue": "€1.20m" },
+        { "id": "wnt_ger_04", "name": "Marina Hegering", "position": "Centre-Back", "number": "5", "dateOfBirth": "Aug 25, 1990", "nationality": ["Germany"], "height": "1,78m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_ger_05", "name": "Kathrin Hendrich", "position": "Centre-Back", "number": "4", "dateOfBirth": "Jun 29, 1992", "nationality": ["Germany"], "height": "1,70m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_ger_06", "name": "Felicitas Rauch", "position": "Left-Back", "number": "3", "dateOfBirth": "Dec 11, 1998", "nationality": ["Germany"], "height": "1,70m", "foot": "left", "marketValue": "€400k" },
+        { "id": "wnt_ger_07", "name": "Lena Oberdorf", "position": "Defensive Midfield", "number": "6", "dateOfBirth": "Dec 19, 2001", "nationality": ["Germany"], "height": "1,74m", "foot": "right", "marketValue": "€3.00m" },
+        { "id": "wnt_ger_08", "name": "Sydney Lohmann", "position": "Central Midfield", "number": "13", "dateOfBirth": "Jun 19, 2000", "nationality": ["Germany"], "height": "1,72m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_ger_09", "name": "Sara Doorsoun", "position": "Centre-Back", "number": "15", "dateOfBirth": "Jan 22, 1992", "nationality": ["Germany"], "height": "1,74m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_ger_10", "name": "Klara Bühl", "position": "Left Winger", "number": "17", "dateOfBirth": "Dec 11, 2000", "nationality": ["Germany"], "height": "1,70m", "foot": "left", "marketValue": "€1.00m" },
+        { "id": "wnt_ger_11", "name": "Lea Schüller", "position": "Centre-Forward", "number": "11", "dateOfBirth": "Nov 12, 1997", "nationality": ["Germany"], "height": "1,73m", "foot": "right", "marketValue": "€1.50m" },
+        { "id": "wnt_ger_12", "name": "Alexandra Popp", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Apr 6, 1991", "nationality": ["Germany"], "height": "1,72m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_ger_13", "name": "Laura Freigang", "position": "Centre-Forward", "number": "19", "dateOfBirth": "Feb 1, 1998", "nationality": ["Germany"], "height": "1,72m", "foot": "left", "marketValue": "€700k" },
+        { "id": "wnt_ger_14", "name": "Nicole Anyomi", "position": "Right Winger", "number": "11", "dateOfBirth": "Apr 13, 2000", "nationality": ["Germany"], "height": "1,70m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_ger_15", "name": "Svenja Huth", "position": "Right Winger", "number": "14", "dateOfBirth": "Jan 25, 1991", "nationality": ["Germany"], "height": "1,68m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_ger_16", "name": "Pernille Harder", "position": "Central Midfield", "number": "10", "dateOfBirth": "Nov 15, 1992", "nationality": ["Denmark"], "height": "1,64m", "foot": "right", "marketValue": "€700k" },
+        { "id": "wnt_ger_17", "name": "Merle Frohms", "position": "Goalkeeper", "number": "23", "dateOfBirth": "Jan 28, 1995", "nationality": ["Germany"], "height": "1,79m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_ger_18", "name": "Chantal Hagel", "position": "Right-Back", "number": "2", "dateOfBirth": "Jun 19, 2001", "nationality": ["Germany"], "height": "1,68m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_ger_19", "name": "Ewa Pajor", "position": "Centre-Forward", "number": "18", "dateOfBirth": "Jul 29, 2000", "nationality": ["Poland"], "height": "1,72m", "foot": "right", "marketValue": "€1.00m" },
+        { "id": "wnt_ger_20", "name": "Linda Dallmann", "position": "Attacking Midfield", "number": "20", "dateOfBirth": "Apr 14, 1994", "nationality": ["Germany"], "height": "1,66m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_ger_21", "name": "Vivien Endemann", "position": "Right Winger", "number": "16", "dateOfBirth": "Nov 29, 2001", "nationality": ["Germany"], "height": "1,68m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_ger_22", "name": "Janina Minge", "position": "Centre-Back", "number": "22", "dateOfBirth": "Jun 18, 2000", "nationality": ["Germany"], "height": "1,74m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_ger_23", "name": "Elisa Senß", "position": "Central Midfield", "number": "21", "dateOfBirth": "Jun 13, 1998", "nationality": ["Germany"], "height": "1,63m", "foot": "right", "marketValue": "€150k" }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3377.png",
+    "name": "France",
+    "players": [
+        { "id": "wnt_fra_01", "name": "Pauline Peyraud-Magnin", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Mar 17, 1992", "nationality": ["France"], "height": "1,73m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_fra_02", "name": "Mylène Chavas", "position": "Goalkeeper", "number": "16", "dateOfBirth": "Apr 9, 1994", "nationality": ["France"], "height": "1,72m", "foot": "right", "marketValue": "€80k" },
+        { "id": "wnt_fra_03", "name": "Wendie Renard", "position": "Centre-Back", "number": "3", "dateOfBirth": "Jul 20, 1990", "nationality": ["France"], "height": "1,87m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_fra_04", "name": "Griedge Mbock", "position": "Centre-Back", "number": "5", "dateOfBirth": "Apr 28, 1996", "nationality": ["France"], "height": "1,77m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_fra_05", "name": "Sakina Karchaoui", "position": "Left-Back", "number": "14", "dateOfBirth": "Jan 6, 1996", "nationality": ["France"], "height": "1,58m", "foot": "left", "marketValue": "€500k" },
+        { "id": "wnt_fra_06", "name": "Eve Périsset", "position": "Right-Back", "number": "2", "dateOfBirth": "Dec 21, 1994", "nationality": ["France"], "height": "1,69m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_fra_07", "name": "Amandine Henry", "position": "Defensive Midfield", "number": "6", "dateOfBirth": "Sep 28, 1989", "nationality": ["France"], "height": "1,70m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_fra_08", "name": "Grace Geyoro", "position": "Central Midfield", "number": "8", "dateOfBirth": "Apr 2, 1997", "nationality": ["France"], "height": "1,63m", "foot": "right", "marketValue": "€700k" },
+        { "id": "wnt_fra_09", "name": "Lindsey Horan", "position": "Central Midfield", "number": "10", "dateOfBirth": "May 26, 1994", "nationality": ["United States"], "height": "1,71m", "foot": "right", "marketValue": "€700k" },
+        { "id": "wnt_fra_10", "name": "Marie-Antoinette Katoto", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Feb 14, 1999", "nationality": ["France"], "height": "1,67m", "foot": "right", "marketValue": "€1.50m" },
+        { "id": "wnt_fra_11", "name": "Sandy Baltimore", "position": "Left Winger", "number": "11", "dateOfBirth": "Nov 23, 2000", "nationality": ["France"], "height": "1,63m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_fra_12", "name": "Delphine Cascarino", "position": "Right Winger", "number": "7", "dateOfBirth": "Nov 15, 1997", "nationality": ["France"], "height": "1,65m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_fra_13", "name": "Clara Matéo", "position": "Left Winger", "number": "19", "dateOfBirth": "Aug 26, 2001", "nationality": ["France"], "height": "1,68m", "foot": "left", "marketValue": "€500k" },
+        { "id": "wnt_fra_14", "name": "Maëlle Lakrar", "position": "Centre-Back", "number": "4", "dateOfBirth": "May 4, 2001", "nationality": ["France"], "height": "1,72m", "foot": "right", "marketValue": "€250k" },
+        { "id": "wnt_fra_15", "name": "Charlotte Bilbault", "position": "Attacking Midfield", "number": "17", "dateOfBirth": "Jul 21, 1992", "nationality": ["France"], "height": "1,71m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_fra_16", "name": "Kenza Dali", "position": "Attacking Midfield", "number": "20", "dateOfBirth": "Mar 27, 1991", "nationality": ["France"], "height": "1,60m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_fra_17", "name": "Vicki Bèche", "position": "Left-Back", "number": "15", "dateOfBirth": "Jul 16, 2002", "nationality": ["France"], "height": "1,65m", "foot": "left", "marketValue": "€200k" },
+        { "id": "wnt_fra_18", "name": "Estelle Cascarino", "position": "Right Winger", "number": "22", "dateOfBirth": "Oct 21, 1996", "nationality": ["France"], "height": "1,64m", "foot": "right", "marketValue": "€250k" },
+        { "id": "wnt_fra_19", "name": "Inès Jaurena", "position": "Defensive Midfield", "number": "18", "dateOfBirth": "Jul 19, 1992", "nationality": ["France"], "height": "1,64m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_fra_20", "name": "Sandie Toletti", "position": "Central Midfield", "number": "13", "dateOfBirth": "May 28, 1997", "nationality": ["France"], "height": "1,70m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_fra_21", "name": "Alice Sombath", "position": "Right-Back", "number": "21", "dateOfBirth": "Oct 25, 2001", "nationality": ["France"], "height": "1,65m", "foot": "right", "marketValue": "€100k" },
+        { "id": "wnt_fra_22", "name": "Maëlle Mpome", "position": "Centre-Forward", "number": "23", "dateOfBirth": "Apr 12, 2002", "nationality": ["France"], "height": "1,72m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_fra_23", "name": "Solène Durand", "position": "Goalkeeper", "number": "23", "dateOfBirth": "Jan 12, 1999", "nationality": ["France"], "height": "1,71m", "foot": "right", "marketValue": "€100k" }
+    ]
+}

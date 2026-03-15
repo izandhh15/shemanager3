@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3375.png",
+    "name": "Spain",
+    "players": [
+        { "id": "wnt_esp_01", "name": "Misa Rodríguez", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Jun 19, 1999", "nationality": ["Spain"], "height": "1,80m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_esp_02", "name": "Sandra Paños", "position": "Goalkeeper", "number": "13", "dateOfBirth": "Feb 22, 1992", "nationality": ["Spain"], "height": "1,72m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_esp_03", "name": "Mariasun Quiñones", "position": "Goalkeeper", "number": "23", "dateOfBirth": "Jan 6, 2000", "nationality": ["Spain"], "height": "1,73m", "foot": "right", "marketValue": "€250k" },
+        { "id": "wnt_esp_04", "name": "Olga Carmona", "position": "Right-Back", "number": "2", "dateOfBirth": "Jun 12, 2000", "nationality": ["Spain"], "height": "1,68m", "foot": "right", "marketValue": "€1.50m" },
+        { "id": "wnt_esp_05", "name": "Irene Paredes", "position": "Centre-Back", "number": "4", "dateOfBirth": "Jul 4, 1991", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_esp_06", "name": "Mapi León", "position": "Left-Back", "number": "14", "dateOfBirth": "Feb 20, 1997", "nationality": ["Spain"], "height": "1,64m", "foot": "left", "marketValue": "€350k" },
+        { "id": "wnt_esp_07", "name": "Laia Codina", "position": "Centre-Back", "number": "3", "dateOfBirth": "Oct 21, 1999", "nationality": ["Spain"], "height": "1,71m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_esp_08", "name": "Eva Navarro", "position": "Left-Back", "number": "18", "dateOfBirth": "Jan 12, 2001", "nationality": ["Spain"], "height": "1,63m", "foot": "left", "marketValue": "€250k" },
+        { "id": "wnt_esp_09", "name": "Keira Walsh", "position": "Defensive Midfield", "number": "16", "dateOfBirth": "Apr 8, 1997", "nationality": ["England"], "height": "1,68m", "foot": "right", "marketValue": "€2.00m" },
+        { "id": "wnt_esp_10", "name": "Aitana Bonmatí", "position": "Central Midfield", "number": "6", "dateOfBirth": "Jan 18, 2000", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€5.00m" },
+        { "id": "wnt_esp_11", "name": "Alexia Putellas", "position": "Central Midfield", "number": "11", "dateOfBirth": "Feb 4, 1994", "nationality": ["Spain"], "height": "1,72m", "foot": "left", "marketValue": "€3.50m" },
+        { "id": "wnt_esp_12", "name": "Maite Oroz", "position": "Central Midfield", "number": "8", "dateOfBirth": "Mar 24, 2002", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_esp_13", "name": "Patri Guijarro", "position": "Central Midfield", "number": "12", "dateOfBirth": "May 17, 1998", "nationality": ["Spain"], "height": "1,71m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_esp_14", "name": "Vicky López", "position": "Central Midfield", "number": "15", "dateOfBirth": "Jun 15, 2006", "nationality": ["Spain"], "height": "1,60m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_esp_15", "name": "Salma Paralluelo", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Jun 19, 2003", "nationality": ["Spain"], "height": "1,72m", "foot": "right", "marketValue": "€2.50m" },
+        { "id": "wnt_esp_16", "name": "Athenea del Castillo", "position": "Left Winger", "number": "17", "dateOfBirth": "Oct 21, 2000", "nationality": ["Spain"], "height": "1,67m", "foot": "right", "marketValue": "€1.00m" },
+        { "id": "wnt_esp_17", "name": "Claudia Pina", "position": "Left Winger", "number": "7", "dateOfBirth": "Mar 12, 2001", "nationality": ["Spain"], "height": "1,62m", "foot": "right", "marketValue": "€800k" },
+        { "id": "wnt_esp_18", "name": "Esther González", "position": "Centre-Forward", "number": "10", "dateOfBirth": "Nov 3, 1994", "nationality": ["Spain"], "height": "1,70m", "foot": "right", "marketValue": "€700k" },
+        { "id": "wnt_esp_19", "name": "Mariona Caldentey", "position": "Attacking Midfield", "number": "20", "dateOfBirth": "Jun 12, 1996", "nationality": ["Spain"], "height": "1,64m", "foot": "left", "marketValue": "€600k" },
+        { "id": "wnt_esp_20", "name": "Jennifer Hermoso", "position": "Centre-Forward", "number": "19", "dateOfBirth": "May 9, 1990", "nationality": ["Spain"], "height": "1,64m", "foot": "left", "marketValue": "€300k" },
+        { "id": "wnt_esp_21", "name": "Jana Fernández", "position": "Right-Back", "number": "22", "dateOfBirth": "Apr 14, 1997", "nationality": ["Spain"], "height": "1,64m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_esp_22", "name": "Ona Batlle", "position": "Right-Back", "number": "5", "dateOfBirth": "Jun 10, 1999", "nationality": ["Spain"], "height": "1,65m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_esp_23", "name": "Teresa Abelleira", "position": "Defensive Midfield", "number": "21", "dateOfBirth": "Jul 27, 2001", "nationality": ["Spain"], "height": "1,66m", "foot": "right", "marketValue": "€350k" }
+    ]
+}

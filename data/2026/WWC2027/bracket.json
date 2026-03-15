@@ -1,0 +1,28 @@
+{
+    "round_of_16": [
+        { "match": 49, "home": "1A", "away": "2C", "date": "2027-07-18" },
+        { "match": 50, "home": "1C", "away": "2A", "date": "2027-07-19" },
+        { "match": 51, "home": "1B", "away": "2D", "date": "2027-07-19" },
+        { "match": 52, "home": "1D", "away": "2B", "date": "2027-07-20" },
+        { "match": 53, "home": "1E", "away": "2G", "date": "2027-07-20" },
+        { "match": 54, "home": "1G", "away": "2E", "date": "2027-07-21" },
+        { "match": 55, "home": "1F", "away": "2H", "date": "2027-07-21" },
+        { "match": 56, "home": "1H", "away": "2F", "date": "2027-07-22" }
+    ],
+    "quarter_finals": [
+        { "match": 57, "home": "W49", "away": "W50", "date": "2027-07-26" },
+        { "match": 58, "home": "W51", "away": "W52", "date": "2027-07-26" },
+        { "match": 59, "home": "W53", "away": "W54", "date": "2027-07-27" },
+        { "match": 60, "home": "W55", "away": "W56", "date": "2027-07-27" }
+    ],
+    "semi_finals": [
+        { "match": 61, "home": "W57", "away": "W58", "date": "2027-07-31" },
+        { "match": 62, "home": "W59", "away": "W60", "date": "2027-08-01" }
+    ],
+    "third_place": [
+        { "match": 63, "home": "L61", "away": "L62", "date": "2027-08-05" }
+    ],
+    "final": [
+        { "match": 64, "home": "W61", "away": "W62", "date": "2027-08-09", "venue": "Estadio do Maracanã, Rio de Janeiro" }
+    ]
+}

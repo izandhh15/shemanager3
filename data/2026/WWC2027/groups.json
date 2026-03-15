@@ -1,0 +1,90 @@
+{
+    "A": {
+        "teams": ["BRA", "COL", "NGA", "PO1"],
+        "matches": [
+            { "round": 1, "home": "BRA", "away": "COL",  "date": "2027-07-03" },
+            { "round": 1, "home": "NGA", "away": "PO1",  "date": "2027-07-03" },
+            { "round": 2, "home": "BRA", "away": "NGA",  "date": "2027-07-07" },
+            { "round": 2, "home": "COL", "away": "PO1",  "date": "2027-07-07" },
+            { "round": 3, "home": "BRA", "away": "PO1",  "date": "2027-07-11" },
+            { "round": 3, "home": "COL", "away": "NGA",  "date": "2027-07-11" }
+        ]
+    },
+    "B": {
+        "teams": ["USA", "AUS", "JPN", "PO2"],
+        "matches": [
+            { "round": 1, "home": "USA", "away": "AUS",  "date": "2027-07-03" },
+            { "round": 1, "home": "JPN", "away": "PO2",  "date": "2027-07-04" },
+            { "round": 2, "home": "USA", "away": "JPN",  "date": "2027-07-08" },
+            { "round": 2, "home": "AUS", "away": "PO2",  "date": "2027-07-08" },
+            { "round": 3, "home": "USA", "away": "PO2",  "date": "2027-07-12" },
+            { "round": 3, "home": "AUS", "away": "JPN",  "date": "2027-07-12" }
+        ]
+    },
+    "C": {
+        "teams": ["ESP", "GER", "ZAM", "PO3"],
+        "matches": [
+            { "round": 1, "home": "ESP", "away": "ZAM",  "date": "2027-07-04" },
+            { "round": 1, "home": "GER", "away": "PO3",  "date": "2027-07-04" },
+            { "round": 2, "home": "ESP", "away": "GER",  "date": "2027-07-08" },
+            { "round": 2, "home": "ZAM", "away": "PO3",  "date": "2027-07-09" },
+            { "round": 3, "home": "ESP", "away": "PO3",  "date": "2027-07-12" },
+            { "round": 3, "home": "GER", "away": "ZAM",  "date": "2027-07-12" }
+        ]
+    },
+    "D": {
+        "teams": ["ENG", "FRA", "CHN", "KOR"],
+        "matches": [
+            { "round": 1, "home": "ENG", "away": "FRA",  "date": "2027-07-05" },
+            { "round": 1, "home": "CHN", "away": "KOR",  "date": "2027-07-05" },
+            { "round": 2, "home": "ENG", "away": "CHN",  "date": "2027-07-09" },
+            { "round": 2, "home": "FRA", "away": "KOR",  "date": "2027-07-09" },
+            { "round": 3, "home": "ENG", "away": "KOR",  "date": "2027-07-13" },
+            { "round": 3, "home": "FRA", "away": "CHN",  "date": "2027-07-13" }
+        ]
+    },
+    "E": {
+        "teams": ["SWE", "ARG", "GHA", "PRK"],
+        "matches": [
+            { "round": 1, "home": "SWE", "away": "ARG",  "date": "2027-07-05" },
+            { "round": 1, "home": "GHA", "away": "PRK",  "date": "2027-07-05" },
+            { "round": 2, "home": "SWE", "away": "GHA",  "date": "2027-07-10" },
+            { "round": 2, "home": "ARG", "away": "PRK",  "date": "2027-07-10" },
+            { "round": 3, "home": "SWE", "away": "PRK",  "date": "2027-07-14" },
+            { "round": 3, "home": "ARG", "away": "GHA",  "date": "2027-07-14" }
+        ]
+    },
+    "F": {
+        "teams": ["NED", "NOR", "JAM", "PO4"],
+        "matches": [
+            { "round": 1, "home": "NED", "away": "JAM",  "date": "2027-07-06" },
+            { "round": 1, "home": "NOR", "away": "PO4",  "date": "2027-07-06" },
+            { "round": 2, "home": "NED", "away": "NOR",  "date": "2027-07-10" },
+            { "round": 2, "home": "JAM", "away": "PO4",  "date": "2027-07-10" },
+            { "round": 3, "home": "NED", "away": "PO4",  "date": "2027-07-14" },
+            { "round": 3, "home": "NOR", "away": "JAM",  "date": "2027-07-14" }
+        ]
+    },
+    "G": {
+        "teams": ["ITA", "CAN", "RSA", "PHI"],
+        "matches": [
+            { "round": 1, "home": "ITA", "away": "CAN",  "date": "2027-07-06" },
+            { "round": 1, "home": "RSA", "away": "PHI",  "date": "2027-07-06" },
+            { "round": 2, "home": "ITA", "away": "RSA",  "date": "2027-07-11" },
+            { "round": 2, "home": "CAN", "away": "PHI",  "date": "2027-07-11" },
+            { "round": 3, "home": "ITA", "away": "PHI",  "date": "2027-07-15" },
+            { "round": 3, "home": "CAN", "away": "RSA",  "date": "2027-07-15" }
+        ]
+    },
+    "H": {
+        "teams": ["DEN", "MEX", "NZL", "USA2"],
+        "matches": [
+            { "round": 1, "home": "DEN", "away": "MEX",  "date": "2027-07-07" },
+            { "round": 1, "home": "NZL", "away": "USA2", "date": "2027-07-07" },
+            { "round": 2, "home": "DEN", "away": "NZL",  "date": "2027-07-11" },
+            { "round": 2, "home": "MEX", "away": "USA2", "date": "2027-07-11" },
+            { "round": 3, "home": "DEN", "away": "USA2", "date": "2027-07-15" },
+            { "round": 3, "home": "MEX", "away": "NZL",  "date": "2027-07-15" }
+        ]
+    }
+}

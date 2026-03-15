@@ -1,0 +1,175 @@
+{
+    "id": "SERIAF",
+    "name": "Serie A Women Athora",
+    "clubs": [
+        {
+            "transfermarktId": "5327",
+            "name": "FC Como Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/5327.png",
+            "stadiumName": "Stadio Ferruccio",
+            "stadiumCity": "Seregno",
+            "stadiumSeats": 3700,
+            "players": [
+                { "id": "saw_com_01", "name": "Astrid Gilardi",       "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Mar 26, 2002", "nationality": ["Italy"],    "height": "1,72m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "saw_com_02", "name": "Tatiana Bonetti",      "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Mar 11, 1993", "nationality": ["Italy"],    "height": "1,67m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "saw_com_03", "name": "Elisa Polli",          "position": "Central Midfield",  "number": "10", "dateOfBirth": "May 19, 2001", "nationality": ["Italy"],    "height": "1,65m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2027" },
+                { "id": "saw_com_04", "name": "Benedetta Glionna",    "position": "Right Winger",      "number": "7",  "dateOfBirth": "Apr 13, 1998", "nationality": ["Italy"],    "height": "1,68m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" },
+                { "id": "saw_com_05", "name": "Cecilia Salvai",       "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Feb 26, 1993", "nationality": ["Italy"],    "height": "1,73m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "430",
+            "name": "ACF Fiorentina Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/430.png",
+            "stadiumName": "Stadio Curva Fiesole - Viola Park",
+            "stadiumCity": "Bagno a Ripoli",
+            "stadiumSeats": 3000,
+            "players": [
+                { "id": "saw_fio_01", "name": "Rachele Baldi",        "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Oct 26, 1996", "nationality": ["Italy"],    "height": "1,71m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "saw_fio_02", "name": "Valery Vigilucci",     "position": "Right Winger",      "number": "7",  "dateOfBirth": "Sep 14, 1998", "nationality": ["Italy"],    "height": "1,65m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "saw_fio_03", "name": "Agnese Bonfantini",    "position": "Right Winger",      "number": "11", "dateOfBirth": "Jan 24, 1999", "nationality": ["Italy"],    "height": "1,73m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "saw_fio_04", "name": "Lana Clelland",        "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jun 20, 1996", "nationality": ["Scotland"], "height": "1,66m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "saw_fio_05", "name": "Miriam Longo",         "position": "Left Winger",       "number": "17", "dateOfBirth": "Apr 8, 1996",  "nationality": ["Italy"],    "height": "1,60m", "foot": "left",  "marketValue": "€100k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "93",
+            "name": "Genoa CFC Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/93.png",
+            "stadiumName": "Stadio La Sciorba",
+            "stadiumCity": "Génova",
+            "stadiumSeats": 4000,
+            "players": [
+                { "id": "saw_gen_01", "name": "Federica Fabiano",     "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jan 5, 2000",  "nationality": ["Italy"],    "height": "1,69m", "foot": "right", "marketValue": "€40k",  "contract": "Jun 30, 2026" },
+                { "id": "saw_gen_02", "name": "Eleonora Goldoni",     "position": "Left Winger",       "number": "11", "dateOfBirth": "Nov 23, 1997", "nationality": ["Italy"],    "height": "1,66m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "saw_gen_03", "name": "Sara Gama",            "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Mar 27, 1989", "nationality": ["Italy"],    "height": "1,67m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "saw_gen_04", "name": "Giada Greggi",         "position": "Defensive Midfield","number": "6",  "dateOfBirth": "Sep 14, 1999", "nationality": ["Italy"],    "height": "1,66m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "46",
+            "name": "FC Internazionale Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/46.png",
+            "stadiumName": "Arena Civica",
+            "stadiumCity": "Milán",
+            "stadiumSeats": 10000,
+            "players": [
+                { "id": "saw_int_01", "name": "Francesca Durante",    "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Sep 30, 1997", "nationality": ["Italy"],    "height": "1,77m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2027" },
+                { "id": "saw_int_02", "name": "Tatiana Bonetti",      "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Mar 11, 1993", "nationality": ["Italy"],    "height": "1,67m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "saw_int_03", "name": "Elisa Polli",          "position": "Central Midfield",  "number": "10", "dateOfBirth": "May 19, 2001", "nationality": ["Italy"],    "height": "1,65m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2027" },
+                { "id": "saw_int_04", "name": "Ghoutia Karchouni",    "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Dec 10, 1994", "nationality": ["France"],   "height": "1,61m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "saw_int_05", "name": "Beatrice Merlo",       "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Nov 7, 2000",  "nationality": ["Italy"],    "height": "1,70m", "foot": "right", "marketValue": "€120k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "506",
+            "name": "Juventus FC Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/506.png",
+            "stadiumName": "Stadio La Marmora-Pozzo",
+            "stadiumCity": "Biella",
+            "stadiumSeats": 5827,
+            "players": [
+                { "id": "saw_juv_01", "name": "Pauline Peyraud-Magnin","position": "Goalkeeper",       "number": "1",  "dateOfBirth": "Mar 17, 1992", "nationality": ["France"],   "height": "1,73m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+                { "id": "saw_juv_02", "name": "Barbara Bonansea",     "position": "Left Winger",       "number": "11", "dateOfBirth": "Jun 13, 1991", "nationality": ["Italy"],    "height": "1,66m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2026" },
+                { "id": "saw_juv_03", "name": "Cristiana Girelli",    "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Apr 23, 1990", "nationality": ["Italy"],    "height": "1,62m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "saw_juv_04", "name": "Sofia Cantore",        "position": "Right Winger",      "number": "7",  "dateOfBirth": "Jun 28, 2000", "nationality": ["Italy"],    "height": "1,67m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2027" },
+                { "id": "saw_juv_05", "name": "Valentina Bergamaschi","position": "Right-Back",        "number": "2",  "dateOfBirth": "Apr 14, 1997", "nationality": ["Italy"],    "height": "1,64m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" },
+                { "id": "saw_juv_06", "name": "Arianna Caruso",       "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Jun 7, 2001",  "nationality": ["Italy"],    "height": "1,63m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "398",
+            "name": "SS Lazio Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/398.png",
+            "stadiumName": "Stadio Mirko Fersini",
+            "stadiumCity": "Formello",
+            "stadiumSeats": 3000,
+            "players": [
+                { "id": "saw_laz_01", "name": "Costanza Baldini",     "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Apr 2, 1995",  "nationality": ["Italy"],    "height": "1,72m", "foot": "right", "marketValue": "€50k",  "contract": "Jun 30, 2026" },
+                { "id": "saw_laz_02", "name": "Lindsey Thomas",       "position": "Right Winger",      "number": "7",  "dateOfBirth": "Jun 5, 1992",  "nationality": ["France"],   "height": "1,68m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "saw_laz_03", "name": "Noemi Visentin",       "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Jan 22, 1998", "nationality": ["Italy"],    "height": "1,68m", "foot": "right", "marketValue": "€60k",  "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "5",
+            "name": "AC Milan Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/5.png",
+            "stadiumName": "Velodromo Attilio Pavesi",
+            "stadiumCity": "Fiorenzuola d'Arda",
+            "stadiumSeats": 4000,
+            "players": [
+                { "id": "saw_mil_01", "name": "Laëtitia Philippe",    "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jul 31, 1993", "nationality": ["France"],   "height": "1,69m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "saw_mil_02", "name": "Yui Hasegawa",         "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Apr 23, 1997", "nationality": ["Japan"],    "height": "1,60m", "foot": "right", "marketValue": "€250k", "contract": "Jun 30, 2027" },
+                { "id": "saw_mil_03", "name": "Valentina Giacinti",   "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Apr 19, 1994", "nationality": ["Italy"],    "height": "1,65m", "foot": "right", "marketValue": "€300k", "contract": "Jun 30, 2026" },
+                { "id": "saw_mil_04", "name": "Christy Grimshaw",     "position": "Defensive Midfield","number": "6",  "dateOfBirth": "Oct 8, 1994",  "nationality": ["United States"],"height": "1,65m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "3142",
+            "name": "Napoli Femminile",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/3142.png",
+            "stadiumName": "Stadio Giuseppe Piccolo",
+            "stadiumCity": "Cercola",
+            "stadiumSeats": 3947,
+            "players": [
+                { "id": "saw_nap_01", "name": "Federica Fabiano",     "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jan 5, 2000",  "nationality": ["Italy"],    "height": "1,69m", "foot": "right", "marketValue": "€40k",  "contract": "Jun 30, 2026" },
+                { "id": "saw_nap_02", "name": "Adele Westo",          "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Jun 20, 2003", "nationality": ["Sweden"],   "height": "1,72m", "foot": "right", "marketValue": "€80k",  "contract": "Jun 30, 2026" },
+                { "id": "saw_nap_03", "name": "Thaisa Moreno",        "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Dec 31, 1993", "nationality": ["Brazil"],   "height": "1,63m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "98",
+            "name": "Parma Calcio Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/98.png",
+            "stadiumName": "Stadio Il Noce",
+            "stadiumCity": "Noceto",
+            "stadiumSeats": 800,
+            "players": [
+                { "id": "saw_par_01", "name": "Alice Volpi",          "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "May 28, 2001", "nationality": ["Italy"],    "height": "1,70m", "foot": "right", "marketValue": "€30k",  "contract": "Jun 30, 2026" },
+                { "id": "saw_par_02", "name": "Sara Penzo",           "position": "Centre-Back",       "number": "4",  "dateOfBirth": "Nov 16, 2000", "nationality": ["Italy"],    "height": "1,69m", "foot": "right", "marketValue": "€30k",  "contract": "Jun 30, 2026" },
+                { "id": "saw_par_03", "name": "Lisa Boattin",         "position": "Left-Back",         "number": "3",  "dateOfBirth": "Aug 6, 1997",  "nationality": ["Italy"],    "height": "1,65m", "foot": "left",  "marketValue": "€200k", "contract": "Jun 30, 2027" }
+            ]
+        },
+        {
+            "transfermarktId": "12",
+            "name": "AS Roma Femminile",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/12.png",
+            "stadiumName": "Stadio Tre Fontane",
+            "stadiumCity": "Roma",
+            "stadiumSeats": 4000,
+            "players": [
+                { "id": "saw_rom_01", "name": "Camelia Ceasar",       "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jul 12, 1990", "nationality": ["Romania"],  "height": "1,72m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "saw_rom_02", "name": "Valentina Giacinti",   "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Apr 19, 1994", "nationality": ["Italy"],    "height": "1,65m", "foot": "right", "marketValue": "€350k", "contract": "Jun 30, 2027" },
+                { "id": "saw_rom_03", "name": "Manuela Giugliano",    "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Sep 23, 1997", "nationality": ["Italy"],    "height": "1,63m", "foot": "right", "marketValue": "€400k", "contract": "Jun 30, 2027" },
+                { "id": "saw_rom_04", "name": "Elisa Bartoli",        "position": "Right-Back",        "number": "2",  "dateOfBirth": "Mar 10, 1991", "nationality": ["Italy"],    "height": "1,63m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "saw_rom_05", "name": "Alayah Pilgrim",       "position": "Right Winger",      "number": "7",  "dateOfBirth": "May 20, 1999", "nationality": ["Trinidad and Tobago"],"height": "1,68m", "foot": "right", "marketValue": "€200k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "4150",
+            "name": "US Sassuolo Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/4150.png",
+            "stadiumName": "Stadio Enzo Ricci",
+            "stadiumCity": "Sassuolo",
+            "stadiumSeats": 4008,
+            "players": [
+                { "id": "saw_sas_01", "name": "Fiona Ballé",          "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Jul 9, 1995",  "nationality": ["France"],   "height": "1,75m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" },
+                { "id": "saw_sas_02", "name": "Lana Clelland",        "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jun 20, 1996", "nationality": ["Scotland"], "height": "1,66m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "saw_sas_03", "name": "Chiara Pellegrini",    "position": "Attacking Midfield","number": "10", "dateOfBirth": "Jan 17, 1999", "nationality": ["Italy"],    "height": "1,63m", "foot": "right", "marketValue": "€100k", "contract": "Jun 30, 2026" }
+            ]
+        },
+        {
+            "transfermarktId": "2289",
+            "name": "Ternana Calcio Women",
+            "image": "https://tmssl.akamaized.net/images/wappen/big/2289.png",
+            "stadiumName": "Stadio Moreno Gubbiotti",
+            "stadiumCity": "Narni",
+            "stadiumSeats": 800,
+            "players": [
+                { "id": "saw_ter_01", "name": "Roberta Aprile",       "position": "Goalkeeper",        "number": "1",  "dateOfBirth": "Feb 14, 1992", "nationality": ["Italy"],    "height": "1,68m", "foot": "right", "marketValue": "€40k",  "contract": "Jun 30, 2026" },
+                { "id": "saw_ter_02", "name": "Martina Piemonte",     "position": "Centre-Forward",    "number": "9",  "dateOfBirth": "Jun 16, 1998", "nationality": ["Italy"],    "height": "1,71m", "foot": "right", "marketValue": "€150k", "contract": "Jun 30, 2026" },
+                { "id": "saw_ter_03", "name": "Federica Cafferata",   "position": "Central Midfield",  "number": "8",  "dateOfBirth": "Mar 9, 2000",  "nationality": ["Italy"],    "height": "1,62m", "foot": "right", "marketValue": "€50k",  "contract": "Jun 30, 2026" }
+            ]
+        }
+    ]
+}

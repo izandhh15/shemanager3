@@ -1,0 +1,29 @@
+{
+    "qualifying": [
+        { "round": "CAF_R1",         "name": "Clasificatorio CAF - Zonales",             "date_start": "2025-10-01", "date_end": "2026-02-28" },
+        { "round": "AFC_R1",         "name": "Clasificatorio AFC - Ronda 1",             "date_start": "2025-09-01", "date_end": "2025-10-15" },
+        { "round": "UEFA_NL",        "name": "Liga de Naciones UEFA Femenina",           "date_start": "2025-09-22", "date_end": "2025-11-25" },
+        { "round": "OFC_QF",         "name": "Copa OFC Femenina",                        "date_start": "2026-04-01", "date_end": "2026-04-20" },
+        { "round": "CONCACAF_WGC",   "name": "W Gold Cup CONCACAF",                      "date_start": "2026-02-15", "date_end": "2026-03-08" },
+        { "round": "CONMEBOL_CA",    "name": "Copa América Femenina",                    "date_start": "2026-03-07", "date_end": "2026-03-28" },
+        { "round": "UEFA_PO",        "name": "Playoff UEFA",                             "date_start": "2026-02-16", "date_end": "2026-07-14" },
+        { "round": "CAF_FINAL",      "name": "Copa Africana de Naciones Femenina",       "date_start": "2026-06-01", "date_end": "2026-07-05" },
+        { "round": "AFC_FINAL",      "name": "Copa Asiática Femenina AFC",               "date_start": "2026-06-14", "date_end": "2026-07-26" },
+        { "round": "ICP",            "name": "Repechaje Intercontinental FIFA",          "date_start": "2026-10-01", "date_end": "2026-10-20" }
+    ],
+    "final_tournament": {
+        "host": "Brasil",
+        "league": [
+            { "round": 1, "date": "2027-07-03" },
+            { "round": 2, "date": "2027-07-07" },
+            { "round": 3, "date": "2027-07-11" }
+        ],
+        "knockout": [
+            { "round": 1, "name": "cup.round_of_16",   "date": "2027-07-18" },
+            { "round": 2, "name": "cup.quarter_finals", "date": "2027-07-26" },
+            { "round": 3, "name": "cup.semi_finals",    "date": "2027-07-31" },
+            { "round": 4, "name": "cup.third_place",    "date": "2027-08-05" },
+            { "round": 5, "name": "cup.final",          "date": "2027-08-09" }
+        ]
+    }
+}

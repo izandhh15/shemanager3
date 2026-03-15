@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3299.png",
+    "name": "England",
+    "players": [
+        { "id": "wnt_eng_01", "name": "Mary Earps", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Mar 7, 1993", "nationality": ["England"], "height": "1,78m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_eng_02", "name": "Hannah Hampton", "position": "Goalkeeper", "number": "13", "dateOfBirth": "Nov 16, 1998", "nationality": ["England"], "height": "1,83m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_eng_03", "name": "Lucy Bronze", "position": "Right-Back", "number": "2", "dateOfBirth": "Oct 28, 1991", "nationality": ["England"], "height": "1,73m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_eng_04", "name": "Leah Williamson", "position": "Centre-Back", "number": "6", "dateOfBirth": "Mar 29, 1997", "nationality": ["England"], "height": "1,73m", "foot": "right", "marketValue": "€700k" },
+        { "id": "wnt_eng_05", "name": "Millie Bright", "position": "Centre-Back", "number": "5", "dateOfBirth": "Aug 9, 1993", "nationality": ["England"], "height": "1,74m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_eng_06", "name": "Alex Greenwood", "position": "Left-Back", "number": "3", "dateOfBirth": "Sep 7, 1993", "nationality": ["England"], "height": "1,68m", "foot": "left", "marketValue": "€350k" },
+        { "id": "wnt_eng_07", "name": "Keira Walsh", "position": "Defensive Midfield", "number": "4", "dateOfBirth": "Apr 8, 1997", "nationality": ["England"], "height": "1,68m", "foot": "right", "marketValue": "€2.00m" },
+        { "id": "wnt_eng_08", "name": "Georgia Stanway", "position": "Central Midfield", "number": "8", "dateOfBirth": "Jan 3, 1999", "nationality": ["England"], "height": "1,65m", "foot": "right", "marketValue": "€900k" },
+        { "id": "wnt_eng_09", "name": "Ella Toone", "position": "Attacking Midfield", "number": "11", "dateOfBirth": "Sep 2, 1999", "nationality": ["England"], "height": "1,62m", "foot": "right", "marketValue": "€700k" },
+        { "id": "wnt_eng_10", "name": "Lauren Hemp", "position": "Left Winger", "number": "7", "dateOfBirth": "Aug 7, 2000", "nationality": ["England"], "height": "1,63m", "foot": "right", "marketValue": "€1.80m" },
+        { "id": "wnt_eng_11", "name": "Beth Mead", "position": "Right Winger", "number": "9", "dateOfBirth": "May 9, 1995", "nationality": ["England"], "height": "1,65m", "foot": "right", "marketValue": "€600k" },
+        { "id": "wnt_eng_12", "name": "Alessia Russo", "position": "Centre-Forward", "number": "23", "dateOfBirth": "Feb 8, 1999", "nationality": ["England"], "height": "1,77m", "foot": "right", "marketValue": "€1.20m" },
+        { "id": "wnt_eng_13", "name": "Chloe Kelly", "position": "Right Winger", "number": "17", "dateOfBirth": "Jan 15, 1998", "nationality": ["England"], "height": "1,64m", "foot": "right", "marketValue": "€800k" },
+        { "id": "wnt_eng_14", "name": "Niamh Charles", "position": "Right-Back", "number": "2", "dateOfBirth": "Jun 21, 1999", "nationality": ["England"], "height": "1,72m", "foot": "right", "marketValue": "€350k" },
+        { "id": "wnt_eng_15", "name": "Rachel Daly", "position": "Centre-Forward", "number": "18", "dateOfBirth": "Dec 6, 1991", "nationality": ["England"], "height": "1,74m", "foot": "right", "marketValue": "€250k" },
+        { "id": "wnt_eng_16", "name": "Lotte Wubben-Moy", "position": "Centre-Back", "number": "15", "dateOfBirth": "Jan 17, 1999", "nationality": ["England"], "height": "1,73m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_eng_17", "name": "Jessica Carter", "position": "Left-Back", "number": "16", "dateOfBirth": "Oct 27, 1997", "nationality": ["England"], "height": "1,66m", "foot": "left", "marketValue": "€200k" },
+        { "id": "wnt_eng_18", "name": "Jess Park", "position": "Right Winger", "number": "22", "dateOfBirth": "Nov 19, 2001", "nationality": ["England"], "height": "1,62m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_eng_19", "name": "Aggie Beever-Jones", "position": "Centre-Forward", "number": "21", "dateOfBirth": "Sep 21, 2003", "nationality": ["England"], "height": "1,68m", "foot": "right", "marketValue": "€500k" },
+        { "id": "wnt_eng_20", "name": "Maya Le Tissier", "position": "Centre-Back", "number": "14", "dateOfBirth": "May 16, 2002", "nationality": ["England"], "height": "1,72m", "foot": "right", "marketValue": "€300k" },
+        { "id": "wnt_eng_21", "name": "Grace Clinton", "position": "Central Midfield", "number": "20", "dateOfBirth": "Oct 22, 2003", "nationality": ["England"], "height": "1,67m", "foot": "right", "marketValue": "€250k" },
+        { "id": "wnt_eng_22", "name": "Fran Kirby", "position": "Attacking Midfield", "number": "10", "dateOfBirth": "Jun 29, 1993", "nationality": ["England"], "height": "1,58m", "foot": "right", "marketValue": "€400k" },
+        { "id": "wnt_eng_23", "name": "Lauren James", "position": "Right Winger", "number": "12", "dateOfBirth": "Sep 29, 2001", "nationality": ["England"], "height": "1,72m", "foot": "right", "marketValue": "€1.50m" }
+    ]
+}

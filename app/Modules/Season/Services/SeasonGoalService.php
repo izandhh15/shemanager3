@@ -1,0 +1,165 @@
+<?php
+
+namespace App\Modules\Season\Services;
+
+use App\Models\Competition;
+use App\Models\Game;
+use App\Models\Team;
+use App\Models\TeamReputation;
+use App\Modules\Competition\Contracts\HasSeasonGoals;
+
+class SeasonGoalService
+{
+    /**
+     * Determine the season goal for a team based on reputation and competition.
+     */
+    public function determineGoalForTeam(Team $team, Competition $competition, ?Game $game = null, bool $recentlyPromoted = false): string
+    {
+        $config = $competition->getConfig();
+
+        if (!$config instanceof HasSeasonGoals) {
+            return Game::GOAL_TOP_HALF;
+        }
+
+        $reputation = $game
+            ? TeamReputation::resolveLevel($game->id, $team->id)
+            : ($team->clubProfile->reputation_level ?? 'modest');
+
+        $goal = $config->getSeasonGoal($reputation);
+
+        if ($recentlyPromoted) {
+            $goal = $this->downgradeGoal($goal, $config);
+        }
+
+        return $goal;
+    }
+
+    /**
+     * Downgrade a season goal by one tier (less ambitious) for recently promoted teams.
+     */
+    private function downgradeGoal(string $goal, HasSeasonGoals $config): string
+    {
+        $goals = $config->getAvailableGoals();
+        uasort($goals, fn ($a, $b) => $a['targetPosition'] <=> $b['targetPosition']);
+        $keys = array_keys($goals);
+        $index = array_search($goal, $keys);
+
+        if ($index !== false && isset($keys[$index + 1])) {
+            return $keys[$index + 1];
+        }
+
+        return $goal;
+    }
+
+    /**
+     * Get the target position for a goal in a competition.
+     */
+    public function getTargetPosition(string $goal, Competition $competition): int
+    {
+        $config = $competition->getConfig();
+
+        if (!$config instanceof HasSeasonGoals) {
+            return 10;
+        }
+
+        return $config->getGoalTargetPosition($goal);
+    }
+
+    /**
+     * Get the translation key for a goal label.
+     */
+    public function getGoalLabel(string $goal, Competition $competition): string
+    {
+        $config = $competition->getConfig();
+
+        if (!$config instanceof HasSeasonGoals) {
+            return 'game.goal_top_half';
+        }
+
+        $goals = $config->getAvailableGoals();
+
+        return $goals[$goal]['label'] ?? 'game.goal_top_half';
+    }
+
+    /**
+     * Evaluate the manager's performance against the season goal.
+     */
+    public function evaluatePerformance(Game $game, int $actualPosition, bool $promoted = false): array
+    {
+        $goal = $game->season_goal ?? Game::GOAL_TOP_HALF;
+        $competition = Competition::find($game->competition_id);
+
+        if (!$competition) {
+            return $this->buildEvaluationResult('met', $actualPosition, 10, $goal, 'game.goal_top_half', true, 0);
+        }
+
+        $targetPosition = $this->getTargetPosition($goal, $competition);
+        $goalLabel = $this->getGoalLabel($goal, $competition);
+        $positionDiff = $targetPosition - $actualPosition; // Positive = better than target
+        $achieved = $actualPosition <= $targetPosition;
+
+        // Determine grade based on goal achievement
+        if ($achieved && $positionDiff >= 5) {
+            $grade = 'exceptional';
+        } elseif ($achieved && $positionDiff >= 2) {
+            $grade = 'exceeded';
+        } elseif ($achieved || $positionDiff >= -1) {
+            $grade = 'met';
+        } elseif ($positionDiff >= -4) {
+            $grade = 'below';
+        } else {
+            $grade = 'disaster';
+        }
+
+        // Promotion is a major achievement — enforce a minimum grade floor
+        if ($promoted) {
+            $minGrade = match ($goal) {
+                Game::GOAL_PROMOTION => 'met',
+                Game::GOAL_PLAYOFF => 'exceeded',
+                default => 'exceptional',
+            };
+
+            $gradeOrder = ['disaster', 'below', 'met', 'exceeded', 'exceptional'];
+            $currentIndex = array_search($grade, $gradeOrder);
+            $minIndex = array_search($minGrade, $gradeOrder);
+
+            if ($currentIndex < $minIndex) {
+                $grade = $minGrade;
+            }
+        }
+
+        return $this->buildEvaluationResult($grade, $actualPosition, $targetPosition, $goal, $goalLabel, $achieved, $positionDiff);
+    }
+
+    /**
+     * Build the evaluation result array.
+     */
+    private function buildEvaluationResult(
+        string $grade,
+        int $actualPosition,
+        int $targetPosition,
+        string $goal,
+        string $goalLabel,
+        bool $achieved,
+        int $positionDiff
+    ): array {
+        $titleKey = "season.evaluation_{$grade}";
+        $messageKey = "season.evaluation_{$grade}_message";
+
+        return [
+            'grade' => $grade,
+            'title' => __($titleKey),
+            'message' => __($messageKey, [
+                'target' => $targetPosition,
+                'actual' => $actualPosition,
+                'diff' => abs($positionDiff),
+            ]),
+            'actualPosition' => $actualPosition,
+            'targetPosition' => $targetPosition,
+            'goal' => $goal,
+            'goalLabel' => __($goalLabel),
+            'achieved' => $achieved,
+            'positionDiff' => $positionDiff,
+        ];
+    }
+}

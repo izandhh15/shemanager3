@@ -1,0 +1,174 @@
+{
+    "_meta": "Sistema de clasificación completo para FIFA Women's World Cup 2027 (Brasil)",
+
+    "UEFA_qualifying": {
+        "name": "Clasificatorio UEFA",
+        "spots": 9,
+        "playoff_spots": 1,
+        "format": "Liga de Naciones UEFA Femenina 2025-26 + Eliminatoria directa",
+        "rounds": [
+            {
+                "round": 1,
+                "name": "Fase de grupos (Liga B y C)",
+                "date_start": "2025-09-22",
+                "date_end": "2025-10-28",
+                "description": "Grupos en ligas B y C. Ganadores de B ascienden, últimos de A descienden."
+            },
+            {
+                "round": 2,
+                "name": "Fase de grupos (Liga A)",
+                "date_start": "2025-11-18",
+                "date_end": "2025-11-25",
+                "description": "Top 9 de Liga A clasifican directamente al Mundial."
+            },
+            {
+                "round": 3,
+                "name": "Playoff UEFA",
+                "date_start": "2026-02-16",
+                "date_end": "2026-07-14",
+                "description": "El 10.º clasificado europeo juega el playoff intercontinental."
+            }
+        ],
+        "liga_a_groups": {
+            "A": ["ESP", "ENG", "FRA", "GER"],
+            "B": ["SWE", "NED", "NOR", "ITA"],
+            "C": ["DEN", "ISL", "BEL", "AUT"]
+        }
+    },
+
+    "CONMEBOL_qualifying": {
+        "name": "Copa América Femenina 2026",
+        "host": "Ecuador",
+        "spots": 3,
+        "playoff_spots": 1,
+        "format": "Torneo continental con fase de grupos + eliminatoria",
+        "date_start": "2026-03-07",
+        "date_end": "2026-03-28",
+        "qualified_spots": "Top 3 clasifican directo. 4.º al repechaje intercontinental.",
+        "groups": {
+            "A": ["BRA", "COL", "PAR", "ECU", "VEN"],
+            "B": ["ARG", "CHI", "URU", "PER", "BOL"]
+        },
+        "note": "Brasil (sede Mundial) clasifica automáticamente. Los 3 cupos directos pueden variar."
+    },
+
+    "CONCACAF_qualifying": {
+        "name": "W Gold Cup CONCACAF 2026",
+        "spots": 4,
+        "playoff_spots": 1,
+        "format": "Fase de grupos + eliminatoria. Top 4 clasifican.",
+        "date_start": "2026-02-15",
+        "date_end": "2026-03-08",
+        "round_1": {
+            "name": "Previa (8 selecciones más bajas del ranking)",
+            "teams": ["GUA", "SLV", "CRC", "PAN", "HAI", "TRI", "DOM", "SUR"],
+            "date": "2026-01-18"
+        },
+        "groups": {
+            "A": ["USA", "JAM", "CRC", "HAI"],
+            "B": ["CAN", "MEX", "PAN", "TRI"]
+        },
+        "qualified_spots": "Top 4 equipos clasifican directamente. 5.º al repechaje."
+    },
+
+    "CAF_qualifying": {
+        "name": "Copa Africana de Naciones Femenina 2026",
+        "host": "Marruecos",
+        "spots": 4,
+        "playoff_spots": 1,
+        "format": "Fase de clasificación zonal + torneo final continental",
+        "date_start": "2025-10-01",
+        "date_end": "2026-07-31",
+        "qualification_rounds": [
+            {
+                "round": "Ronda 1 - Zonales",
+                "date_start": "2025-10-01",
+                "date_end": "2026-02-28",
+                "description": "6 zonas CAF (CECAFA, COSAFA, UNAF, WAFU-A, WAFU-B, UNIFFAC). Top equipos por zona avanzan."
+            },
+            {
+                "round": "Copa Africana (Final)",
+                "date_start": "2026-06-01",
+                "date_end": "2026-07-05",
+                "groups": {
+                    "A": ["MAR", "NGA", "ALG", "CMR"],
+                    "B": ["RSA", "ZAM", "GHA", "CIV"],
+                    "C": ["EGY", "SEN", "TAN", "ETH"]
+                },
+                "qualified": "Top 4 del torneo final clasifican al Mundial. 5.º al repechaje."
+            }
+        ]
+    },
+
+    "AFC_qualifying": {
+        "name": "Copa Asiática Femenina AFC 2026",
+        "host": "Australia",
+        "spots": 6,
+        "playoff_spots": 2,
+        "format": "Clasificatorias por grupos + torneo final AFC",
+        "date_start": "2025-09-01",
+        "date_end": "2026-07-26",
+        "qualification_rounds": [
+            {
+                "round": "Ronda 1 - Grupos clasificatorios",
+                "date_start": "2025-09-01",
+                "date_end": "2025-10-15",
+                "description": "Grupos de 4-5 equipos. Ganadores y mejores segundos avanzan.",
+                "groups": {
+                    "A": ["JPN", "VIE", "TPE", "NEP"],
+                    "B": ["PRK", "MAS", "PHI", "MYA"],
+                    "C": ["AUS", "CHN", "THA", "IND"],
+                    "D": ["KOR", "JOR", "IRN", "UZB"],
+                    "E": ["HKG", "IDN", "KAZ", "LAO"],
+                    "F": ["KSA", "BHR", "UAE", "PAK"]
+                }
+            },
+            {
+                "round": "Copa Asiática (Final)",
+                "date_start": "2026-06-14",
+                "date_end": "2026-07-26",
+                "groups": {
+                    "A": ["JPN", "CHN", "KOR", "VIE"],
+                    "B": ["AUS", "PRK", "PHI", "UZB"],
+                    "C": ["THA", "JOR", "TPE", "MAS"]
+                },
+                "qualified": "Top 6 del torneo clasifican directo. 7.º y 8.º al repechaje."
+            }
+        ]
+    },
+
+    "OFC_qualifying": {
+        "name": "Copa OFC Femenina 2026",
+        "host": "Nueva Zelanda",
+        "spots": 1,
+        "playoff_spots": 1,
+        "format": "Torneo round-robin + final",
+        "date_start": "2026-04-01",
+        "date_end": "2026-04-20",
+        "teams": ["NZL", "PNG", "FIJ", "SOL", "VAN", "NCL", "TAH", "SAM", "TGA", "COK"],
+        "qualified": "Campeón OFC clasifica directo. Finalista al repechaje intercontinental."
+    },
+
+    "interconfederation_playoffs": {
+        "name": "Repechaje Intercontinental FIFA",
+        "host": "Por determinar",
+        "spots": 4,
+        "date_start": "2026-10-01",
+        "date_end": "2026-10-20",
+        "format": "6 equipos: 2 grupos de 3 (round-robin). Los 2 primeros de cada grupo clasifican (4 clasificados).",
+        "participants": [
+            "UEFA_PO (10.º Europa)",
+            "CONMEBOL_PO (4.º Sudamérica)",
+            "CONCACAF_PO (5.º Norteamérica)",
+            "CAF_PO (5.ª África)",
+            "AFC_PO1 (7.ª Asia)",
+            "AFC_PO2 (8.ª Asia)",
+            "OFC_PO (2.ª Oceanía)"
+        ],
+        "groups": {
+            "Grupo A": ["UEFA_PO", "CONMEBOL_PO", "OFC_PO"],
+            "Grupo B": ["CONCACAF_PO", "CAF_PO", "AFC_PO1"]
+        },
+        "note": "7 equipos por 4 plazas. Uno de los equipos AFC tiene bye (no juega)."
+    }
+}

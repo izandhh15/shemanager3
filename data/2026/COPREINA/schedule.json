@@ -1,0 +1,40 @@
+{
+    "knockout": [
+        {
+            "round": 1,
+            "name": "cup.round_of_64",
+            "date": "2025-10-26",
+            "note": "32 equipos (1F, 2F, 3F, DR). Ganan 16 clasificados."
+        },
+        {
+            "round": 2,
+            "name": "cup.round_of_32",
+            "date": "2025-11-30",
+            "note": "16 equipos de 1D (Tercera ronda) + 16 ganadores de Primera ronda = 32 equipos. Ganan 16 clasificados."
+        },
+        {
+            "round": 3,
+            "name": "cup.round_of_16",
+            "date": "2026-01-18",
+            "note": "8 equipos TOP de 1D (Octavos de final seeded) + 8 ganadores de ronda anterior = 16 equipos. Ganan 8 clasificados."
+        },
+        {
+            "round": 4,
+            "name": "cup.quarter_finals",
+            "date": "2026-03-01",
+            "note": "8 equipos."
+        },
+        {
+            "round": 5,
+            "name": "cup.semi_finals",
+            "date": "2026-04-19",
+            "note": "4 equipos. Final Four."
+        },
+        {
+            "round": 6,
+            "name": "cup.final",
+            "date": "2026-05-17",
+            "note": "Final única sede neutral."
+        }
+    ]
+}

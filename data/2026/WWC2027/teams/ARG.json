@@ -1,0 +1,29 @@
+{
+    "image": "https://tmssl.akamaized.net/images/wappen/big/3437.png",
+    "name": "Argentina",
+    "players": [
+        { "id": "wnt_arg_01", "name": "Laurina Oliveros", "position": "Goalkeeper", "number": "1", "dateOfBirth": "Apr 16, 1992", "nationality": ["Argentina"], "height": "1,68m", "foot": "right", "marketValue": "€80k" },
+        { "id": "wnt_arg_02", "name": "Florencia Bonsegundo", "position": "Attacking Midfield", "number": "10", "dateOfBirth": "Jun 21, 1993", "nationality": ["Argentina"], "height": "1,63m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_arg_03", "name": "Yamila Rodríguez", "position": "Left Winger", "number": "11", "dateOfBirth": "Sep 23, 2001", "nationality": ["Argentina"], "height": "1,60m", "foot": "left", "marketValue": "€400k" },
+        { "id": "wnt_arg_04", "name": "Estefanía Banini", "position": "Central Midfield", "number": "8", "dateOfBirth": "Oct 24, 1990", "nationality": ["Argentina"], "height": "1,57m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_arg_05", "name": "Vanina Correa", "position": "Goalkeeper", "number": "12", "dateOfBirth": "Feb 18, 1983", "nationality": ["Argentina"], "height": "1,74m", "foot": "right", "marketValue": "€50k" },
+        { "id": "wnt_arg_06", "name": "Romina Núñez", "position": "Centre-Forward", "number": "9", "dateOfBirth": "Oct 26, 1995", "nationality": ["Argentina"], "height": "1,65m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_arg_07", "name": "Miriam Mayorga", "position": "Left-Back", "number": "3", "dateOfBirth": "Aug 15, 1996", "nationality": ["Argentina"], "height": "1,60m", "foot": "left", "marketValue": "€80k" },
+        { "id": "wnt_arg_08", "name": "Eliana Stábile", "position": "Centre-Back", "number": "5", "dateOfBirth": "Jun 2, 1990", "nationality": ["Argentina"], "height": "1,68m", "foot": "right", "marketValue": "€60k" },
+        { "id": "wnt_arg_09", "name": "Mariana Larroquette", "position": "Centre-Forward", "number": "7", "dateOfBirth": "May 8, 1994", "nationality": ["Argentina"], "height": "1,73m", "foot": "right", "marketValue": "€100k" },
+        { "id": "wnt_arg_10", "name": "Adriana Sachs", "position": "Defensive Midfield", "number": "6", "dateOfBirth": "Mar 21, 1994", "nationality": ["Argentina"], "height": "1,70m", "foot": "right", "marketValue": "€60k" },
+        { "id": "wnt_arg_11", "name": "Agustina Barroso", "position": "Centre-Back", "number": "4", "dateOfBirth": "Jun 5, 1997", "nationality": ["Argentina"], "height": "1,70m", "foot": "right", "marketValue": "€80k" },
+        { "id": "wnt_arg_12", "name": "Aldana Cometti", "position": "Right-Back", "number": "2", "dateOfBirth": "May 11, 1997", "nationality": ["Argentina"], "height": "1,67m", "foot": "right", "marketValue": "€100k" },
+        { "id": "wnt_arg_13", "name": "Sophia Braun", "position": "Right Winger", "number": "17", "dateOfBirth": "Dec 15, 2001", "nationality": ["Argentina"], "height": "1,67m", "foot": "right", "marketValue": "€200k" },
+        { "id": "wnt_arg_14", "name": "Lorena Benítez", "position": "Left-Back", "number": "14", "dateOfBirth": "Sep 27, 1996", "nationality": ["Argentina"], "height": "1,62m", "foot": "left", "marketValue": "€60k" },
+        { "id": "wnt_arg_15", "name": "Victoria Carratu", "position": "Central Midfield", "number": "16", "dateOfBirth": "Feb 5, 1996", "nationality": ["Argentina"], "height": "1,63m", "foot": "right", "marketValue": "€60k" },
+        { "id": "wnt_arg_16", "name": "Dalila Ippolito", "position": "Attacking Midfield", "number": "19", "dateOfBirth": "May 30, 2001", "nationality": ["Argentina"], "height": "1,62m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_arg_17", "name": "Clarisa Huber", "position": "Centre-Back", "number": "15", "dateOfBirth": "Apr 21, 2001", "nationality": ["Argentina"], "height": "1,72m", "foot": "right", "marketValue": "€60k" },
+        { "id": "wnt_arg_18", "name": "Camila Gómez Ares", "position": "Left Winger", "number": "18", "dateOfBirth": "Mar 12, 2000", "nationality": ["Argentina"], "height": "1,62m", "foot": "left", "marketValue": "€100k" },
+        { "id": "wnt_arg_19", "name": "Martina Icardi", "position": "Right Winger", "number": "20", "dateOfBirth": "Aug 7, 2003", "nationality": ["Argentina"], "height": "1,60m", "foot": "right", "marketValue": "€150k" },
+        { "id": "wnt_arg_20", "name": "Rocío Bueno", "position": "Central Midfield", "number": "13", "dateOfBirth": "Sep 9, 1997", "nationality": ["Argentina"], "height": "1,65m", "foot": "right", "marketValue": "€60k" },
+        { "id": "wnt_arg_21", "name": "Florencia Jaimes", "position": "Centre-Forward", "number": "21", "dateOfBirth": "Jan 31, 1995", "nationality": ["Argentina"], "height": "1,68m", "foot": "right", "marketValue": "€80k" },
+        { "id": "wnt_arg_22", "name": "Priscila Jardim", "position": "Right-Back", "number": "22", "dateOfBirth": "Nov 14, 2000", "nationality": ["Argentina"], "height": "1,64m", "foot": "right", "marketValue": "€60k" },
+        { "id": "wnt_arg_23", "name": "Soledad Jaimes", "position": "Right Winger", "number": "23", "dateOfBirth": "Jul 22, 1992", "nationality": ["Argentina"], "height": "1,66m", "foot": "right", "marketValue": "€100k" }
+    ]
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheManager — El primer mánager de fútbol femenino.</title>
+    <meta name="description" content="El primer manager de fútbol femenino gratuito y sin instalación. Liga F, Frauen-Bundesliga, WSL, Serie A, Ligue 1, UWCL y Mundial Femenino 2027.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate" hreflang="es" href="/index.html">
+    <link rel="alternate" hreflang="en" href="/index-en.html">
+    <link rel="alternate" hreflang="x-default" href="/index.html">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=barlow-semi-condensed:400,600,800|inter:400,500,600" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                fontSize: { xs:'0.8rem', sm:'1rem', base:'1.25rem', xl:'1.563rem', '2xl':'1.953rem', '3xl':'2.441rem', '4xl':'3.052rem' },
+                extend: {
+                    fontFamily: { heading:['"Barlow Semi Condensed"','sans-serif'], sans:['Inter','ui-sans-serif','system-ui','sans-serif'] },
+                    colors: {
+                        surface: { 900:'#0B1120', 800:'#0F172A', 700:'#1E293B', 600:'#334155' },
+                        accent: { blue:'#3B82F6', gold:'#F59E0B', green:'#22C55E', red:'#EF4444', orange:'#F97316', purple:'#A855F7', pink:'#EC4899' },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>html{scroll-behavior:smooth}</style>
+</head>
+<body class="min-h-screen bg-surface-900 font-sans text-white antialiased">
+
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="-skew-x-12 bg-accent-purple px-3 sm:px-4 py-1">
+                <span class="skew-x-12 inline-block font-heading text-xl sm:text-3xl font-bold text-white tracking-tight">SheManager</span>
+            </div>
+            <span class="text-xs font-semibold text-accent-pink uppercase tracking-widest hidden sm:inline">Femenino</span>
+        </div>
+        <div class="flex items-center gap-2 sm:gap-4">
+            <a href="/index.html" class="text-xs font-semibold text-white uppercase tracking-wider">ES</a>
+            <span class="text-slate-600">|</span>
+            <a href="/index-en.html" class="text-xs font-semibold text-slate-400 hover:text-white transition uppercase tracking-wider">EN</a>
+            <a href="https://app.shemanager.com/login" class="text-sm font-semibold text-white bg-white/10 border border-white/20 hover:bg-white/20 px-3 sm:px-5 py-2 rounded-md transition">Iniciar sesión</a>
+        </div>
+    </nav>
+
+    <section class="relative max-w-7xl mx-auto px-6 pt-12 pb-24 sm:pt-20 sm:pb-24 overflow-hidden">
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-accent-purple/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-72 h-72 bg-accent-pink/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div>
+            <div class="inline-flex items-center gap-2 bg-accent-purple/10 border border-accent-purple/20 rounded-full px-4 py-1.5 mb-6">
+                <span class="w-2 h-2 bg-accent-purple rounded-full animate-pulse"></span>
+                <span class="text-xs font-semibold text-accent-purple uppercase tracking-wider">Temporada 2025-26 · En desarrollo activo</span>
+            </div>
+            <h1 class="font-heading text-3xl sm:text-[3.5rem] font-bold leading-tight tracking-tight uppercase">
+                El primer mánager de<br>
+                <span class="text-accent-pink">fútbol femenino.</span>
+            </h1>
+            <p class="mt-6 text-sm sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
+                Gestiona equipos reales de Liga F, Frauen-Bundesliga, Women's Super League, Serie A y Ligue 1 Femenina. Compite en la UWCL y lleva a tu equipo al Mundial Femenino 2027.
+            </p>
+
+            <form id="waitlist-form" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl">
+                <input type="text" id="name" name="name" required placeholder="Tu nombre"
+                    class="sm:w-40 px-4 py-3 rounded-md bg-white/10 border border-white/20 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-accent-purple text-sm transition">
+                <input type="email" id="email" name="email" required placeholder="tu@email.com"
+                    class="flex-1 px-4 py-3 rounded-md bg-white/10 border border-white/20 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-accent-purple text-sm transition">
+                <button type="submit" id="submit-btn"
+                    class="bg-accent-purple hover:bg-purple-600 text-white px-6 py-3 rounded-md font-semibold uppercase tracking-wide text-xs whitespace-nowrap transition">
+                    Acceso Anticipado
+                </button>
+            </form>
+            <div id="form-message" class="hidden text-xs mt-3"></div>
+            <p class="mt-3 text-xs text-slate-500">Apúntate a la lista de espera. Sin spam.</p>
+
+            <div class="mt-10 flex flex-wrap divide-x divide-white/10 max-w-2xl">
+                <div class="text-center flex-1 px-3 min-w-[70px]">
+                    <div class="font-heading text-2xl font-bold text-accent-purple">5</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Ligas</div>
+                </div>
+                <div class="text-center flex-1 px-3 min-w-[70px]">
+                    <div class="font-heading text-2xl font-bold text-accent-purple">11</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Competiciones</div>
+                </div>
+                <div class="text-center flex-1 px-3 min-w-[70px]">
+                    <div class="font-heading text-2xl font-bold text-accent-purple">98</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Equipos</div>
+                </div>
+                <div class="text-center flex-1 px-3 min-w-[70px]">
+                    <div class="font-heading text-2xl font-bold text-accent-purple">176</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Selecciones</div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-2">
+                <span class="bg-surface-700 border border-white/10 rounded-full px-3 py-1.5 text-xs font-semibold">🇪🇸 Liga F</span>
+                <span class="bg-surface-700 border border-white/10 rounded-full px-3 py-1.5 text-xs font-semibold">🏆 Copa de la Reina</span>
+                <span class="bg-surface-700 border border-white/10 rounded-full px-3 py-1.5 text-xs font-semibold">⭐ UWCL</span>
+                <span class="bg-surface-700 border border-white/10 rounded-full px-3 py-1.5 text-xs font-semibold">🇩🇪 Frauen-Bundesliga</span>
+                <span class="bg-surface-700 border border-white/10 rounded-full px-3 py-1.5 text-xs font-semibold">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Women's Super League</span>
+                <span class="bg-surface-700 border border-white/10 rounded-full px-3 py-1.5 text-xs font-semibold">🇫🇷 Arkema Première Ligue</span>
+                <span class="bg-surface-700 border border-white/10 rounded-full px-3 py-1.5 text-xs font-semibold">🇮🇹 Serie A Women</span>
+                <span class="bg-surface-800 border border-accent-pink/30 rounded-full px-3 py-1.5 text-xs font-semibold text-accent-pink">🌍 WWC 2027 Brasil</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center mb-10">
+            <h2 class="font-heading text-3xl font-bold mb-3 uppercase tracking-wide">Las Mejores del Mundo</h2>
+            <p class="text-sm text-slate-400">Plantillas reales 2025-26 con habilidades basadas en valor de mercado</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-4 text-center hover:border-accent-purple/40 transition">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 mx-auto mb-3 flex items-center justify-center font-bold">AB</div>
+                <div class="font-heading font-bold text-sm leading-tight">Aitana Bonmatí</div>
+                <div class="text-xs text-slate-500 mt-1">FC Barcelona</div>
+                <div class="text-xs text-accent-gold mt-1 font-semibold">€5M</div>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-4 text-center hover:border-accent-purple/40 transition">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-red-600 to-orange-500 mx-auto mb-3 flex items-center justify-center font-bold">LO</div>
+                <div class="font-heading font-bold text-sm leading-tight">Lena Oberdorf</div>
+                <div class="text-xs text-slate-500 mt-1">VfL Wolfsburg</div>
+                <div class="text-xs text-accent-gold mt-1 font-semibold">€3M</div>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-4 text-center hover:border-accent-purple/40 transition">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-500 to-red-600 mx-auto mb-3 flex items-center justify-center font-bold">LC</div>
+                <div class="font-heading font-bold text-sm leading-tight">Linda Caicedo</div>
+                <div class="text-xs text-slate-500 mt-1">Real Madrid</div>
+                <div class="text-xs text-accent-gold mt-1 font-semibold">€3M</div>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-4 text-center hover:border-accent-purple/40 transition">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 mx-auto mb-3 flex items-center justify-center font-bold">VM</div>
+                <div class="font-heading font-bold text-sm leading-tight">Vivianne Miedema</div>
+                <div class="text-xs text-slate-500 mt-1">Arsenal</div>
+                <div class="text-xs text-accent-gold mt-1 font-semibold">€2M</div>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-4 text-center hover:border-accent-purple/40 transition">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 mx-auto mb-3 flex items-center justify-center font-bold">AH</div>
+                <div class="font-heading font-bold text-sm leading-tight">Ada Hegerberg</div>
+                <div class="text-xs text-slate-500 mt-1">OL Lyon</div>
+                <div class="text-xs text-accent-gold mt-1 font-semibold">€2.5M</div>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-4 text-center hover:border-accent-purple/40 transition">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-600 to-rose-500 mx-auto mb-3 flex items-center justify-center font-bold">SP</div>
+                <div class="font-heading font-bold text-sm leading-tight">Salma Paralluelo</div>
+                <div class="text-xs text-slate-500 mt-1">FC Barcelona</div>
+                <div class="text-xs text-accent-gold mt-1 font-semibold">€2.5M</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="font-heading text-3xl font-bold mb-3 uppercase tracking-wide">Todo lo que necesitas</h2>
+            <p class="text-sm text-slate-400">El motor del juego masculino, adaptado al fútbol femenino real.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-accent-purple/20 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-accent-purple" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h3 class="font-heading text-xl font-semibold mb-2">Partido en Vivo</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Vive cada partido en tiempo real con sustituciones, cambios de formación y ajuste de mentalidad.</p>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-accent-blue/20 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-accent-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <h3 class="font-heading text-xl font-semibold mb-2">Fichajes Internacionales</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Ficha jugadoras de las 5 grandes ligas europeas. Negocia, cede a préstamo o contrata agentes libres.</p>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-accent-green/20 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-accent-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                </div>
+                <h3 class="font-heading text-xl font-semibold mb-2">La Cantera</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Nuevas promesas cada temporada. Desarrolla a las futuras estrellas del fútbol femenino desde la base.</p>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-accent-gold/20 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-accent-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                </div>
+                <h3 class="font-heading text-xl font-semibold mb-2">11 Competiciones</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Liga F, Copa de la Reina, Supercopa, UWCL, Europa Cup, 4 ligas extranjeras y el Mundial Femenino 2027.</p>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-accent-pink/20 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-accent-pink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3 class="font-heading text-xl font-semibold mb-2">Copa del Mundo 2027</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">176 selecciones con clasificatorias reales por confederación. Final en el Maracanã, agosto 2027.</p>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-6">
+                <div class="w-10 h-10 bg-accent-orange/20 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5 text-accent-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3 class="font-heading text-xl font-semibold mb-2">Economía Real</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Presupuestos ajustados a la realidad del fútbol femenino. Cada euro cuenta más que en el fútbol masculino.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-8 sm:p-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <svg class="w-8 h-8 text-accent-green" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <h2 class="font-heading text-2xl font-bold uppercase tracking-wide">Open Source · Gratis</h2>
+                </div>
+                <p class="text-sm text-slate-400 mb-6 leading-relaxed">Sin pagos, sin micropagos, sin trucos. El código es abierto. SheManager es el primer manager de fútbol femenino de código abierto, basado en Virtua FC de Pablo Román.</p>
+                <a href="https://github.com/izandhh/shemanager" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-md font-semibold text-sm transition">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    Ver en GitHub
+                </a>
+            </div>
+            <div class="bg-surface-800 border border-white/5 rounded-xl p-8 sm:p-10 flex flex-col items-center text-center">
+                <img src="https://unavatar.io/twitter/izandhh" class="border border-white/20 rounded-full w-24 h-24 mb-6" alt="Izan Delgado">
+                <h2 class="font-heading text-2xl font-bold mb-2">Creado por Izan Delgado</h2>
+                <p class="text-slate-400 text-sm mb-6">Desarrollador apasionado por el fútbol femenino. SheManager nace de la convicción de que el fútbol femenino merece su propio espacio en los videojuegos de gestión.</p>
+                <div class="flex items-center justify-center gap-4 mt-auto">
+                    <a href="https://x.com/izandhh" target="_blank" rel="noopener" class="text-sm text-slate-400 hover:text-white transition">@izandhh</a>
+                    <a href="https://github.com/izandhh" target="_blank" rel="noopener" class="text-sm text-slate-400 hover:text-white transition">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <h2 class="font-heading text-3xl font-bold mb-4 uppercase tracking-wide">¿Lista para dirigir tu equipo?</h2>
+        <p class="text-sm text-slate-400 mb-8">Apúntate a la lista de espera y sé la primera en enterarte del lanzamiento.</p>
+        <a href="#" onclick="document.getElementById('email').focus();return false;"
+           class="inline-block bg-accent-purple hover:bg-purple-600 text-white px-10 py-3 rounded-md font-semibold uppercase tracking-wide text-sm transition">
+            Unirme a la Lista de Espera
+        </a>
+    </section>
+
+    <footer class="max-w-7xl mx-auto px-6 py-12 border-t border-white/10">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="-skew-x-12 bg-accent-purple px-3 py-1">
+                    <span class="skew-x-12 inline-block font-heading text-xl font-bold text-white tracking-tight">SheManager</span>
+                </div>
+                <span class="text-xs text-accent-pink font-semibold uppercase tracking-widest">Femenino</span>
+            </div>
+            <div class="text-xs text-slate-500">
+                © 2026 Izan Delgado · Open Source ·
+                <a href="https://github.com/izandhh/shemanager" target="_blank" class="hover:text-slate-400">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('waitlist-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const formMessage = document.getElementById('form-message');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            if (!name || !email) return;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            formMessage.classList.add('hidden');
+            try {
+                const res = await fetch('https://app.shemanager.com/api/waitlist', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email }),
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    formMessage.textContent = '¡Estás en la lista! Te avisaremos pronto.';
+                    formMessage.className = 'text-xs mt-3 text-green-400';
+                    formMessage.classList.remove('hidden');
+                    form.reset();
+                } else {
+                    formMessage.textContent = data.error || 'Algo salió mal. Inténtalo de nuevo.';
+                    formMessage.className = 'text-xs mt-3 text-red-400';
+                    formMessage.classList.remove('hidden');
+                }
+            } catch {
+                formMessage.textContent = 'Error de conexión. Inténtalo de nuevo.';
+                formMessage.className = 'text-xs mt-3 text-red-400';
+                formMessage.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Acceso Anticipado';
+            }
+        });
+    </script>
+</body>
+</html>

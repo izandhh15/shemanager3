@@ -1,0 +1,59 @@
+{
+    "round_1_matches": [
+        { "match": "1-1",  "home": "wec_aja",  "away": "wec_atl"  },
+        { "match": "1-2",  "home": "wec_sub",  "away": "wec_hib"  },
+        { "match": "1-3",  "home": "wec_kge",  "away": "wec_abb"  },
+        { "match": "1-4",  "home": "wec_par",  "away": "wec_bii"  },
+        { "match": "1-5",  "home": "wec_rbn",  "away": "wec_int"  },
+        { "match": "1-6",  "home": "wec_ari",  "away": "wec_vll"  },
+        { "match": "1-7",  "home": "wec_stu",  "away": "wec_psv"  },
+        { "match": "1-8",  "home": "wec_and",  "away": "wec_sar"  },
+        { "match": "1-9",  "home": "wec_kol",  "away": "wec_nor"  },
+        { "match": "1-10", "home": "wec_kup",  "away": "wec_far"  },
+        { "match": "1-11", "home": "wec_gra",  "away": "wec_gla"  }
+    ],
+
+    "round_2_seeded": [
+        "wec_slo",  "wec_scp",  "wec_sla",  "wec_gin",
+        "wec_fhj",  "wec_hac",  "wec_din",  "wec_brg",
+        "wec_vor",  "wec_bra",  "wec_bre",  "wec_ham",
+        "wec_fer",  "wec_avi",  "wec_yb",   "wec_spap",
+        "wec_kat",  "wec_ros",  "wec_mur",  "wec_min",
+        "wec_ein"
+    ],
+
+    "round_2_matches": [
+        { "match": "2-1",  "seeded": "wec_slo",  "qualifier": "W1-1"  },
+        { "match": "2-2",  "seeded": "wec_scp",  "qualifier": "W1-2"  },
+        { "match": "2-3",  "seeded": "wec_sla",  "qualifier": "W1-3"  },
+        { "match": "2-4",  "seeded": "wec_gin",  "qualifier": "W1-4"  },
+        { "match": "2-5",  "seeded": "wec_fhj",  "qualifier": "W1-5"  },
+        { "match": "2-6",  "seeded": "wec_hac",  "qualifier": "W1-6"  },
+        { "match": "2-7",  "seeded": "wec_din",  "qualifier": "W1-7"  },
+        { "match": "2-8",  "seeded": "wec_brg",  "qualifier": "W1-8"  },
+        { "match": "2-9",  "seeded": "wec_vor",  "qualifier": "W1-9"  },
+        { "match": "2-10", "seeded": "wec_bra",  "qualifier": "W1-10" },
+        { "match": "2-11", "seeded": "wec_bre",  "qualifier": "W1-11" },
+        { "match": "2-12", "seeded": "wec_ham",  "qualifier": "wec_fer" },
+        { "match": "2-13", "seeded": "wec_avi",  "qualifier": "wec_yb" },
+        { "match": "2-14", "seeded": "wec_spap", "qualifier": "wec_kat" },
+        { "match": "2-15", "seeded": "wec_ros",  "qualifier": "wec_mur" },
+        { "match": "2-16", "seeded": "wec_min",  "qualifier": "wec_ein" }
+    ],
+
+    "quarter_finals": [
+        { "match": "QF-1", "home": "W2-1",  "away": "W2-2"  },
+        { "match": "QF-2", "home": "W2-3",  "away": "W2-4"  },
+        { "match": "QF-3", "home": "W2-5",  "away": "W2-6"  },
+        { "match": "QF-4", "home": "W2-7",  "away": "W2-8"  }
+    ],
+
+    "semi_finals": [
+        { "match": "SF-1", "home": "W_QF1", "away": "W_QF2" },
+        { "match": "SF-2", "home": "W_QF3", "away": "W_QF4" }
+    ],
+
+    "final": [
+        { "match": "F-1",  "home": "W_SF1", "away": "W_SF2" }
+    ]
+}
