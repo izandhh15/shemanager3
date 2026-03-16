@@ -4,15 +4,22 @@ set -e
 echo "=== SheManager Startup ==="
 
 if [ -z "$APP_KEY" ]; then
-  echo "Generating APP_KEY..."
   php artisan key:generate --force
 fi
 
 echo "Running migrations..."
 php artisan migrate --force --no-interaction
 
-echo "Seeding women's football data (2026 season)..."
-php artisan app:seed-reference-data --season=2026 --no-interaction
+if [ "${DB_FRESH}" = "true" ]; then
+  echo "Fresh seed requested..."
+  php artisan migrate:fresh --force --no-interaction
+  php artisan app:seed-reference-data --season=2026 --no-interaction
+elif php artisan tinker --execute="echo \App\Models\Team::count();" 2>/dev/null | tail -1 | grep -q "^0$"; then
+  echo "Empty DB — seeding..."
+  php artisan app:seed-reference-data --season=2026 --no-interaction
+else
+  echo "DB already seeded. Skipping."
+fi
 
 php artisan config:cache
 php artisan route:cache
